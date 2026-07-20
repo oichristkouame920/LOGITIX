@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nos remorques — LOGITIX</title>
+    <link href="css/fonts.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/vegas.min.css" rel="stylesheet">
+    <link href="css/tooplate-barista.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/chambre.css">
+    <link rel="stylesheet" href="css/modif.css">
+    <style>
+        :root { --choc:#D2691E;--choc-dark:#8B4513;--navy:#01203F;--navy-2:#0b2c4d;--surface:#f3f0ec;--surface2:#eae3da;--white:#fdfdfd;--text:#211a14;--muted:#68605a;--border:#e2d8cb;--radius:8px;--ease:.2s ease; }
+        html { overflow-x:hidden; }
+        body { padding-top:148px; background:var(--white); font-family:var(--body-font-family); font-weight:400; color:var(--text); overflow-x:hidden; }
+
+        /* HERO */
+        .fleet-hero { position:relative; min-height:460px; display:flex; align-items:center; justify-content:center; text-align:center; overflow:hidden; border-bottom:4px solid var(--choc); }
+        .fleet-hero .bg { position:absolute; inset:0; background:url('images/entrelogi.png') center/cover no-repeat; }
+        .fleet-hero .overlay { position:absolute; inset:0; background:linear-gradient(180deg, rgba(1,32,63,.88), rgba(139,69,19,.75)); }
+        .fleet-hero-inner { position:relative; z-index:1; padding:2rem 1.5rem; max-width:820px; }
+        .fleet-hero .eyebrow { display:inline-block; font-size:.72rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--navy); background:var(--choc); padding:.35rem 1rem; border-radius:100px; margin-bottom:1.2rem; }
+        .fleet-hero h1 { font-size:clamp(1.9rem,4.6vw,3rem); font-weight:800; text-transform:uppercase; color:var(--white); line-height:1.15; margin-bottom:1rem; }
+        .fleet-hero p { color:rgba(255,255,255,.85); font-size:1rem; max-width:620px; margin:0 auto; }
+
+        /* SECTION INTRO */
+        .section-label { display:inline-block; font-size:.68rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--white); background:var(--navy); padding:.3rem .8rem; margin-bottom:.7rem; }
+        .section-title { font-size:1.9rem; font-weight:800; text-transform:uppercase; color:var(--text); line-height:1.15; margin-bottom:.8rem; }
+        .section-rule { width:44px; height:4px; background:var(--choc); margin-bottom:1.6rem; }
+
+        /* FILTERS */
+        .filters { display:flex; flex-wrap:wrap; gap:.6rem; margin-bottom:3rem; }
+        .filter-btn { border:1px solid var(--border); background:var(--white); color:var(--text); font-weight:600; font-size:.82rem; padding:.6rem 1.3rem; border-radius:100px; cursor:pointer; transition:background var(--ease),color var(--ease),border-color var(--ease); }
+        .filter-btn:hover { border-color:var(--choc); color:var(--choc-dark); }
+        .filter-btn.active { background:var(--navy); border-color:var(--navy); color:var(--white); }
+
+        /* CATEGORY */
+        .cat-section { margin-bottom:4rem; }
+        .cat-section:last-child { margin-bottom:0; }
+        .cat-heading { display:flex; align-items:center; gap:.7rem; margin-bottom:1.8rem; }
+        .cat-heading .emoji { font-size:1.6rem; }
+        .cat-heading h2 { font-size:1.35rem; font-weight:800; text-transform:uppercase; color:var(--navy); margin:0; }
+
+        /* VEHICLE CARD */
+        .vehicle-card { background:var(--white); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; transition:transform var(--ease),box-shadow var(--ease),border-color var(--ease); height:100%; display:flex; flex-direction:column; }
+        .vehicle-card:hover { transform:translateY(-4px); box-shadow:0 16px 32px rgba(33,26,20,.14); border-color:var(--choc); }
+        .vehicle-card .tile { aspect-ratio:16/10; background:linear-gradient(135deg,var(--navy),var(--choc-dark)); display:flex; align-items:center; justify-content:center; overflow:hidden; position:relative; }
+        .vehicle-card .tile.alt { background:linear-gradient(135deg,var(--choc),var(--navy)); }
+        .vehicle-card .tile .placeholder-img { width:100%; height:100%; object-fit:cover; display:block; }
+        .vehicle-card .tile .no-image { font-size:3rem; color:rgba(255,255,255,.92); text-align:center; padding:1rem; }
+        .vehicle-card .tile .no-image small { display:block; font-size:.7rem; opacity:.7; margin-top:.4rem; }
+        .vehicle-card .body { padding:1.2rem 1.3rem 1.4rem; display:flex; flex-direction:column; flex:1; }
+        .vehicle-card h3 { font-size:1.05rem; font-weight:800; color:var(--navy); margin-bottom:.7rem; }
+        .vehicle-card .specs { list-style:none; padding:0; margin:0 0 1.2rem; display:grid; gap:.4rem; flex:1; }
+        .vehicle-card .specs li { font-size:.8rem; color:var(--muted); display:flex; align-items:center; gap:.5rem; }
+        .vehicle-card .specs li i { color:var(--choc); font-size:.85rem; }
+        .btn-discover { align-self:flex-start; background:transparent; border:1px solid var(--navy); color:var(--navy); font-weight:700; font-size:.78rem; letter-spacing:.04em; text-transform:uppercase; padding:.55rem 1.2rem; border-radius:100px; cursor:pointer; transition:background var(--ease),color var(--ease); }
+        .btn-discover:hover { background:var(--navy); color:var(--white); }
+
+        /* STATS */
+        .fleet-stats { background:var(--navy); border-radius:4px; padding:2.4rem 1rem; display:grid; grid-template-columns:repeat(5,1fr); }
+        .fleet-stats .stat { text-align:center; padding:0 .5rem; border-left:1px solid rgba(255,255,255,.15); }
+        .fleet-stats .stat:first-child { border-left:0; }
+        .fleet-stats .num { font-weight:800; font-size:2.2rem; color:var(--choc); }
+        .fleet-stats .lbl { font-size:.72rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:rgba(255,255,255,.75); margin-top:.3rem; }
+        @media (max-width:768px) { .fleet-stats { grid-template-columns:repeat(2,1fr); row-gap:1.8rem; } .fleet-stats .stat:nth-child(odd) { border-left:0; } }
+
+        /* WHY */
+        .why-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:1.2rem; }
+        .why-item { text-align:center; padding:1.6rem 1rem; border:1px solid var(--border); border-radius:var(--radius); background:var(--surface); }
+        .why-item .chk { width:44px; height:44px; border-radius:50%; background:var(--choc); color:var(--white); display:flex; align-items:center; justify-content:center; margin:0 auto .9rem; font-size:1.2rem; }
+        .why-item span { font-weight:700; font-size:.88rem; color:var(--navy); }
+        @media (max-width:768px) { .why-grid { grid-template-columns:repeat(2,1fr); } }
+
+        /* MODAL */
+        .modal-content { border-radius:var(--radius); border:none; overflow:hidden; }
+        .modal-header { background:var(--navy); border:none; padding:1.3rem 1.6rem; }
+        .modal-title { color:var(--white); font-weight:800; text-transform:uppercase; font-size:1.15rem; }
+        .modal-header .btn-close { filter:invert(1); }
+        .modal-body { padding:0; }
+        .modal-img { width:100%; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,var(--navy),var(--choc-dark)); overflow:hidden; }
+        .modal-img img { width:100%; height:100%; object-fit:cover; }
+        .modal-img .no-image { font-size:5rem; color:rgba(255,255,255,.92); text-align:center; padding:1rem; }
+        .modal-img .no-image small { display:block; font-size:.8rem; opacity:.7; margin-top:.5rem; }
+        .modal-desc { padding:1.4rem 1.6rem .2rem; color:var(--text); font-size:.9rem; line-height:1.65; }
+        .spec-table { width:100%; border-collapse:collapse; margin:1rem 0 1.6rem; }
+        .spec-table tr { border-bottom:1px solid var(--border); }
+        .spec-table tr:last-child { border-bottom:none; }
+        .spec-table td { padding:.8rem 1.6rem; font-size:.86rem; }
+        .spec-table td:first-child { font-weight:700; color:var(--navy); width:42%; }
+        .spec-table td:last-child { color:var(--muted); }
+        .avail-badge { display:inline-flex; align-items:center; gap:.4rem; font-weight:700; font-size:.8rem; padding:.3rem .9rem; border-radius:100px; }
+        .avail-badge.available { background:#e4f3e6; color:#1f7a34; }
+        .avail-badge.service { background:#fdeadb; color:var(--choc-dark); }
+
+        .reveal { opacity:0; transform:translateY(24px); transition:opacity .6s ease,transform .6s ease; }
+        .reveal.visible { opacity:1; transform:none; }
+        .hidden-cat { display:none !important; }
+
+        .modal { z-index:1000010; }
+        .modal-backdrop { z-index:1000000; }
+    </style>
+</head>
+<body>
+   <nav class="navbar navbar-expand-xl">                
+        <div class="container">
+            <div class="navbar-brand d-flex align-items-center">
+                <a href="index.html"><img src="images/logo.png" class="navbar-brand-image img-fluid" alt="LOGITIX"></a>
+            </div>
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                LOGITIX
+            </a>
+        
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-lg-auto">
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="index.html">Acceuil</a>
+                    </li>
+        
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="camions.html">Camions</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="remorques.html">Remorques</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="fourgon.html">Fourgons </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="chauffeurs.html">Nos Chauffeurs</a>
+                    </li>
+
+                </ul>
+
+                <div class="ms-xl-2">
+                    <a class="btn custom-btn custom-border-btn" href="se_connecter.html">
+                        Suivre son colis
+                        <i class="bi-arrow-up-right ms-2"></i>
+                    </a>
+                </div>
+                            
+            </div>
+        </div>
+    </nav>
+
+    <header class="fleet-hero">
+        <div class="bg"></div>
+        <div class="overlay"></div>
+        <div class="fleet-hero-inner">
+            <span class="eyebrow">LOGITIX</span>
+            <h1>Des remorques adaptées à tous vos besoins</h1>
+            <p>Une gamme complète de remorques standards et spécialisées pour répondre aux exigences de la logistique moderne.</p>
+        </div>
+    </header>
+
+    <div class="container" style="padding-top:3.5rem;">
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">Toutes</button>
+            <button class="filter-btn" data-filter="standard">Remorques standards</button>
+            <button class="filter-btn" data-filter="specialisees">Remorques spécialisées</button>
+            <button class="filter-btn" data-filter="semi-remorques">Semi-remorques</button>
+            <button class="filter-btn" data-filter="oversize">Oversize & Hors normes</button>
+        </div>
+
+        <!-- REMORQUES STANDARDS -->
+        <div class="cat-section" data-cat-section="standard">
+            <div class="cat-heading">
+                <span class="emoji">📦</span>
+                <h2>Remorques standards</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4 vehicle-item" data-cat="standard">
+                    <div class="vehicle-card reveal">
+                        <div class="tile">
+                            <img src="images/remorques/bachee-coulissante.jpg" class="placeholder-img" alt="Bâchée coulissante" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-box-seam"></i><small>Bâchée coulissante</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Bâchée coulissante</h3>
+                            <ul class="specs">
+                                <li><i class="bi bi-check-circle-fill"></i>13.6 m</li>
+                                <li><i class="bi bi-check-circle-fill"></i>90 m³</li>
+                                <li><i class="bi bi-check-circle-fill"></i>33 palettes</li>
+                            </ul>
+                            <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+                                data-name="Bâchée coulissante" data-img="images/remorques/bachee-coulissante.jpg" data-alt="0"
+                                data-capacity="33 palettes (90 m³)" data-length="13.6 m" data-usage="Transport national et international"
+                                data-type="Bâchée" data-avail="available" data-avail-label="Disponible"
+                                data-desc="Remorque bâchée coulissante idéale pour le transport de marchandises palettisées. Accès latéral facilité par la bâche coulissante, permettant des chargements et déchargements rapides.">
+                                Découvrir <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 vehicle-item" data-cat="standard">
+                    <div class="vehicle-card reveal">
+                        <div class="tile alt">
+                            <img src="images/remorques/fourgon-sec.jpg" class="placeholder-img" alt="Fourgon sec" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-box"></i><small>Fourgon sec</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Fourgon sec</h3>
+                            <ul class="specs">
+                                <li><i class="bi bi-check-circle-fill"></i>13.6 m</li>
+                                <li><i class="bi bi-check-circle-fill"></i>92 m³</li>
+                                <li><i class="bi bi-check-circle-fill"></i>33 palettes</li>
+                            </ul>
+                            <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+                                data-name="Fourgon sec" data-img="images/remorques/fourgon-sec.jpg" data-alt="1"
+                                data-capacity="33 palettes (92 m³)" data-length="13.6 m" data-usage="Transport de marchandises diverses"
+                                data-type="Fermé" data-avail="available" data-avail-label="Disponible"
+                                data-desc="Remorque fermée totalement sécurisée, protégeant les marchandises des intempéries et des vols. Idéale pour le transport de biens de consommation.">
+                                Découvrir <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 vehicle-item" data-cat="standard">
+                    <div class="vehicle-card reveal">
+                        <div class="tile">
+                            <img src="images/remorques/plateau-ridelle.jpg" class="placeholder-img" alt="Plateau ridelle" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-grid"></i><small>Plateau ridelle</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Plateau ridelle</h3>
+                            <ul class="specs">
+                                <li><i class="bi bi-check-circle-fill"></i>13.6 m</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Charge utile 24 t</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Multi-usages</li>
+                            </ul>
+                            <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+                                data-name="Plateau ridelle" data-img="images/remorques/plateau-ridelle.jpg" data-alt="0"
+                                data-capacity="24 tonnes" data-length="13.6 m" data-usage="Transport de marchandises volumineuses"
+                                data-type="Plateau" data-avail="available" data-avail-label="Disponible"
+                                data-desc="Remorque plateau avec ridelles amovibles, parfaite pour les charges lourdes et volumineuses que les conteneurs fermés ne peuvent pas accueillir.">
+                                Découvrir <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 vehicle-item" data-cat="standard">
+                    <div class="vehicle-card reveal">
+                        <div class="tile alt">
+                            <img src="images/remorques/megabachee.jpg" class="placeholder-img" alt="Mégabâchée" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-archive"></i><small>Mégabâchée</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Mégabâchée</h3>
+                            <ul class="specs">
+                                <li><i class="bi bi-check-circle-fill"></i>13.6 m</li>
+                                <li><i class="bi bi-check-circle-fill"></i>105 m³</li>
+                                <li><i class="bi bi-check-circle-fill"></i>30 palettes</li>
+                            </ul>
+                            <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+                                data-name="Mégabâchée" data-img="images/remorques/megabachee.jpg" data-alt="1"
+                                data-capacity="30 palettes (105 m³)" data-length="13.6 m" data-usage="Transport de volume"
+                                data-type="Bâchée" data-avail="service" data-avail-label="En service"
+                                data-desc="Version surdimensionnée de la remorque bâchée, offrant un volume de chargement maximal pour les marchandises légères mais volumineuses.">
+                                Découvrir <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- REMORQUES SPÉCIALISÉES -->
+        <div class="cat-section" data-cat-section="specialisees">
+            <div class="cat-heading">
+                <span class="emoji">⚙️</span>
+                <h2>Remorques spécialisées</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4 vehicle-item" data-cat="specialisees">
+                    <div class="vehicle-card reveal">
+                        <div class="tile">
+                            <img src="images/remorques/frigorifique.jpg" class="placeholder-img" alt="Frigorifique" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-snow2"></i><small>Frigorifique</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Frigorifique</h3>
+                            <ul class="specs">
+                                <li><i class="bi bi-check-circle-fill"></i>13.6 m</li>
+                                <li><i class="bi bi-check-circle-fill"></i>-25°C à +25°C</li>
+                                <li><i class="bi bi-check-circle-fill"></i>26 palettes</li>
+                            </ul>
+                            <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+                                data-name="Frigorifique" data-img="images/remorques/frigorifique.jpg" data-alt="0"
+                                data-capacity="26 palettes" data-length="13.6 m" data-usage="Transport de produits frais et surgelés"
+                                data-type="Frigorifique" data-avail="available" data-avail-label="Disponible"
+                                data-desc="Remorque isotherme avec groupe frigorifique intégré, maintenant une température constante pour le transport de denrées périssables, médicaments et produits sensibles.">
+                                Découvrir <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 vehicle-item" data-cat="specialisees">
+                    <div class="vehicle-card reveal">
+                        <div class="tile alt">
+                            <img src="images/remorques/citerne.jpg" class="placeholder-img" alt="Citerne" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-droplet"></i><small>Citerne</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Citerne</h3>
+                            <ul class="specs">
+                                <li><i class="bi bi-check-circle-fill"></i>40 000 L</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Inox / Alu</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Compartimentée</li>
+                            </ul>
+                            <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+                                data-name="Citerne" data-img="images/remorques/citerne.jpg" data-alt="1"
+                                data-capacity="40 000 litres" data-length="Varié" data-usage="Transport de liquides"
+                                data-type="Citerne" data-avail="available" data-avail-label="Disponible"
+                                data-desc="Remorque citerne conçue pour le transport sécurisé de liquides alimentaires, chimiques ou de carburants, avec des compartiments pour le multi-produits.">
+                                Découvrir <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 vehicle-item" data-cat="specialisees">
+                    <div class="vehicle-card reveal">
+                        <div class="tile">
+                            <img src="images/remorques/citerne-gas.jpg" class="placeholder-img" alt="Citerne gaz" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-fire"></i><small>Citerne gaz</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Citerne gaz (GPL)</h3>
+                            <ul class="specs">
+                                <li><i class="bi bi-check-circle-fill"></i>25 000 L</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Pression 20 bar</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Sécurité renforcée</li>
+                            </ul>
+                            <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+                                data-name="Citerne gaz (GPL)" data-img="images/remorques/citerne-gas.jpg" data-alt="0"
+                                data-capacity="25 000 litres" data-length="Varié" data-usage="Transport de gaz liquéfiés"
+                                data-type="Citerne sous pression" data-avail="service" data-avail-label="En service"
+                                data-desc="Remorque citerne sous pression pour le transport de gaz de pétrole liquéfié (GPL) et autres gaz sous pression, avec équipements de sécurité certifiés.">
+                                Découvrir <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 vehicle-item" data-cat="specialisees">
+                    <div class="vehicle-card reveal">
+                        <div class="tile alt">
+                            <img src="images/remorques/porte-voitures.jpg" class="placeholder-img" alt="Porte-voitures" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-truck-flatbed"></i><small>Porte-voitures</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Porte-voitures</h3>
+                            <ul class="specs">
+                                <li><i class="bi bi-check-circle-fill"></i>2 niveaux</li>
+                                <li><i class="bi bi-check-circle-fill"></i>6-8 véhicules</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Protection intégrée</li>
+                            </ul>
+                            <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+                                data-name="Porte-voitures" data-img="images/remorques/porte-voitures.jpg" data-alt="1"
+                                data-capacity="6 à 8 véhicules" data-length="13.6 m" data-usage="Transport automobile"
+                                data-type="Spécialisée" data-avail="service" data-avail-label="En service"
+                                data-desc="Remorque à deux niveaux pour le transport de véhicules neufs ou d'occasion, avec systèmes de fixation et protection contre les intempéries.">
+                                Découvrir <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 vehicle-item" data-cat="specialisees">
+                    <div class="vehicle-card reveal">
+                        <div class="tile">
+                            <img src="images/remorques/porte-conteneurs.jpg" class="placeholder-img" alt="Porte-conteneurs" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-bricks"></i><small>Porte-conteneurs</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Porte-conteneurs</h3>
+                            <ul class="specs">
+                                <li><i class="bi bi-check-circle-fill"></i>20-40 pieds</li>
+                                <li><i class="bi bi-check-circle-fill"></i>30 tonnes</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Multimodal</li>
+                            </ul>
+                            <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+                                data-name="Porte-conteneurs" data-img="images/remorques/porte-conteneurs.jpg" data-alt="0"
+                                data-capacity="30 tonnes" data-length="20-40 pieds" data-usage="Transport multimodal"
+                                data-type="Spécialisée" data-avail="available" data-avail-label="Disponible"
+                                data-desc="Remorque châssis conçue pour le transport de conteneurs ISO de 20 ou 40 pieds, facilitant le transfert entre les différents modes de transport.">
+                                Découvrir <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 vehicle-item" data-cat="specialisees">
+                    <div class="vehicle-card reveal">
+                        <div class="tile alt">
+                            <img src="images/remorques/benne.jpg" class="placeholder-img" alt="Benne" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-dumpster"></i><small>Benne</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Benne</h3>
+                            <ul class="specs">
+                                <li><i class="bi bi-check-circle-fill"></i>20-30 m³</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Charge utile 28 t</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Basculement hydraulique</li>
+                            </ul>
+                            <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+                                data-name="Benne" data-img="images/remorques/benne.jpg" data-alt="1"
+                                data-capacity="20-30 m³" data-length="6-8 m" data-usage="Transport de matériaux en vrac"
+                                data-type="Benne" data-avail="available" data-avail-label="Disponible"
+                                data-desc="Remorque benne basculante pour le transport de sable, graviers, déchets et autres matériaux en vrac. Système hydraulique puissant pour un déchargement rapide.">
+                                Découvrir <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEMI-REMORQUES -->
+        <div class="cat-section" data-cat-section="semi-remorques">
+            <div class="cat-heading">
+                <span class="emoji">🔗</span>
+                <h2>Semi-remorques</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4 vehicle-item" data-cat="semi-remorques">
+                    <div class="vehicle-card reveal">
+                        <div class="tile">
+                            <img src="images/remorques/semi-bachee.jpg" class="placeholder-img" alt="Semi-remorque bâchée" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-truck"></i><small>Semi-remorque bâchée</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Semi-remorque bâchée</h3>
+                            <ul class="specs">
+                                <li><i class="bi bi-check-circle-fill"></i>13.6 m</li>
+                                <li><i class="bi bi-check-circle-fill"></i>88 m³</li>
+                                <li><i class="bi bi-check-circle-fill"></i>24 palettes</li>
+                            </ul>
+                            <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+                                data-name="Semi-remorque bâchée" data-img="images/remorques/semi-bachee.jpg" data-alt="0"
+                                data-capacity="24 palettes (88 m³)" data-length="13.6 m" data-usage="Transport général"
+                                data-type="Semi-remorque" data-avail="available" data-avail-label="Disponible"
+                                data-desc="Semi-remorque standard bâchée, offrant une bonne protection et une grande flexibilité de chargement pour les marchandises diverses.">
+                                Découvrir <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 vehicle-item" data-cat="semi-remorques">
+                    <div class="vehicle-card reveal">
+                        <div class="tile alt">
+                            <img src="images/remorques/semi-fourgon.jpg" class="placeholder-img" alt="Semi-remorque fourgon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-building"></i><small>Semi-remorque fourgon</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Semi-remorque fourgon</h3>
+                            <ul class="specs">
+                                <li><i class="bi bi-check-circle-fill"></i>13.6 m</li>
+                                <li><i class="bi bi-check-circle-fill"></i>96 m³</li>
+                                <li><i class="bi bi-check-circle-fill"></i>33 palettes</li>
+                            </ul>
+                            <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+                                data-name="Semi-remorque fourgon" data-img="images/remorques/semi-fourgon.jpg" data-alt="1"
+                                data-capacity="33 palettes (96 m³)" data-length="13.6 m" data-usage="Transport sécurisé"
+                                data-type="Semi-remorque" data-avail="available" data-avail-label="Disponible"
+                                data-desc="Semi-remorque fermée offrant une sécurité maximale et une protection totale contre les intempéries pour les marchandises de valeur.">
+                                Découvrir <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 vehicle-item" data-cat="semi-remorques">
+                    <div class="vehicle-card reveal">
+                        <div class="tile">
+                            <img src="images/remorques/semi-frigo.jpg" class="placeholder-img" alt="Semi-remorque frigo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-thermometer-half"></i><small>Semi-remorque frigo</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Semi-remorque frigo</h3>
+                            <ul class="specs">
+                                <li><i class="bi bi-check-circle-fill"></i>13.6 m</li>
+                                <li><i class="bi bi-check-circle-fill"></i>-25°C à +25°C</li>
+                                <li><i class="bi bi-check-circle-fill"></i>26 palettes</li>
+                            </ul>
+                            <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+                                data-name="Semi-remorque frigo" data-img="images/remorques/semi-frigo.jpg" data-alt="0"
+                                data-capacity="26 palettes" data-length="13.6 m" data-usage="Transport de produits frais"
+                                data-type="Semi-remorque" data-avail="service" data-avail-label="En service"
+                                data-desc="Semi-remorque isotherme avec groupe frigorifique indépendant, garantissant la chaîne du froid pour les denrées périssables.">
+                                Découvrir <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 vehicle-item" data-cat="semi-remorques">
+                    <div class="vehicle-card reveal">
+                        <div class="tile alt">
+                            <img src="images/remorques/semi-extensible.jpg" class="placeholder-img" alt="Semi-remorque extensible" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-arrows-expand"></i><small>Semi-remorque extensible</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Semi-remorque extensible</h3>
+                            <ul class="specs">
+                                <li><i class="bi bi-check-circle-fill"></i>13.6-18.6 m</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Charge utile 22 t</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Marchandises longues</li>
+                            </ul>
+                            <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+                                data-name="Semi-remorque extensible" data-img="images/remorques/semi-extensible.jpg" data-alt="1"
+                                data-capacity="22 tonnes" data-length="13.6-18.6 m" data-usage="Transport de marchandises longues"
+                                data-type="Semi-remorque" data-avail="available" data-avail-label="Disponible"
+                                data-desc="Semi-remorque à longueur variable, idéale pour le transport de tubes, poutres, et autres charges longues qui dépassent les dimensions standard.">
+                                Découvrir <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- OVERSIZE & HORS NORMES -->
+        <div class="cat-section" data-cat-section="oversize">
+            <div class="cat-heading">
+                <span class="emoji">🏗️</span>
+                <h2>Oversize & Hors normes</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4 vehicle-item" data-cat="oversize">
+                    <div class="vehicle-card reveal">
+                        <div class="tile">
+                            <img src="images/remorques/lowboy.jpg" class="placeholder-img" alt="Lowboy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-arrow-down"></i><small>Lowboy</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Lowboy (Plateau surbaissé)</h3>
+                            <ul class="specs">
+                                <li><i class="bi bi-check-circle-fill"></i>Hauteur de chargement 0.7 m</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Charge utile 45 t</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Engins de chantier</li>
+                            </ul>
+                            <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+                                data-name="Lowboy (Plateau surbaissé)" data-img="images/remorques/lowboy.jpg" data-alt="0"
+                                data-capacity="45 tonnes" data-length="12-16 m" data-usage="Transport d'engins de chantier et machines lourdes"
+                                data-type="Oversize" data-avail="available" data-avail-label="Disponible"
+                                data-desc="Remorque plateau surbaissé à faible hauteur de chargement, idéale pour le transport de pelleteuses, bulldozers, grues et autres engins de chantier de grande hauteur.">
+                                Découvrir <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 vehicle-item" data-cat="oversize">
+                    <div class="vehicle-card reveal">
+                        <div class="tile alt">
+                            <img src="images/remorques/remorque-axles.jpg" class="placeholder-img" alt="Multi-essieux" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-asterisk"></i><small>Multi-essieux</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Remorque multi-essieux</h3>
+                            <ul class="specs">
+                                <li><i class="bi bi-check-circle-fill"></i>4-8 essieux</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Charge utile 80 t</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Modulable</li>
+                            </ul>
+                            <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+                                data-name="Remorque multi-essieux" data-img="images/remorques/remorque-axles.jpg" data-alt="1"
+                                data-capacity="80 tonnes" data-length="14-24 m" data-usage="Transport de charges exceptionnelles"
+                                data-type="Oversize" data-avail="available" data-avail-label="Disponible"
+                                data-desc="Remorque à essieux multiples pour la répartition des charges lourdes, permettant le transport de transformateurs, générateurs et équipements industriels de très grande masse.">
+                                Découvrir <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 vehicle-item" data-cat="oversize">
+                    <div class="vehicle-card reveal">
+                        <div class="tile">
+                            <img src="images/remorques/remorque-colis.jpg" class="placeholder-img" alt="Colis longs" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-rulers"></i><small>Colis longs</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Remorque pour colis longs</h3>
+                            <ul class="specs">
+                                <li><i class="bi bi-check-circle-fill"></i>Jusqu'à 30 m</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Charge utile 30 t</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Convoi exceptionnel</li>
+                            </ul>
+                            <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+                                data-name="Remorque pour colis longs" data-img="images/remorques/remorque-colis.jpg" data-alt="0"
+                                data-capacity="30 tonnes" data-length="Jusqu'à 30 m" data-usage="Transport de colis longs"
+                                data-type="Oversize" data-avail="service" data-avail-label="En service"
+                                data-desc="Remorque spécialement conçue pour le transport de colis longs comme les éoliennes, tronçons de pont, poutres métalliques, et structures industrielles.">
+                                Découvrir <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 vehicle-item" data-cat="oversize">
+                    <div class="vehicle-card reveal">
+                        <div class="tile alt">
+                            <img src="images/remorques/remorque-modulaire.jpg" class="placeholder-img" alt="Modulaire" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-layers"></i><small>Modulaire</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Remorque modulaire</h3>
+                            <ul class="specs">
+                                <li><i class="bi bi-check-circle-fill"></i>Extensible en longueur</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Charge utile 60 t</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Configurations variables</li>
+                            </ul>
+                            <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+                                data-name="Remorque modulaire" data-img="images/remorques/remorque-modulaire.jpg" data-alt="1"
+                                data-capacity="60 tonnes" data-length="12-24 m" data-usage="Transport de charges exceptionnelles"
+                                data-type="Oversize" data-avail="available" data-avail-label="Disponible"
+                                data-desc="Remorque modulaire extensible offrant une flexibilité maximale pour le transport de charges exceptionnelles de différentes tailles et poids.">
+                                Découvrir <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 vehicle-item" data-cat="oversize">
+                    <div class="vehicle-card reveal">
+                        <div class="tile">
+                            <img src="images/remorques/remorque-porte-engins.jpg" class="placeholder-img" alt="Porte-engins" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-crane"></i><small>Porte-engins</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Remorque porte-engins</h3>
+                            <ul class="specs">
+                                <li><i class="bi bi-check-circle-fill"></i>Pente d'accès</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Charge utile 50 t</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Chargement au sol</li>
+                            </ul>
+                            <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+                                data-name="Remorque porte-engins" data-img="images/remorques/remorque-porte-engins.jpg" data-alt="0"
+                                data-capacity="50 tonnes" data-length="12-16 m" data-usage="Transport d'engins de chantier"
+                                data-type="Oversize" data-avail="service" data-avail-label="En service"
+                                data-desc="Remorque avec rampe d'accès pour le chargement par roulage des engins de chantier, permettant un accès facile et sécurisé pour les machines sur chenilles ou roues.">
+                                Découvrir <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 vehicle-item" data-cat="oversize">
+                    <div class="vehicle-card reveal">
+                        <div class="tile alt">
+                            <img src="images/remorques/remorque-semi-remorque-oversize.jpg" class="placeholder-img" alt="Semi-remorque oversize" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-truck"></i><small>Semi-remorque oversize</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Semi-remorque oversize</h3>
+                            <ul class="specs">
+                                <li><i class="bi bi-check-circle-fill"></i>Jusqu'à 4.5 m de large</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Charge utile 60 t</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Escorte obligatoire</li>
+                            </ul>
+                            <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+                                data-name="Semi-remorque oversize" data-img="images/remorques/remorque-semi-remorque-oversize.jpg" data-alt="1"
+                                data-capacity="60 tonnes" data-length="14-20 m" data-usage="Transport de charges surdimensionnées"
+                                data-type="Oversize" data-avail="available" data-avail-label="Disponible"
+                                data-desc="Semi-remorque pour charges larges et lourdes, dépassant les dimensions standards. Transport nécessitant une autorisation spéciale et escorte.">
+                                Découvrir <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="padding-top:1rem;padding-bottom:5rem;">
+        <p class="section-label">Nos chiffres</p>
+        <h2 class="section-title">La flotte en un coup d'œil</h2>
+        <div class="section-rule"></div>
+        <div class="fleet-stats reveal">
+            <div class="stat"><div class="num" data-target="35">0</div><div class="lbl">Remorques standards</div></div>
+            <div class="stat"><div class="num" data-target="25">0</div><div class="lbl">Remorques spécialisées</div></div>
+            <div class="stat"><div class="num" data-target="18">0</div><div class="lbl">Semi-remorques</div></div>
+            <div class="stat"><div class="num" data-target="12">0</div><div class="lbl">Oversize</div></div>
+            <div class="stat"><div class="num" data-target="90">0</div><div class="lbl">Remorques total</div></div>
+        </div>
+    </div>
+
+    <div class="container" style="padding-bottom:5rem;">
+        <p class="section-label">Nos engagements</p>
+        <h2 class="section-title">Pourquoi nos remorques ?</h2>
+        <div class="section-rule"></div>
+        <div class="why-grid">
+            <div class="why-item reveal"><div class="chk"><i class="bi bi-stars"></i></div><span>Modernes</span></div>
+            <div class="why-item reveal"><div class="chk"><i class="bi bi-broadcast"></i></div><span>Connectées</span></div>
+            <div class="why-item reveal"><div class="chk"><i class="bi bi-tools"></i></div><span>Entretenues</span></div>
+            <div class="why-item reveal"><div class="chk"><i class="bi bi-shield-lock"></i></div><span>Sécurisées</span></div>
+            <div class="why-item reveal"><div class="chk"><i class="bi bi-clock-history"></i></div><span>Disponibles 24h/24</span></div>
+        </div>
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal fade" id="vehicleModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalVehicleName">Remorque</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-img" id="modalVehicleImg">
+                        <img src="" alt="Remorque" id="modalVehicleImage" style="display:none;width:100%;height:100%;object-fit:cover;">
+                        <div class="no-image" id="modalNoImage" style="display:flex;"><i class="bi bi-box-seam"></i><small>Image non disponible</small></div>
+                    </div>
+                    <p class="modal-desc" id="modalVehicleDesc"></p>
+                    <table class="spec-table">
+                        <tr><td>Capacité</td><td id="modalCapacity"></td></tr>
+                        <tr><td>Longueur</td><td id="modalLength"></td></tr>
+                        <tr><td>Utilisation</td><td id="modalUsage"></td></tr>
+                        <tr><td>Type</td><td id="modalType"></td></tr>
+                        <tr><td>Disponibilité</td><td id="modalAvail"></td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-12 me-auto">
+                    <em class="text-white d-block mb-4">Où nous trouver ?</em>
+                    <strong class="text-white"><i class="bi-geo-alt me-2"></i>📍 Terminal à Conteneurs de Vridi, Port Autonome d'Abidjan, Côte d'Ivoire (SIEGE)</strong>
+                    <ul class="social-icon mt-4">
+                        <li class="social-icon-item"><a href="https://www.facebook.com/logitix" class="social-icon-link bi-facebook"></a></li>
+                        <li class="social-icon-item"><a href="https://wa.me/2250503231625?text=Bonjour j'aimerais avoir plus d'information sur votre flotte de remorques" class="social-icon-link bi-whatsapp"></a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-12 mt-4 mb-3 mt-lg-0 mb-lg-0">
+                    <em class="text-white d-block mb-4">Contacts</em>
+                    <p class="d-flex mb-1"><strong class="me-2">Téléphone:</strong><a href="tel:+2250503231625" class="site-footer-link">(+225) 05 03 23 16 25<br>(+225) 01 51 30 60 51</a></p>
+                    <p class="d-flex"><strong class="me-2">Email:</strong><a href="mailto:oichristkouame920@gmail.com" class="site-footer-link">oichristkouame920@gmail.com</a></p>
+                </div>
+                <div class="col-lg-8 col-12 mt-4"><p class="copyright-text mb-0">Copyright © kouame — Design 2025</p></div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/click-scroll.js"></script>
+    <script src="js/vegas.min.js"></script>
+    <script src="js/custom.js"></script>
+
+    <script>
+        // Reveal on scroll
+        const io = new IntersectionObserver(entries => { entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('visible'); io.unobserve(en.target); } }); }, { threshold: 0.08 });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+        // Category filters
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const catSections = document.querySelectorAll('.cat-section');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const target = btn.getAttribute('data-filter');
+                catSections.forEach(sec => {
+                    const cat = sec.getAttribute('data-cat-section');
+                    sec.classList.toggle('hidden-cat', target !== 'all' && target !== cat);
+                });
+            });
+        });
+
+        // Vehicle modal
+        const vehicleModal = document.getElementById('vehicleModal');
+        vehicleModal.addEventListener('show.bs.modal', event => {
+            const btn = event.relatedTarget;
+            document.getElementById('modalVehicleName').textContent = btn.getAttribute('data-name');
+            document.getElementById('modalVehicleDesc').textContent = btn.getAttribute('data-desc');
+            document.getElementById('modalCapacity').textContent = btn.getAttribute('data-capacity');
+            document.getElementById('modalLength').textContent = btn.getAttribute('data-length');
+            document.getElementById('modalUsage').textContent = btn.getAttribute('data-usage');
+            document.getElementById('modalType').textContent = btn.getAttribute('data-type');
+
+            const avail = btn.getAttribute('data-avail');
+            const availLabel = btn.getAttribute('data-avail-label');
+            document.getElementById('modalAvail').innerHTML =
+                `<span class="avail-badge ${avail === 'available' ? 'available' : 'service'}">
+                    <i class="bi ${avail === 'available' ? 'bi-check-circle-fill' : 'bi-tools'}"></i> ${availLabel}
+                 </span>`;
+
+            // Handle image
+            const imgSrc = btn.getAttribute('data-img');
+            const imgEl = document.getElementById('modalVehicleImage');
+            const noImgEl = document.getElementById('modalNoImage');
+            const imgWrap = document.getElementById('modalVehicleImg');
+            
+            if (imgSrc) {
+                imgEl.src = imgSrc;
+                imgEl.style.display = 'block';
+                noImgEl.style.display = 'none';
+                imgWrap.style.background = 'transparent';
+            } else {
+                imgEl.style.display = 'none';
+                noImgEl.style.display = 'flex';
+                imgWrap.style.background = btn.getAttribute('data-alt') === '1' 
+                    ? 'linear-gradient(135deg,var(--choc),var(--navy))'
+                    : 'linear-gradient(135deg,var(--navy),var(--choc-dark))';
+            }
+        });
+
+        // Animated counters
+        const counters = document.querySelectorAll('.fleet-stats .num[data-target]');
+        function animateCounter(el){
+            const target = parseInt(el.getAttribute('data-target'), 10);
+            const duration = 1400;
+            const start = performance.now();
+            function tick(now){
+                const p = Math.min((now - start) / duration, 1);
+                el.textContent = Math.round(p * target);
+                if (p < 1) requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+        }
+        const statsBand = document.querySelector('.fleet-stats');
+        if (statsBand) {
+            const statsObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        counters.forEach(animateCounter);
+                        statsObserver.disconnect();
+                    }
+                });
+            }, { threshold: 0.4 });
+            statsObserver.observe(statsBand);
+        }
+    </script>
+</body>
+</html>

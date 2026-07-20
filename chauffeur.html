@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nos chauffeurs — LOGITIX</title>
+    <link href="css/fonts.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/vegas.min.css" rel="stylesheet">
+    <link href="css/tooplate-barista.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/chambre.css">
+    <link rel="stylesheet" href="css/modif.css">
+    <style>
+        :root { --choc:#D2691E;--choc-dark:#8B4513;--navy:#01203F;--navy-2:#0b2c4d;--surface:#f3f0ec;--surface2:#eae3da;--white:#fdfdfd;--text:#211a14;--muted:#68605a;--border:#e2d8cb;--radius:8px;--ease:.2s ease; }
+        html { overflow-x:hidden; }
+        body { padding-top:148px; background:var(--white); font-family:var(--body-font-family); font-weight:400; color:var(--text); overflow-x:hidden; }
+
+        /* HERO */
+        .fleet-hero { position:relative; min-height:460px; display:flex; align-items:center; justify-content:center; text-align:center; overflow:hidden; border-bottom:4px solid var(--choc); }
+        .fleet-hero .bg { position:absolute; inset:0; background:url('images/entrelogi.png') center/cover no-repeat; }
+        .fleet-hero .overlay { position:absolute; inset:0; background:linear-gradient(180deg, rgba(1,32,63,.88), rgba(139,69,19,.75)); }
+        .fleet-hero-inner { position:relative; z-index:1; padding:2rem 1.5rem; max-width:820px; }
+        .fleet-hero .eyebrow { display:inline-block; font-size:.72rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--navy); background:var(--choc); padding:.35rem 1rem; border-radius:100px; margin-bottom:1.2rem; }
+        .fleet-hero h1 { font-size:clamp(1.9rem,4.6vw,3rem); font-weight:800; text-transform:uppercase; color:var(--white); line-height:1.15; margin-bottom:1rem; }
+        .fleet-hero p { color:rgba(255,255,255,.85); font-size:1rem; max-width:620px; margin:0 auto; }
+
+        /* SECTION INTRO */
+        .section-label { display:inline-block; font-size:.68rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--white); background:var(--navy); padding:.3rem .8rem; margin-bottom:.7rem; }
+        .section-title { font-size:1.9rem; font-weight:800; text-transform:uppercase; color:var(--text); line-height:1.15; margin-bottom:.8rem; }
+        .section-rule { width:44px; height:4px; background:var(--choc); margin-bottom:1.6rem; }
+
+        /* FILTERS */
+        .filters { display:flex; flex-wrap:wrap; gap:.6rem; margin-bottom:3rem; }
+        .filter-btn { border:1px solid var(--border); background:var(--white); color:var(--text); font-weight:600; font-size:.82rem; padding:.6rem 1.3rem; border-radius:100px; cursor:pointer; transition:background var(--ease),color var(--ease),border-color var(--ease); }
+        .filter-btn:hover { border-color:var(--choc); color:var(--choc-dark); }
+        .filter-btn.active { background:var(--navy); border-color:var(--navy); color:var(--white); }
+
+        /* DRIVER CARD */
+        .driver-card { background:var(--white); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; transition:transform var(--ease),box-shadow var(--ease),border-color var(--ease); height:100%; display:flex; flex-direction:column; }
+        .driver-card:hover { transform:translateY(-4px); box-shadow:0 16px 32px rgba(33,26,20,.14); border-color:var(--choc); }
+        .driver-card .tile { aspect-ratio:4/3; background:linear-gradient(135deg,var(--navy),var(--choc-dark)); display:flex; align-items:center; justify-content:center; overflow:hidden; position:relative; }
+        .driver-card .tile.alt { background:linear-gradient(135deg,var(--choc),var(--navy)); }
+        .driver-card .tile .placeholder-img { width:100%; height:100%; object-fit:cover; display:block; }
+        .driver-card .tile .no-image { font-size:4rem; color:rgba(255,255,255,.92); text-align:center; padding:1rem; }
+        .driver-card .tile .no-image small { display:block; font-size:.8rem; opacity:.7; margin-top:.4rem; }
+        .driver-card .body { padding:1.2rem 1.3rem 1.4rem; display:flex; flex-direction:column; flex:1; }
+        .driver-card h3 { font-size:1.1rem; font-weight:800; color:var(--navy); margin-bottom:.2rem; }
+        .driver-card .role { font-size:.85rem; color:var(--choc); font-weight:600; margin-bottom:.8rem; }
+        .driver-card .specs { list-style:none; padding:0; margin:0 0 1.2rem; display:grid; gap:.4rem; flex:1; }
+        .driver-card .specs li { font-size:.8rem; color:var(--muted); display:flex; align-items:center; gap:.5rem; }
+        .driver-card .specs li i { color:var(--choc); font-size:.85rem; }
+        .btn-discover { align-self:flex-start; background:transparent; border:1px solid var(--navy); color:var(--navy); font-weight:700; font-size:.78rem; letter-spacing:.04em; text-transform:uppercase; padding:.55rem 1.2rem; border-radius:100px; cursor:pointer; transition:background var(--ease),color var(--ease); }
+        .btn-discover:hover { background:var(--navy); color:var(--white); }
+
+        /* STATS */
+        .fleet-stats { background:var(--navy); border-radius:4px; padding:2.4rem 1rem; display:grid; grid-template-columns:repeat(5,1fr); }
+        .fleet-stats .stat { text-align:center; padding:0 .5rem; border-left:1px solid rgba(255,255,255,.15); }
+        .fleet-stats .stat:first-child { border-left:0; }
+        .fleet-stats .num { font-weight:800; font-size:2.2rem; color:var(--choc); }
+        .fleet-stats .lbl { font-size:.72rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:rgba(255,255,255,.75); margin-top:.3rem; }
+        @media (max-width:768px) { .fleet-stats { grid-template-columns:repeat(2,1fr); row-gap:1.8rem; } .fleet-stats .stat:nth-child(odd) { border-left:0; } }
+
+        /* WHY */
+        .why-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:1.2rem; }
+        .why-item { text-align:center; padding:1.6rem 1rem; border:1px solid var(--border); border-radius:var(--radius); background:var(--surface); }
+        .why-item .chk { width:44px; height:44px; border-radius:50%; background:var(--choc); color:var(--white); display:flex; align-items:center; justify-content:center; margin:0 auto .9rem; font-size:1.2rem; }
+        .why-item span { font-weight:700; font-size:.88rem; color:var(--navy); }
+        @media (max-width:768px) { .why-grid { grid-template-columns:repeat(2,1fr); } }
+
+        /* MODAL */
+        .modal-content { border-radius:var(--radius); border:none; overflow:hidden; }
+        .modal-header { background:var(--navy); border:none; padding:1.3rem 1.6rem; }
+        .modal-title { color:var(--white); font-weight:800; text-transform:uppercase; font-size:1.15rem; }
+        .modal-header .btn-close { filter:invert(1); }
+        .modal-body { padding:0; }
+        .modal-img { width:100%; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,var(--navy),var(--choc-dark)); overflow:hidden; }
+        .modal-img img { width:100%; height:100%; object-fit:cover; }
+        .modal-img .no-image { font-size:5rem; color:rgba(255,255,255,.92); text-align:center; padding:1rem; }
+        .modal-img .no-image small { display:block; font-size:.8rem; opacity:.7; margin-top:.5rem; }
+        .modal-desc { padding:1.4rem 1.6rem .2rem; color:var(--text); font-size:.9rem; line-height:1.65; }
+        .spec-table { width:100%; border-collapse:collapse; margin:1rem 0 1.6rem; }
+        .spec-table tr { border-bottom:1px solid var(--border); }
+        .spec-table tr:last-child { border-bottom:none; }
+        .spec-table td { padding:.8rem 1.6rem; font-size:.86rem; }
+        .spec-table td:first-child { font-weight:700; color:var(--navy); width:42%; }
+        .spec-table td:last-child { color:var(--muted); }
+        .avail-badge { display:inline-flex; align-items:center; gap:.4rem; font-weight:700; font-size:.8rem; padding:.3rem .9rem; border-radius:100px; }
+        .avail-badge.available { background:#e4f3e6; color:#1f7a34; }
+        .avail-badge.service { background:#fdeadb; color:var(--choc-dark); }
+
+        .reveal { opacity:0; transform:translateY(24px); transition:opacity .6s ease,transform .6s ease; }
+        .reveal.visible { opacity:1; transform:none; }
+        .hidden-cat { display:none !important; }
+
+        .modal { z-index:1000010; }
+        .modal-backdrop { z-index:1000000; }
+
+        /* RECRUTEMENT SECTION */
+        .recrutement-section { background:var(--surface); padding:3rem 2rem; border-radius:var(--radius); border:1px solid var(--border); }
+        .recrutement-section .icon-big { font-size:3rem; color:var(--choc); }
+        .recrutement-section .btn-recrutement { background:var(--choc); border:none; color:var(--white); font-weight:700; text-transform:uppercase; padding:.8rem 2rem; border-radius:100px; transition:background var(--ease); }
+        .recrutement-section .btn-recrutement:hover { background:var(--choc-dark); color:var(--white); }
+
+        /* TEAM SECTION */
+        .team-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem; }
+        .team-member { text-align:center; padding:1.5rem 1rem; border:1px solid var(--border); border-radius:var(--radius); background:var(--white); transition:transform var(--ease),box-shadow var(--ease); }
+        .team-member:hover { transform:translateY(-4px); box-shadow:0 8px 20px rgba(33,26,20,.1); }
+        .team-member .avatar { width:80px; height:80px; border-radius:50%; background:linear-gradient(135deg,var(--navy),var(--choc-dark)); display:flex; align-items:center; justify-content:center; margin:0 auto .9rem; color:var(--white); font-size:2.5rem; overflow:hidden; }
+        .team-member .avatar img { width:100%; height:100%; object-fit:cover; }
+        .team-member h4 { font-size:1rem; font-weight:800; color:var(--navy); margin-bottom:.2rem; }
+        .team-member .role { font-size:.8rem; color:var(--choc); font-weight:600; }
+        @media (max-width:768px) { .team-grid { grid-template-columns:repeat(2,1fr); } }
+    </style>
+</head>
+<body>
+   <nav class="navbar navbar-expand-xl">                
+        <div class="container">
+            <div class="navbar-brand d-flex align-items-center">
+                <a href="index.html"><img src="images/logo.png" class="navbar-brand-image img-fluid" alt="LOGITIX"></a>
+            </div>
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                LOGITIX
+            </a>
+        
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-lg-auto">
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="index.html">Acceuil</a>
+                    </li>
+        
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="camions.html">Camions</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="remorques.html">Remorques</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="fourgons.html">Fourgons </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="chauffeur.html">Nos Chauffeurs</a>
+                    </li>
+
+                </ul>
+
+                <div class="ms-xl-2">
+                    <a class="btn custom-btn custom-border-btn" href="se_connecter.html">
+                        Suivre son colis
+                        <i class="bi-arrow-up-right ms-2"></i>
+                    </a>
+                </div>
+                            
+            </div>
+        </div>
+    </nav>
+
+    <header class="fleet-hero">
+        <div class="bg"></div>
+        <div class="overlay"></div>
+        <div class="fleet-hero-inner">
+            <span class="eyebrow">LOGITIX</span>
+            <h1>Nos chauffeurs, l'âme de LOGITIX</h1>
+            <p>Des professionnels qualifiés, formés et dévoués pour assurer la sécurité et la performance de vos transports.</p>
+        </div>
+    </header>
+
+    <div class="container" style="padding-top:3.5rem;">
+        <p class="section-label">Notre équipe</p>
+        <h2 class="section-title">Des professionnels engagés</h2>
+        <div class="section-rule"></div>
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">Tous</button>
+            <button class="filter-btn" data-filter="tracteurs">Chauffeurs poids lourds</button>
+            <button class="filter-btn" data-filter="fourgons">Chauffeurs fourgons</button>
+            <button class="filter-btn" data-filter="specialises">Chauffeurs spécialisés</button>
+        </div>
+
+        <!-- CHAUFFEURS POIDS LOURDS -->
+        <div class="cat-section" data-cat-section="tracteurs">
+            <div class="cat-heading">
+                <span class="emoji">🚛</span>
+                <h2>Chauffeurs poids lourds</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4 vehicle-item" data-cat="tracteurs">
+                    <div class="driver-card reveal">
+                        <div class="tile">
+                            <img src="images/chauffeurs/chauffeur1.jpg" class="placeholder-img" alt="Jean Dupont" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-person-circle"></i><small>Jean Dupont</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Jean Dupont</h3>
+                            <div class="role"><i class="bi bi-star-fill me-1" style="color:var(--choc);"></i> Chauffeur poids lourds</div>
+                            <ul class="specs">
+                                <li><i class="bi bi-check-circle-fill"></i>18 ans d'expérience</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Mercedes Actros, Scania S</li>
+                                <li><i class="bi bi-check-circle-fill"></i>International</li>
+                            </ul>
+                            <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+                                data-name="Jean Dupont" data-img="images/chauffeurs/chauffeur1.jpg" data-alt="0"
+                                data-experience="18 ans" data-vehicles="Mercedes Actros, Scania S" data-zone="International"
+                                data-type="Poids lourds" data-avail="available" data-avail-label="Disponible"
+                                data-desc="Chauffeur poids lourds expérimenté, spécialiste des longs trajets internationaux. Maîtrise parfaite des normes de sécurité et de la gestion des temps de conduite.">
+                                Découvrir <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 vehicle-item" data-cat="tracteurs">
+                    <div class="driver-card reveal">
+                        <div class="tile alt">
+                            <img src="images/chauffeurs/chauffeur2.jpg" class="placeholder-img" alt="Marie Koffi" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-person-circle"></i><small>Marie Koffi</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Marie Koffi</h3>
+                            <div class="role"><i class="bi bi-star-fill me-1" style="color:var(--choc);"></i> Chauffeur poids lourds</div>
+                            <ul class="specs">
+                                <li><i class="bi bi-check-circle-fill"></i>12 ans d'expérience</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Volvo FH, MAN TGX</li>
+                                <li><i class="bi bi-check-circle-fill"></i>National</li>
+                            </ul>
+                            <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+                                data-name="Marie Koffi" data-img="images/chauffeurs/chauffeur2.jpg" data-alt="1"
+                                data-experience="12 ans" data-vehicles="Volvo FH, MAN TGX" data-zone="National"
+                                data-type="Poids lourds" data-avail="available" data-avail-label="Disponible"
+                                data-desc="Chauffeur poids lourds fiable et ponctuelle, spécialisée dans les rotations nationales régulières. Excellente connaissance du réseau routier national.">
+                                Découvrir <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 vehicle-item" data-cat="tracteurs">
+                    <div class="driver-card reveal">
+                        <div class="tile">
+                            <img src="images/chauffeurs/chauffeur3.jpg" class="placeholder-img" alt="Kouadio N'guessan" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-person-circle"></i><small>Kouadio N'guessan</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Kouadio N'guessan</h3>
+                            <div class="role"><i class="bi bi-star-fill me-1" style="color:var(--choc);"></i> Chauffeur poids lourds</div>
+                            <ul class="specs">
+                                <li><i class="bi bi-check-circle-fill"></i>15 ans d'expérience</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Mercedes Actros, Scania S</li>
+                                <li><i class="bi bi-check-circle-fill"></i>International</li>
+                            </ul>
+                            <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+                                data-name="Kouadio N'guessan" data-img="images/chauffeurs/chauffeur3.jpg" data-alt="0"
+                                data-experience="15 ans" data-vehicles="Mercedes Actros, Scania S" data-zone="International"
+                                data-type="Poids lourds" data-avail="service" data-avail-label="En service"
+                                data-desc="Chauffeur poids lourds expérimenté, spécialisé dans le transport international de marchandises. Maîtrise des procédures douanières et des réglementations européennes.">
+                                Découvrir <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 vehicle-item" data-cat="tracteurs">
+                    <div class="driver-card reveal">
+                        <div class="tile alt">
+                            <img src="images/chauffeurs/chauffeur4.jpg" class="placeholder-img" alt="Abdoulaye Diallo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-person-circle"></i><small>Abdoulaye Diallo</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Abdoulaye Diallo</h3>
+                            <div class="role"><i class="bi bi-star-fill me-1" style="color:var(--choc);"></i> Chauffeur poids lourds</div>
+                            <ul class="specs">
+                                <li><i class="bi bi-check-circle-fill"></i>10 ans d'expérience</li>
+                                <li><i class="bi bi-check-circle-fill"></i>MAN TGX</li>
+                                <li><i class="bi bi-check-circle-fill"></i>National</li>
+                            </ul>
+                            <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+                                data-name="Abdoulaye Diallo" data-img="images/chauffeurs/chauffeur4.jpg" data-alt="1"
+                                data-experience="10 ans" data-vehicles="MAN TGX" data-zone="National"
+                                data-type="Poids lourds" data-avail="available" data-avail-label="Disponible"
+                                data-desc="Chauffeur poids lourds dynamique, spécialisé dans les transports nationaux. Grand sens de la responsabilité et de la ponctualité.">
+                                Découvrir <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CHAUFFEURS FOURGONS -->
+        <div class="cat-section" data-cat-section="fourgons">
+            <div class="cat-heading">
+                <span class="emoji">🚐</span>
+                <h2>Chauffeurs fourgons</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4 vehicle-item" data-cat="fourgons">
+                    <div class="driver-card reveal">
+                        <div class="tile">
+                            <img src="images/chauffeurs/chauffeur5.jpg" class="placeholder-img" alt="Camille Dubois" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-person-circle"></i><small>Camille Dubois</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Camille Dubois</h3>
+                            <div class="role"><i class="bi bi-star-fill me-1" style="color:var(--choc);"></i> Chauffeur fourgon</div>
+                            <ul class="specs">
+                                <li><i class="bi bi-check-circle-fill"></i>8 ans d'expérience</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Mercedes Sprinter, Ford Transit</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Distribution urbaine</li>
+                            </ul>
+                            <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+                                data-name="Camille Dubois" data-img="images/chauffeurs/chauffeur5.jpg" data-alt="0"
+                                data-experience="8 ans" data-vehicles="Mercedes Sprinter, Ford Transit" data-zone="Urbain"
+                                data-type="Fourgon" data-avail="available" data-avail-label="Disponible"
+                                data-desc="Chauffeur fourgon expérimenté, spécialiste de la distribution urbaine. Parfaite connaissance des centres-villes et des zones piétonnes.">
+                                Découvrir <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 vehicle-item" data-cat="fourgons">
+                    <div class="driver-card reveal">
+                        <div class="tile alt">
+                            <img src="images/chauffeurs/chauffeur6.jpg" class="placeholder-img" alt="David Konan" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-person-circle"></i><small>David Konan</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>David Konan</h3>
+                            <div class="role"><i class="bi bi-star-fill me-1" style="color:var(--choc);"></i> Chauffeur fourgon</div>
+                            <ul class="specs">
+                                <li><i class="bi bi-check-circle-fill"></i>6 ans d'expérience</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Renault Master</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Livraisons express</li>
+                            </ul>
+                            <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+                                data-name="David Konan" data-img="images/chauffeurs/chauffeur6.jpg" data-alt="1"
+                                data-experience="6 ans" data-vehicles="Renault Master" data-zone="Urbain"
+                                data-type="Fourgon" data-avail="available" data-avail-label="Disponible"
+                                data-desc="Chauffeur fourgon dynamique et réactif, spécialisé dans les livraisons express en milieu urbain. Sens de l'orientation et ponctualité exemplaires.">
+                                Découvrir <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 vehicle-item" data-cat="fourgons">
+                    <div class="driver-card reveal">
+                        <div class="tile">
+                            <img src="images/chauffeurs/chauffeur7.jpg" class="placeholder-img" alt="Sophie Yao" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-person-circle"></i><small>Sophie Yao</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Sophie Yao</h3>
+                            <div class="role"><i class="bi bi-star-fill me-1" style="color:var(--choc);"></i> Chauffeur fourgon</div>
+                            <ul class="specs">
+                                <li><i class="bi bi-check-circle-fill"></i>5 ans d'expérience</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Fiat Ducato</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Multi-secteurs</li>
+                            </ul>
+                            <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+                                data-name="Sophie Yao" data-img="images/chauffeurs/chauffeur7.jpg" data-alt="0"
+                                data-experience="5 ans" data-vehicles="Fiat Ducato" data-zone="Urbain"
+                                data-type="Fourgon" data-avail="service" data-avail-label="En service"
+                                data-desc="Chauffeur fourgon polyvalent, s'adaptant à tous types de livraisons. Excellente relation client et professionnalisme reconnu.">
+                                Découvrir <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CHAUFFEURS SPÉCIALISÉS -->
+        <div class="cat-section" data-cat-section="specialises">
+            <div class="cat-heading">
+                <span class="emoji">⚡</span>
+                <h2>Chauffeurs spécialisés</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4 vehicle-item" data-cat="specialises">
+                    <div class="driver-card reveal">
+                        <div class="tile">
+                            <img src="images/chauffeurs/chauffeur8.jpg" class="placeholder-img" alt="Marc Bamba" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-person-circle"></i><small>Marc Bamba</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Marc Bamba</h3>
+                            <div class="role"><i class="bi bi-star-fill me-1" style="color:var(--choc);"></i> Chauffeur oversize</div>
+                            <ul class="specs">
+                                <li><i class="bi bi-check-circle-fill"></i>20 ans d'expérience</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Lowboy, Multi-essieux</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Convois exceptionnels</li>
+                            </ul>
+                            <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+                                data-name="Marc Bamba" data-img="images/chauffeurs/chauffeur8.jpg" data-alt="0"
+                                data-experience="20 ans" data-vehicles="Lowboy, Multi-essieux" data-zone="International"
+                                data-type="Oversize" data-avail="available" data-avail-label="Disponible"
+                                data-desc="Chauffeur oversize expérimenté, spécialiste des convois exceptionnels. Maîtrise des procédures d'escorte et des réglementations spécifiques.">
+                                Découvrir <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 vehicle-item" data-cat="specialises">
+                    <div class="driver-card reveal">
+                        <div class="tile alt">
+                            <img src="images/chauffeurs/chauffeur9.jpg" class="placeholder-img" alt="Fatou Traoré" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-person-circle"></i><small>Fatou Traoré</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Fatou Traoré</h3>
+                            <div class="role"><i class="bi bi-star-fill me-1" style="color:var(--choc);"></i> Chauffeur frigorifique</div>
+                            <ul class="specs">
+                                <li><i class="bi bi-check-circle-fill"></i>10 ans d'expérience</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Fourgon frigo</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Chaîne du froid</li>
+                            </ul>
+                            <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+                                data-name="Fatou Traoré" data-img="images/chauffeurs/chauffeur9.jpg" data-alt="1"
+                                data-experience="10 ans" data-vehicles="Fourgon frigo" data-zone="National"
+                                data-type="Frigorifique" data-avail="available" data-avail-label="Disponible"
+                                data-desc="Chauffeur frigorifique certifié, spécialiste de la chaîne du froid. Garant de la qualité et de la sécurité des produits périssables transportés.">
+                                Découvrir <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 vehicle-item" data-cat="specialises">
+                    <div class="driver-card reveal">
+                        <div class="tile">
+                            <img src="images/chauffeurs/chauffeur10.jpg" class="placeholder-img" alt="Ibrahim Cissé" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-person-circle"></i><small>Ibrahim Cissé</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Ibrahim Cissé</h3>
+                            <div class="role"><i class="bi bi-star-fill me-1" style="color:var(--choc);"></i> Chauffeur citerne</div>
+                            <ul class="specs">
+                                <li><i class="bi bi-check-circle-fill"></i>14 ans d'expérience</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Citerne liquide</li>
+                                <li><i class="bi bi-check-circle-fill"></i>ADN/ADR</li>
+                            </ul>
+                            <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+                                data-name="Ibrahim Cissé" data-img="images/chauffeurs/chauffeur10.jpg" data-alt="0"
+                                data-experience="14 ans" data-vehicles="Citerne liquide" data-zone="International"
+                                data-type="Citerne" data-avail="service" data-avail-label="En service"
+                                data-desc="Chauffeur citerne certifié ADR, spécialiste du transport de liquides dangereux. Rigoureux et respectueux des normes de sécurité les plus strictes.">
+                                Découvrir <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="padding-top:1rem;padding-bottom:5rem;">
+        <p class="section-label">Nos chiffres</p>
+        <h2 class="section-title">L'équipe en un coup d'œil</h2>
+        <div class="section-rule"></div>
+        <div class="fleet-stats reveal">
+            <div class="stat"><div class="num" data-target="45">0</div><div class="lbl">Chauffeurs poids lourds</div></div>
+            <div class="stat"><div class="num" data-target="25">0</div><div class="lbl">Chauffeurs fourgons</div></div>
+            <div class="stat"><div class="num" data-target="15">0</div><div class="lbl">Chauffeurs spécialisés</div></div>
+            <div class="stat"><div class="num" data-target="85">0</div><div class="lbl">Chauffeurs total</div></div>
+            <div class="stat"><div class="num" data-target="78">0</div><div class="lbl">En activité</div></div>
+        </div>
+    </div>
+
+    <!-- AVANTAGES ET RECRUTEMENT -->
+    <div class="container" style="padding-bottom:5rem;">
+        <p class="section-label">Avantages</p>
+        <h2 class="section-title">Pourquoi rejoindre LOGITIX ?</h2>
+        <div class="section-rule"></div>
+        <div class="why-grid">
+            <div class="why-item reveal"><div class="chk"><i class="bi bi-cash"></i></div><span>Rémunération attractive</span></div>
+            <div class="why-item reveal"><div class="chk"><i class="bi bi-clock"></i></div><span>Temps de conduite optimisés</span></div>
+            <div class="why-item reveal"><div class="chk"><i class="bi bi-trophy"></i></div><span>Formation continue</span></div>
+            <div class="why-item reveal"><div class="chk"><i class="bi bi-shield-check"></i></div><span>Sécurité et confort</span></div>
+            <div class="why-item reveal"><div class="chk"><i class="bi bi-people"></i></div><span>Esprit d'équipe</span></div>
+        </div>
+
+        <div class="recrutement-section mt-5 reveal">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="icon-big"><i class="bi bi-person-plus"></i></div>
+                        <div>
+                            <h3 class="mb-1" style="font-weight:800;color:var(--navy);">Rejoignez nos équipes !</h3>
+                            <p class="mb-0" style="color:var(--muted);">Nous recherchons des chauffeurs passionnés et professionnels. Postulez dès maintenant pour intégrer LOGITIX.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                    <a href="#" class="btn-recrutement" onclick="alert('Merci pour votre intérêt ! Veuillez envoyer votre CV à oichristkouame920@gmail.com');"><i class="bi bi-send me-2"></i>Postuler maintenant</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal fade" id="vehicleModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalVehicleName">Chauffeur</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-img" id="modalVehicleImg">
+                        <img src="" alt="Chauffeur" id="modalVehicleImage" style="display:none;width:100%;height:100%;object-fit:cover;">
+                        <div class="no-image" id="modalNoImage" style="display:flex;"><i class="bi bi-person-circle"></i><small>Image non disponible</small></div>
+                    </div>
+                    <p class="modal-desc" id="modalVehicleDesc"></p>
+                    <table class="spec-table">
+                        <tr><td>Expérience</td><td id="modalExperience"></td></tr>
+                        <tr><td>Véhicules conduits</td><td id="modalVehicles"></td></tr>
+                        <tr><td>Zone d'activité</td><td id="modalZone"></td></tr>
+                        <tr><td>Type</td><td id="modalType"></td></tr>
+                        <tr><td>Disponibilité</td><td id="modalAvail"></td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-12 me-auto">
+                    <em class="text-white d-block mb-4">Où nous trouver ?</em>
+                    <strong class="text-white"><i class="bi-geo-alt me-2"></i>📍 Terminal à Conteneurs de Vridi, Port Autonome d'Abidjan, Côte d'Ivoire (SIEGE)</strong>
+                    <ul class="social-icon mt-4">
+                        <li class="social-icon-item"><a href="https://www.facebook.com/logitix" class="social-icon-link bi-facebook"></a></li>
+                        <li class="social-icon-item"><a href="https://wa.me/2250503231625?text=Bonjour j'aimerais avoir plus d'information sur votre équipe de chauffeurs" class="social-icon-link bi-whatsapp"></a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-12 mt-4 mb-3 mt-lg-0 mb-lg-0">
+                    <em class="text-white d-block mb-4">Contacts</em>
+                    <p class="d-flex mb-1"><strong class="me-2">Téléphone:</strong><a href="tel:+2250503231625" class="site-footer-link">(+225) 05 03 23 16 25<br>(+225) 01 51 30 60 51</a></p>
+                    <p class="d-flex"><strong class="me-2">Email:</strong><a href="mailto:oichristkouame920@gmail.com" class="site-footer-link">oichristkouame920@gmail.com</a></p>
+                </div>
+                <div class="col-lg-8 col-12 mt-4"><p class="copyright-text mb-0">Copyright © kouame — Design 2025</p></div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/click-scroll.js"></script>
+    <script src="js/vegas.min.js"></script>
+    <script src="js/custom.js"></script>
+
+    <script>
+        // Reveal on scroll
+        const io = new IntersectionObserver(entries => { entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('visible'); io.unobserve(en.target); } }); }, { threshold: 0.08 });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+        // Category filters
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const catSections = document.querySelectorAll('.cat-section');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const target = btn.getAttribute('data-filter');
+                catSections.forEach(sec => {
+                    const cat = sec.getAttribute('data-cat-section');
+                    sec.classList.toggle('hidden-cat', target !== 'all' && target !== cat);
+                });
+            });
+        });
+
+        // Driver modal
+        const vehicleModal = document.getElementById('vehicleModal');
+        vehicleModal.addEventListener('show.bs.modal', event => {
+            const btn = event.relatedTarget;
+            document.getElementById('modalVehicleName').textContent = btn.getAttribute('data-name');
+            document.getElementById('modalVehicleDesc').textContent = btn.getAttribute('data-desc');
+            document.getElementById('modalExperience').textContent = btn.getAttribute('data-experience');
+            document.getElementById('modalVehicles').textContent = btn.getAttribute('data-vehicles');
+            document.getElementById('modalZone').textContent = btn.getAttribute('data-zone');
+            document.getElementById('modalType').textContent = btn.getAttribute('data-type');
+
+            const avail = btn.getAttribute('data-avail');
+            const availLabel = btn.getAttribute('data-avail-label');
+            document.getElementById('modalAvail').innerHTML =
+                `<span class="avail-badge ${avail === 'available' ? 'available' : 'service'}">
+                    <i class="bi ${avail === 'available' ? 'bi-check-circle-fill' : 'bi-tools'}"></i> ${availLabel}
+                 </span>`;
+
+            // Handle image
+            const imgSrc = btn.getAttribute('data-img');
+            const imgEl = document.getElementById('modalVehicleImage');
+            const noImgEl = document.getElementById('modalNoImage');
+            const imgWrap = document.getElementById('modalVehicleImg');
+            
+            if (imgSrc) {
+                imgEl.src = imgSrc;
+                imgEl.style.display = 'block';
+                noImgEl.style.display = 'none';
+                imgWrap.style.background = 'transparent';
+            } else {
+                imgEl.style.display = 'none';
+                noImgEl.style.display = 'flex';
+                imgWrap.style.background = btn.getAttribute('data-alt') === '1' 
+                    ? 'linear-gradient(135deg,var(--choc),var(--navy))'
+                    : 'linear-gradient(135deg,var(--navy),var(--choc-dark))';
+            }
+        });
+
+        // Animated counters
+        const counters = document.querySelectorAll('.fleet-stats .num[data-target]');
+        function animateCounter(el){
+            const target = parseInt(el.getAttribute('data-target'), 10);
+            const duration = 1400;
+            const start = performance.now();
+            function tick(now){
+                const p = Math.min((now - start) / duration, 1);
+                el.textContent = Math.round(p * target);
+                if (p < 1) requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+        }
+        const statsBand = document.querySelector('.fleet-stats');
+        if (statsBand) {
+            const statsObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        counters.forEach(animateCounter);
+                        statsObserver.disconnect();
+                    }
+                });
+            }, { threshold: 0.4 });
+            statsObserver.observe(statsBand);
+        }
+    </script>
+</body>
+</html>

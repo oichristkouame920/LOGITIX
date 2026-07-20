@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Entrepôt LOGITIX à Shanghai - Hub logistique asiatique">
+    <meta name="author" content="LOGITIX">
+    <title>Entrepôt de Shanghai — LOGITIX</title>
+
+    <!-- CSS FICHIERS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,400;0,600;0,700;1,200;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/vegas.min.css" rel="stylesheet">
+    <link href="css/tooplate-barista.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/galerie.css">
+    <link rel="stylesheet" href="css/modif.css">
+
+    <style>
+        :root {
+            --choc: #D2691E;
+            --choc-dark: #8B4513;
+            --choc-light: #E8A87C;
+            --navy: #01203F;
+            --navy-2: #0b2c4d;
+            --surface: #f3f0ec;
+            --surface2: #eae3da;
+            --white: #fdfdfd;
+            --text: #211a14;
+            --muted: #68605a;
+            --border: #e2d8cb;
+            --radius: 4px;
+            --ease: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            --ease-smooth: 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --red-china: #C41E24;
+            --gold-china: #D4A017;
+        }
+
+        /* ── BADGE VILLE ── */
+        .city-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--red-china), #8B0000);
+            color: var(--white);
+            padding: .4rem 1.2rem;
+            border-radius: 100px;
+            font-size: .7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+        }
+        .city-badge i {
+            margin-right: .4rem;
+        }
+
+        /* ── HERO SHANGHAI ── */
+        .page-hero {
+            background: linear-gradient(135deg, #1a0a0a 0%, #2d1515 40%, #0d0d0d 100%);
+            padding: 6rem 1.5rem 5.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 4px solid var(--red-china);
+        }
+        .page-hero::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: 
+                radial-gradient(ellipse 120% 100% at 50% 0%, rgba(196,30,36,.08) 0%, transparent 60%),
+                radial-gradient(ellipse 100% 80% at 50% 150%, rgba(196,30,36,.06) 0%, transparent 70%);
+            pointer-events: none;
+            animation: gradientFloat 8s ease-in-out infinite;
+        }
+        /* Caractères chinois en fond avec traduction */
+        .page-hero .hero-china-bg {
+            position: absolute;
+            right: 3%;
+            bottom: 8%;
+            text-align: right;
+            animation: floatChina 25s ease-in-out infinite;
+        }
+        .page-hero .hero-china-bg .zh {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 6rem;
+            font-weight: 900;
+            opacity: .04;
+            color: var(--red-china);
+            letter-spacing: .3em;
+            line-height: 1;
+            display: block;
+        }
+        .page-hero .hero-china-bg .fr {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: .55rem;
+            color: rgba(255,255,255,.08);
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            display: block;
+            margin-top: .2rem;
+        }
+        @keyframes floatChina {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(2deg); }
+        }
+        @keyframes gradientFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        .hero-eyebrow {
+            font-size: .7rem;
+            letter-spacing: .28em;
+            text-transform: uppercase;
+            color: var(--red-china);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1.1rem;
+            opacity: 0;
+            animation: fadeInDown 0.8s ease-out 0.2s forwards;
+        }
+        .page-hero h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: clamp(2.2rem, 6vw, 4.2rem);
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.15;
+            letter-spacing: .06em;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.4s forwards;
+        }
+        .page-hero h1 .sub-en {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: clamp(1.2rem, 2.5vw, 2rem);
+            font-weight: 300;
+            display: block;
+            color: rgba(255,255,255,.5);
+            letter-spacing: .15em;
+            margin-top: .2rem;
+        }
+        .page-hero h1 .sub-zh {
+            font-family: 'Noto Serif SC', serif;
+            font-size: clamp(.6rem, 1vw, .8rem);
+            font-weight: 300;
+            display: block;
+            color: rgba(255,255,255,.2);
+            letter-spacing: .15em;
+            margin-top: .1rem;
+            font-style: normal;
+        }
+        .page-hero .sub {
+            margin-top: .8rem;
+            color: rgba(255,255,255,.55);
+            font-size: .95rem;
+            letter-spacing: .08em;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 300;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.6s forwards;
+        }
+        .page-hero .hero-tags {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: .8rem;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.8s forwards;
+        }
+        .page-hero .hero-tags span {
+            background: rgba(255,255,255,.06);
+            border: 1px solid rgba(196,30,36,.3);
+            color: rgba(255,255,255,.7);
+            padding: .3rem .9rem;
+            border-radius: 100px;
+            font-size: .7rem;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            font-weight: 600;
+        }
+        .gold-rule {
+            width: 54px; height: 3px;
+            background: linear-gradient(90deg, transparent, var(--red-china), transparent);
+            margin: 1.8rem auto 0;
+            opacity: 0;
+            animation: fadeInDown 0.8s ease-out 0.8s forwards;
+        }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: none; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+
+        /* ── EN-TÊTE CATÉGORIE ── */
+        .cat-header {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            margin-bottom: 1.8rem;
+            flex-wrap: wrap;
+        }
+        .cat-header::before {
+            content: '';
+            flex: 0 0 36px; height: 2px;
+            background: var(--red-china);
+            animation: expandRight 0.7s ease-out 0.3s backwards;
+        }
+        .cat-title {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--navy);
+            letter-spacing: .05em;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            flex-wrap: wrap;
+        }
+        .cat-title .zh-group {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .cat-title .zh-group .zh {
+            font-family: 'Noto Serif SC', serif;
+            font-weight: 400;
+            font-size: .9rem;
+            color: var(--red-china);
+            line-height: 1.2;
+        }
+        .cat-title .zh-group .fr-trans {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 400;
+            font-size: .5rem;
+            color: var(--muted);
+            text-transform: lowercase;
+            font-style: italic;
+            letter-spacing: .04em;
+            line-height: 1;
+        }
+        .cat-title::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--red-china);
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: expandRight 0.7s ease-out 0.5s forwards;
+        }
+        .cat-header::after {
+            content: '';
+            flex: 1; height: 1px;
+            background: linear-gradient(to right, rgba(196,30,36,.5), rgba(196,30,36,.1));
+            animation: expandRight 0.7s ease-out 0.4s backwards;
+        }
+        @keyframes expandRight { from { transform: scaleX(0); transform-origin: left; } to { transform: scaleX(1); } }
+
+        /* ── CADRE GRILLE ── */
+        .grid-frame {
+            background: var(--surface);
+            border: 1px solid rgba(196,30,36,.18);
+            border-radius: var(--radius);
+            padding: 14px;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,.03);
+            transition: border-color var(--ease);
+        }
+        .grid-frame:hover {
+            border-color: rgba(196,30,36,.4);
+        }
+
+        /* ── PHOTO ITEM ── */
+        .photo-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius);
+            aspect-ratio: 4 / 3;
+            background: linear-gradient(135deg, #d9cec5 0%, #ccc4bb 100%);
+            cursor: zoom-in;
+            width: 100%;
+            transition: box-shadow var(--ease-smooth);
+            box-shadow: 0 4px 12px rgba(33, 26, 20, .08);
+        }
+        .photo-item:hover {
+            box-shadow: 0 8px 24px rgba(33, 26, 20, .15);
+        }
+        .photo-item img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform var(--ease-smooth), filter var(--ease-smooth);
+            filter: brightness(.96) saturate(.91) contrast(1.02);
+        }
+        .photo-item:hover img {
+            transform: scale(1.06);
+            filter: brightness(1.02) saturate(1.08) contrast(1.05);
+        }
+        .photo-item::after {
+            content: '';
+            position: absolute; inset: 0;
+            background: 
+                linear-gradient(135deg, rgba(196,30,36,0) 35%, rgba(196,30,36,.08) 100%),
+                radial-gradient(ellipse 100% 100% at 100% 0%, rgba(253,253,253,0) 0%, rgba(33,26,20,.02) 100%);
+            opacity: 0;
+            transition: opacity var(--ease);
+            pointer-events: none;
+        }
+        .photo-item:hover::after { opacity: 1; }
+        .photo-item::before {
+            content: '🔍';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 44px; height: 44px;
+            background: rgba(253,253,253, 0.85);
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity var(--ease), transform var(--ease);
+            pointer-events: none;
+            z-index: 2;
+            box-shadow: 0 2px 8px rgba(0,0,0,.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        .photo-item:hover::before { opacity: 1; }
+
+        /* ── SECTION DESCRIPTION ── */
+        .sector-desc {
+            background: var(--white);
+            padding: 1rem 1.2rem;
+            border-radius: var(--radius);
+            border-left: 3px solid var(--red-china);
+            margin-top: 1rem;
+            font-size: .9rem;
+            color: var(--text);
+        }
+        .sector-desc strong {
+            color: var(--navy);
+        }
+
+        /* ── BADGE CAPACITÉ ── */
+        .capacity-badge {
+            display: inline-block;
+            background: var(--navy);
+            color: var(--white);
+            padding: .2rem .7rem;
+            border-radius: 100px;
+            font-size: .65rem;
+            font-weight: 600;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            margin-right: .4rem;
+        }
+
+        /* ── LIGHTBOX ── */
+        .lightbox {
+            display: none;
+            position: fixed; inset: 0;
+            background: rgba(1,32,63,.96);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            cursor: zoom-out;
+            backdrop-filter: blur(8px);
+            animation: fadeInBackdrop 0.3s ease-out;
+        }
+        .lightbox.open { display: flex; }
+        @keyframes fadeInBackdrop { from { opacity: 0; } to { opacity: 1; } }
+        .lightbox img {
+            max-width: 95vw; max-height: 85vh;
+            object-fit: contain;
+            border-radius: var(--radius);
+            box-shadow: 
+                0 0 1px rgba(196,30,36,.3),
+                0 0 40px rgba(0,0,0,.6),
+                0 0 80px rgba(0,0,0,.3);
+            animation: lbIn .3s var(--ease-smooth);
+        }
+        @keyframes lbIn {
+            from { opacity: 0; transform: scale(.92) translateY(20px); }
+            to   { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .lb-close {
+            position: fixed; top: 1.4rem; right: 1.6rem;
+            background: rgba(1,32,63,.8);
+            border: 1px solid rgba(196,30,36,.35);
+            color: var(--red-china);
+            width: 42px; height: 42px;
+            border-radius: 50%;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: all var(--ease);
+            z-index: 10000;
+            font-weight: 200;
+            line-height: 1;
+        }
+        .lb-close:hover { 
+            background: rgba(196,30,36,.3);
+            border-color: rgba(196,30,36,.6);
+            transform: scale(1.1);
+        }
+        .lb-close:active { transform: scale(0.95); }
+
+        /* ── SCROLL REVEAL ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s var(--ease-smooth), transform 0.7s var(--ease-smooth);
+        }
+        .reveal.visible { 
+            opacity: 1; 
+            transform: none; 
+        }
+
+        /* ── INFO STATS ── */
+        .info-stats {
+            background: linear-gradient(135deg, #1a0a0a, #2d1515);
+            border-radius: var(--radius);
+            padding: 2rem 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            text-align: center;
+            border: 1px solid rgba(196,30,36,.2);
+        }
+        .info-stats .stat-item .number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--red-china);
+        }
+        .info-stats .stat-item .label {
+            font-size: .7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: rgba(255,255,255,.7);
+            letter-spacing: .05em;
+        }
+        @media (max-width: 768px) {
+            .info-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        /* ── BADGE POSITION ── */
+        .position-badge {
+            display: inline-block;
+            background: rgba(196,30,36,.12);
+            color: var(--red-china);
+            padding: .2rem .8rem;
+            border-radius: 100px;
+            font-size: .7rem;
+            font-weight: 600;
+        }
+
+        /* ── SECTION SPÉCIFIQUE SHANGHAI ── */
+        .shanghai-highlight {
+            background: linear-gradient(135deg, #1a0a0a, #2d1515);
+            border-radius: var(--radius);
+            padding: 2rem 2rem 1.5rem;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(196,30,36,.2);
+        }
+        .shanghai-highlight .china-char {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            text-align: right;
+        }
+        .shanghai-highlight .china-char .zh {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 6rem;
+            font-weight: 900;
+            opacity: .04;
+            color: var(--red-china);
+            line-height: 1;
+            display: block;
+        }
+        .shanghai-highlight .china-char .fr {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: .5rem;
+            color: rgba(255,255,255,.08);
+            text-transform: uppercase;
+            letter-spacing: .2em;
+            display: block;
+        }
+        .shanghai-highlight h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--red-china);
+            margin-bottom: .5rem;
+            font-family: 'Noto Serif SC', serif;
+        }
+        .shanghai-highlight h3 .en {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: .8rem;
+            color: rgba(255,255,255,.4);
+            text-transform: uppercase;
+            letter-spacing: .1em;
+        }
+        .shanghai-highlight h3 .zh-trans {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: .55rem;
+            color: rgba(255,255,255,.2);
+            font-weight: 300;
+            display: block;
+            letter-spacing: .15em;
+            margin-top: .1rem;
+        }
+        .shanghai-highlight p {
+            color: rgba(255,255,255,.7);
+            font-size: .9rem;
+            max-width: 80%;
+        }
+        .shanghai-highlight .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem;
+            margin-top: 1rem;
+        }
+        .shanghai-highlight .tags span {
+            background: rgba(255,255,255,.06);
+            border: 1px solid rgba(196,30,36,.2);
+            padding: .3rem .8rem;
+            border-radius: 100px;
+            font-size: .7rem;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+            color: rgba(255,255,255,.7);
+        }
+
+        /* ── NAVIGATION ACTIVE ── */
+        .navbar .nav-link.active-shanghai {
+            color: var(--red-china) !important;
+            border-bottom: 2px solid var(--red-china);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            .page-hero { padding: 4.5rem 1.5rem 4rem; }
+            .cat-header { margin-bottom: 1.5rem; }
+            .lb-close { width: 40px; height: 40px; font-size: 1rem; }
+            .lightbox { padding: 1rem; }
+            .shanghai-highlight p { max-width: 100%; }
+            .page-hero .hero-china-bg .zh { font-size: 3rem; }
+            .page-hero .hero-china-bg .fr { font-size: .4rem; }
+            .cat-title .zh-group .fr-trans { display: none; }
+            .shanghai-highlight .china-char .zh { font-size: 3rem; }
+            .shanghai-highlight .china-char .fr { display: none; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══ NAVBAR ═══ -->
+    <nav class="navbar navbar-expand-xl">                
+        <div class="container">
+            <div class="navbar-brand d-flex align-items-center">
+                <a href="index.html"><img src="images/logo.png" class="navbar-brand-image img-fluid" alt="LOGITIX"></a>
+            </div>
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                LOGITIX
+            </a>
+        
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-lg-auto">
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="entre_abidjan.html">Abidjan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="entre_san-pedro.html">San-Pedro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="entre_dakar.html">Dakar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="entre_brest.html">Brest</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll active-shanghai" href="entre_shangai.html">Shanghai</a>
+                    </li>
+                </ul>
+
+                <div class="ms-xl-2">
+                    <a class="btn custom-btn custom-border-btn" href="se_connecter.html">
+                        Se connecter
+                        <i class="bi-arrow-up-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ═══ HERO SHANGHAI ═══ -->
+    <header class="page-hero">
+        <div class="hero-china-bg">
+            <span class="zh">上海 物流 中心</span>
+            <span class="fr">Centre logistique de Shanghai</span>
+        </div>
+        <p class="hero-eyebrow">LOGITIX • CHINE</p>
+        <h1>
+            上海
+            <span class="sub-en">SHANGHAI</span>
+            <span class="sub-zh">Shànghǎi</span>
+        </h1>
+        <p class="sub">Le hub logistique de l'Asie-Pacifique</p>
+        <div class="hero-tags">
+            <span>🏗️ 45 000 m²</span>
+            <span>📍 Port de Shanghai</span>
+            <span>🌏 Hub Asie-Pacifique</span>
+            <span>⚡ 24h/24</span>
+        </div>
+        <div class="gold-rule"></div>
+    </header>
+
+    <!-- ═══ STATS ═══ -->
+    <div class="container mt-4">
+        <div class="info-stats reveal">
+            <div class="stat-item">
+                <div class="number" data-target="45000">0</div>
+                <div class="label">m² de stockage</div>
+            </div>
+            <div class="stat-item">
+                <div class="number" data-target="25">0</div>
+                <div class="label">Quais de chargement</div>
+            </div>
+            <div class="stat-item">
+                <div class="number" data-target="8000">0</div>
+                <div class="label">Emplacements palettes</div>
+            </div>
+            <div class="stat-item">
+                <div class="number" data-target="24">0</div>
+                <div class="label">Surveillance 24h/24</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ MISE EN AVANT SHANGHAI ═══ -->
+    <div class="container mt-4">
+        <div class="shanghai-highlight reveal">
+            <div class="china-char">
+                <span class="zh">中国</span>
+                <span class="fr">Chine</span>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h3>
+                        中国 · 上海
+                        <span class="en">— Porte de l'Asie</span>
+                        <span class="zh-trans">Zhōngguó · Shànghǎi — Chine · Shanghai</span>
+                    </h3>
+                    <p>L'entrepôt de Shanghai est positionné au cœur du <strong style="color:var(--red-china);">hub logistique asiatique</strong>, à proximité immédiate du plus grand port du monde. Cette localisation stratégique offre un <strong style="color:var(--red-china);">accès privilégié</strong> aux marchés chinois, japonais, coréens et sud-est asiatiques.</p>
+                    <div class="tags">
+                        <span>⚓ Port à 10 min</span>
+                        <span>🌏 Route de la soie</span>
+                        <span>🚛 Flotte dédiée</span>
+                        <span>📦 Douane intégrée</span>
+                        <span>🏗️ Zone franche</span>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center mt-3 mt-lg-0">
+                    <div style="font-size:4rem;color:var(--red-china);">🏮</div>
+                    <div style="color:rgba(255,255,255,.4);font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;">Asie-Pacifique</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ GALERIE DES SECTEURS ═══ -->
+    <div class="container my-5">
+
+        <!-- MARCHANDISES GÉNÉRALES -->
+        <section class="mb-5 reveal">
+            <div class="cat-header">
+                <span class="cat-title">
+                    📦 Marchandises générales
+                    <span class="zh-group">
+                        <span class="zh">一般商品</span>
+                        <span class="fr-trans">marchandises générales</span>
+                    </span>
+                </span>
+                <span class="position-badge">Secteur 1</span>
+            </div>
+            <div class="grid-frame">
+                <div class="row g-3">
+                    <div class="col-12 col-md-6">
+                        <div class="photo-item">
+                            <img src="images/entrepots/shanghai/general-1.jpg" alt="Stockage marchandises générales" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%231a0a0a%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%22 y=%22150%22 font-family=%22Arial%22 font-size=%2220%22 fill=%22%23C41E24%22%3E一般商品%3C/text%3E%3C/svg%3E'">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="photo-item">
+                            <img src="images/entrepots/shanghai/general-2.jpg" alt="Zone de préparation de commandes" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%231a0a0a%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%22 y=%22150%22 font-family=%22Arial%22 font-size=%2220%22 fill=%22%23C41E24%22%3E订单准备%3C/text%3E%3C/svg%3E'">
+                        </div>
+                    </div>
+                </div>
+                <div class="sector-desc">
+                    <strong>📍 Secteur 1</strong> — <span class="capacity-badge">15 000 m²</span>
+                    Espace de stockage dédié aux marchandises générales : produits de consommation, biens durables, électronique, textile. Zone équipée de rayonnages adaptés et d'une aire de préparation de commandes.
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUITS FRAIS ET SURGELÉS -->
+        <section class="mb-5 reveal">
+            <div class="cat-header">
+                <span class="cat-title">
+                    ❄️ Produits frais et surgelés
+                    <span class="zh-group">
+                        <span class="zh">冷冻食品</span>
+                        <span class="fr-trans">produits surgelés</span>
+                    </span>
+                </span>
+                <span class="position-badge">Secteur 2</span>
+            </div>
+            <div class="grid-frame">
+                <div class="row g-3">
+                    <div class="col-12 col-md-6">
+                        <div class="photo-item">
+                            <img src="images/entrepots/shanghai/frais-1.jpg" alt="Entrepôt frigorifique" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%231a0a0a%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%22 y=%22150%22 font-family=%22Arial%22 font-size=%2220%22 fill=%22%23C41E24%22%3E冷冻区%3C/text%3E%3C/svg%3E'">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="photo-item">
+                            <img src="images/entrepots/shanghai/frais-2.jpg" alt="Stockage surgelés" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%231a0a0a%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%22 y=%22150%22 font-family=%22Arial%22 font-size=%2220%22 fill=%22%23C41E24%22%3E冷藏区%3C/text%3E%3C/svg%3E'">
+                        </div>
+                    </div>
+                </div>
+                <div class="sector-desc">
+                    <strong>📍 Secteur 2</strong> — <span class="capacity-badge">7 000 m²</span>
+                    Chambre froide avec plages de température de -25°C à +4°C. Idéal pour le stockage de produits alimentaires frais, surgelés, produits de la mer, viandes et fruits exotiques.
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUITS CHIMIQUES ET DANGEREUX -->
+        <section class="mb-5 reveal">
+            <div class="cat-header">
+                <span class="cat-title">
+                    🧪 Produits chimiques et dangereux
+                    <span class="zh-group">
+                        <span class="zh">危险化学品</span>
+                        <span class="fr-trans">produits chimiques dangereux</span>
+                    </span>
+                </span>
+                <span class="position-badge">Secteur 3</span>
+            </div>
+            <div class="grid-frame">
+                <div class="row g-3">
+                    <div class="col-12 col-md-6">
+                        <div class="photo-item">
+                            <img src="images/entrepots/shanghai/chimique-1.jpg" alt="Stockage produits chimiques" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%231a0a0a%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%22 y=%22150%22 font-family=%22Arial%22 font-size=%2220%22 fill=%22%23C41E24%22%3E化学品储存%3C/text%3E%3C/svg%3E'">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="photo-item">
+                            <img src="images/entrepots/shanghai/chimique-2.jpg" alt="Zone sécurisée produits dangereux" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%231a0a0a%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%22 y=%22150%22 font-family=%22Arial%22 font-size=%2220%22 fill=%22%23C41E24%22%3E安全区域%3C/text%3E%3C/svg%3E'">
+                        </div>
+                    </div>
+                </div>
+                <div class="sector-desc">
+                    <strong>📍 Secteur 3</strong> — <span class="capacity-badge">4 000 m²</span>
+                    Zone de stockage sécurisée conforme aux normes internationales pour les produits chimiques, solvants, peintures et matières dangereuses. Équipement de protection et systèmes anti-incendie renforcés.
+                </div>
+            </div>
+        </section>
+
+        <!-- CHARGES LOURDES ET OVERSIZE -->
+        <section class="mb-5 reveal">
+            <div class="cat-header">
+                <span class="cat-title">
+                    🏗️ Charges lourdes et oversize
+                    <span class="zh-group">
+                        <span class="zh">重型货物</span>
+                        <span class="fr-trans">charges lourdes</span>
+                    </span>
+                </span>
+                <span class="position-badge">Secteur 4</span>
+            </div>
+            <div class="grid-frame">
+                <div class="row g-3">
+                    <div class="col-12 col-md-6">
+                        <div class="photo-item">
+                            <img src="images/entrepots/shanghai/lourd-1.jpg" alt="Stockage charges lourdes" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%231a0a0a%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%22 y=%22150%22 font-family=%22Arial%22 font-size=%2220%22 fill=%22%23C41E24%22%3E重型储存%3C/text%3E%3C/svg%3E'">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="photo-item">
+                            <img src="images/entrepots/shanghai/lourd-2.jpg" alt="Zone oversize" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%231a0a0a%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%22 y=%22150%22 font-family=%22Arial%22 font-size=%2220%22 fill=%22%23C41E24%22%3E超大型区域%3C/text%3E%3C/svg%3E'">
+                        </div>
+                    </div>
+                </div>
+                <div class="sector-desc">
+                    <strong>📍 Secteur 4</strong> — <span class="capacity-badge">6 000 m²</span>
+                    Espace dédié aux charges lourdes et marchandises hors normes : machines industrielles, engins de chantier, matériaux de construction, pièces surdimensionnées pour l'industrie.
+                </div>
+            </div>
+        </section>
+
+        <!-- ÉLECTRONIQUE ET HIGH-TECH -->
+        <section class="mb-5 reveal">
+            <div class="cat-header">
+                <span class="cat-title">
+                    💻 Électronique et high-tech
+                    <span class="zh-group">
+                        <span class="zh">电子产品</span>
+                        <span class="fr-trans">produits électroniques</span>
+                    </span>
+                </span>
+                <span class="position-badge">Secteur 5</span>
+            </div>
+            <div class="grid-frame">
+                <div class="row g-3">
+                    <div class="col-12 col-md-6">
+                        <div class="photo-item">
+                            <img src="images/entrepots/shanghai/electronique-1.jpg" alt="Stockage électronique" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%231a0a0a%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%22 y=%22150%22 font-family=%22Arial%22 font-size=%2220%22 fill=%22%23C41E24%22%3E电子产品储存%3C/text%3E%3C/svg%3E'">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="photo-item">
+                            <img src="images/entrepots/shanghai/electronique-2.jpg" alt="Zone high-tech" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%231a0a0a%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%22 y=%22150%22 font-family=%22Arial%22 font-size=%2220%22 fill=%22%23C41E24%22%3E高科技区域%3C/text%3E%3C/svg%3E'">
+                        </div>
+                    </div>
+                </div>
+                <div class="sector-desc">
+                    <strong>📍 Secteur 5</strong> — <span class="capacity-badge">4 000 m²</span>
+                    Zone climatisée et anti-statique pour le stockage de produits électroniques, composants, smartphones, ordinateurs et équipements high-tech. Contrôle d'humidité et température.
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUITS PHARMACEUTIQUES -->
+        <section class="mb-5 reveal">
+            <div class="cat-header">
+                <span class="cat-title">
+                    💊 Produits pharmaceutiques
+                    <span class="zh-group">
+                        <span class="zh">药品储存</span>
+                        <span class="fr-trans">stockage pharmaceutique</span>
+                    </span>
+                </span>
+                <span class="position-badge">Secteur 6</span>
+            </div>
+            <div class="grid-frame">
+                <div class="row g-3">
+                    <div class="col-12 col-md-6">
+                        <div class="photo-item">
+                            <img src="images/entrepots/shanghai/pharma-1.jpg" alt="Stockage pharmaceutique" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%231a0a0a%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%22 y=%22150%22 font-family=%22Arial%22 font-size=%2220%22 fill=%22%23C41E24%22%3E药品储存%3C/text%3E%3C/svg%3E'">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="photo-item">
+                            <img src="images/entrepots/shanghai/pharma-2.jpg" alt="Zone pharmaceutique climatisée" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%231a0a0a%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%22 y=%22150%22 font-family=%22Arial%22 font-size=%2220%22 fill=%22%23C41E24%22%3E温控区%3C/text%3E%3C/svg%3E'">
+                        </div>
+                    </div>
+                </div>
+                <div class="sector-desc">
+                    <strong>📍 Secteur 6</strong> — <span class="capacity-badge">3 000 m²</span>
+                    Zone sécurisée et climatisée conforme aux normes BPF pour le stockage de médicaments, vaccins, dispositifs médicaux. Contrôle d'accès restreint et traçabilité complète.
+                </div>
+            </div>
+        </section>
+
+        <!-- ZONE LOGISTIQUE ET PRÉPARATION -->
+        <section class="mb-5 reveal">
+            <div class="cat-header">
+                <span class="cat-title">
+                    📋 Zone logistique et préparation
+                    <span class="zh-group">
+                        <span class="zh">物流和备货区</span>
+                        <span class="fr-trans">zone logistique et de préparation</span>
+                    </span>
+                </span>
+                <span class="position-badge">Secteur 7</span>
+            </div>
+            <div class="grid-frame">
+                <div class="row g-3">
+                    <div class="col-12 col-md-6">
+                        <div class="photo-item">
+                            <img src="images/entrepots/shanghai/logistique-1.jpg" alt="Zone de préparation" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%231a0a0a%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%22 y=%22150%22 font-family=%22Arial%22 font-size=%2220%22 fill=%22%23C41E24%22%3E备货区%3C/text%3E%3C/svg%3E'">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="photo-item">
+                            <img src="images/entrepots/shanghai/logistique-2.jpg" alt="Quais de chargement" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%231a0a0a%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%22 y=%22150%22 font-family=%22Arial%22 font-size=%2220%22 fill=%22%23C41E24%22%3E装卸区%3C/text%3E%3C/svg%3E'">
+                        </div>
+                    </div>
+                </div>
+                <div class="sector-desc">
+                    <strong>📍 Secteur 7</strong> — <span class="capacity-badge">6 000 m²</span>
+                    Zone dédiée à la préparation de commandes, au picking, au conditionnement et au cross-docking. Équipée de 25 quais de chargement pour une logistique fluide.
+                </div>
+            </div>
+        </section>
+
+    </div><!-- /.container -->
+
+    <!-- ═══ LIGHTBOX ═══ -->
+    <div class="lightbox" id="lightbox">
+        <button class="lb-close" id="lbClose" aria-label="Fermer">✕</button>
+        <img id="lbImg" src="" alt="">
+    </div>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="site">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-12 me-auto">
+                    <em class="text-white d-block mb-4">Où nous trouver ?</em>
+                    <strong class="text-white"><i class="bi-geo-alt me-2"></i>📍 Terminal à Conteneurs de Vridi, Port Autonome d'Abidjan, Côte d'Ivoire (SIEGE)</strong>
+                    <ul class="social-icon mt-4">
+                        <li class="social-icon-item"><a href="https://www.facebook.com/logitix" class="social-icon-link bi-facebook"></a></li>
+                        <li class="social-icon-item"><a href="https://wa.me/2250503231625?text=Bonjour j'aimerais avoir plus d'information sur votre entrepôt de Shanghai" class="social-icon-link bi-whatsapp"></a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-12 mt-4 mb-3 mt-lg-0 mb-lg-0">
+                    <em class="text-white d-block mb-4">Contacts</em>
+                    <p class="d-flex mb-1"><strong class="me-2">Téléphone:</strong><a href="tel:+2250503231625" class="site-footer-link">(+225) 05 03 23 16 25<br>(+225) 01 51 30 60 51</a></p>
+                    <p class="d-flex"><strong class="me-2">Email:</strong><a href="mailto:oichristkouame920@gmail.com" class="site-footer-link">oichristkouame920@gmail.com</a></p>
+                </div>
+                <div class="col-lg-8 col-12 mt-4"><p class="copyright-text mb-0">Copyright © kouame — Design 2025</p></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══ JS ═══ -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/click-scroll.js"></script>
+    <script src="js/vegas.min.js"></script>
+    <script src="js/custom.js"></script>
+
+    <script>
+        /* ── LIGHTBOX MANAGER ── */
+        const lb = document.getElementById('lightbox');
+        const lbImg = document.getElementById('lbImg');
+        const lbClose = document.getElementById('lbClose');
+        let currentImageIndex = 0;
+        const allImages = Array.from(document.querySelectorAll('.photo-item img'));
+
+        function openLightbox(imgElement) {
+            lbImg.src = imgElement.src;
+            lbImg.alt = imgElement.alt;
+            currentImageIndex = allImages.indexOf(imgElement);
+            lb.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            lbImg.focus();
+        }
+
+        function closeLightbox() {
+            lb.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        allImages.forEach(img => {
+            img.addEventListener('click', () => openLightbox(img));
+            img.parentElement.style.cursor = 'pointer';
+        });
+
+        lb.addEventListener('click', e => {
+            if (e.target === lb || e.target === lbImg) closeLightbox();
+        });
+
+        lbClose.addEventListener('click', closeLightbox);
+
+        document.addEventListener('keydown', e => {
+            if (!lb.classList.contains('open')) return;
+            if (e.key === 'Escape') {
+                closeLightbox();
+            } else if (e.key === 'ArrowRight' && currentImageIndex < allImages.length - 1) {
+                openLightbox(allImages[currentImageIndex + 1]);
+            } else if (e.key === 'ArrowLeft' && currentImageIndex > 0) {
+                openLightbox(allImages[currentImageIndex - 1]);
+            }
+        });
+
+        /* ── SCROLL REVEAL ── */
+        const revealOptions = {
+            threshold: 0.08,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const revealOnScroll = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealOnScroll.unobserve(entry.target);
+                }
+            });
+        }, revealOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => revealOnScroll.observe(el));
+
+        /* ── ANIMATED COUNTERS ── */
+        const counters = document.querySelectorAll('.info-stats .number[data-target]');
+        function animateCounter(el) {
+            const target = parseInt(el.getAttribute('data-target'), 10);
+            const duration = 1500;
+            const start = performance.now();
+            function tick(now) {
+                const p = Math.min((now - start) / duration, 1);
+                el.textContent = Math.round(p * target).toLocaleString();
+                if (p < 1) requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+        }
+        const statsBand = document.querySelector('.info-stats');
+        if (statsBand) {
+            const statsObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        counters.forEach(animateCounter);
+                        statsObserver.disconnect();
+                    }
+                });
+            }, { threshold: 0.4 });
+            statsObserver.observe(statsBand);
+        }
+
+        document.documentElement.style.scrollBehavior = 'smooth';
+    </script>
+</body>
+</html>
