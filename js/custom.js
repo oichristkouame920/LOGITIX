@@ -14,7 +14,7 @@
             {src:"images/chargeme.png"},
             {src:"images/hamburg-6849995_1280.jpg"},
             {src:"images/camionslogi.png"},
-            {src:"images/termi.jpg"}
+            {src:"images/entrepot-dakar.jpg"}.
           ],
           timer: false,
           animation: 'kenburns',

@@ -125,7 +125,7 @@
                                                 <h5 class="text-white">Vous n'avez pas de compte ?</h5>
                                             </div>
                                             <div class="col-lg-4 col-md-10 col-8 mx-auto mt-2">
-                                                <button class="form-control"><a href="crer_compte.html">Créer un compte</a></button>
+                                                <button class="form-control"><a href="crer_compte.php">Créer un compte</a></button>
                                             </div>
                                         </form>
                                     <!-- </div> -->
