@@ -19,11 +19,11 @@
       "images/entrelogi.png",
       "images/entrepot1.avif",
       "images/entrepo2.avif",
+      "images/interieur/21_entrepot_moderne_en_pleine_activite.jpg",
       "images/chargeme.png",
       "images/hamburg-6849995_1280.jpg",
       "images/camionslogi.png",
       "images/interieur/02_preparation_commandes_02.jpg"
-
     ];
 
 

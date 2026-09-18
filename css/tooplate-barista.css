@@ -691,7 +691,7 @@ strong {
 }
 
 .menu-block .border-top {
-  border-top-color: rgba(255, 255, 255, 0.35);
+  border-top-color: rgba(255, 255, 255, 0.35) !important;
 }
 
 .menu-block h6 {
@@ -742,7 +742,7 @@ strong {
   REVIEWS              
 -----------------------------------------*/
 .reviews-section { /*pour la couleur qui es derriere vu pour vous*/
-  background-color: rgb(168, 75, 21);
+  background-color: #527b7cff;
 }
 
 .reviews-block {
@@ -753,7 +753,7 @@ strong {
 }
 
 .reviews-block .border-top {
-  border-top-color: rgba(255, 255, 255, 0.35);
+  border-top-color: rgba(255, 255, 255, 0.35) !important;
 }
 
 .reviews-block-image-wrap-a {
