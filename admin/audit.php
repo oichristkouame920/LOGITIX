@@ -1,0 +1,6 @@
+<?php
+require_once __DIR__ . '/../includes/auth_guard.php'; require_once __DIR__ . '/../models/AdminLogisticsModel.php'; require_once __DIR__ . '/../includes/admin_layout.php';
+$model=new AdminLogisticsModel(); try{$items=$model->listAudit(300);}catch(Throwable $e){error_log('LOGITIX audit: '.$e->getMessage());$items=[];setError('Impossible de charger le journal administrateur.');} adminPageStart('Journal administrateur','audit');
+?>
+<div class="admin-card"><p class="text-muted">Ce journal enregistre les actions métier sensibles effectuées depuis l’interface admin. Les mots de passe et secrets 2FA ne sont jamais journalisés.</p><div class="table-responsive"><table class="table align-middle"><thead><tr><th>Date</th><th>Admin</th><th>Action</th><th>Objet</th><th>IP</th><th>Détails</th></tr></thead><tbody><?php if(!$items):?><tr><td colspan="6" class="text-center text-muted">Aucune action enregistrée.</td></tr><?php endif;?><?php foreach($items as $i):?><tr><td><?= e(formatDate($i['created_at'])) ?></td><td>#<?= (int)$i['actor_user_id'] ?></td><td><code><?= e($i['action']) ?></code></td><td><?= e($i['entity_type']) ?><?= $i['entity_id']?' #'.(int)$i['entity_id']:'' ?></td><td><?= e($i['ip']??'—') ?></td><td class="break-word"><small><?= e($i['details']??'—') ?></small></td></tr><?php endforeach;?></tbody></table></div></div>
+<?php adminPageEnd(); ?>

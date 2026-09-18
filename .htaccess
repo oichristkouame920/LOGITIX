@@ -1,0 +1,28 @@
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Interdire tous les fichiers/dossiers caches (.git, .env, .vscode, ...).
+    RewriteRule (^|/)\. - [F,L,NC]
+
+    # Ces repertoires font partie du code/deploiement et ne sont jamais publics.
+    RewriteRule ^(?:config|database|deployment|includes|models|tools|vendor|tests)(?:/|$) - [F,L,NC]
+</IfModule>
+
+# Bloquer les sauvegardes, exports, documents internes et secrets meme si
+# mod_rewrite n'est pas disponible.
+<FilesMatch "(?i)(^\.|\.(?:env|ini|log|sql|bak|dump|sqlite|sqlite3|docx|md|txt|yml|yaml|dist|zip|tar|tgz|gz|rar|7z|pem|key|p12|pfx|old|orig|swp)$)">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-Permitted-Cross-Domain-Policies "none"
+    Header always set Cross-Origin-Opener-Policy "same-origin"
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" "expr=%{HTTPS} == 'on'"
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self'; frame-src https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+</IfModule>

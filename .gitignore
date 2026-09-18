@@ -1,0 +1,10 @@
+.env
+.env.*
+!.env.example
+.vscode/
+*.sql.bak
+*.dump
+*.sqlite
+*.sqlite3
+*.log
+*.zip

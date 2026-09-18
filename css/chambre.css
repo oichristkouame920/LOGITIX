@@ -1,0 +1,40 @@
+body{
+    background-color:var(--primary-color);
+}
+.col{
+    text-align: center;
+}
+h5{
+    font-style: italic; color: var(--secondary-color); font-weight: bold; text-align: center; text-decoration:underline;
+}
+.couv{
+    border-radius:40px;
+    width:500px;
+}
+.hob{ /*pour les articles de chambre*/
+    width:55px; height:auto;
+}
+
+img:hover
+{
+    transform: scale(1.1); 
+    transition-duration: 0.5s;
+}
+
+.col img
+{
+    cursor:pointer;
+    transition: tranform 0.3s ease;
+}
+.col img:hover
+{
+    transform: scale(1.1);
+}
+.hob{
+    cursor:pointer;
+    transition: transform 0.3s ease;
+}
+.hob:hover
+{
+    transform: scale(1.15);
+}

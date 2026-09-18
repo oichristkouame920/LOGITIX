@@ -1,0 +1,190 @@
+LOGITIX v7.7.2 - correctif MySQL 8.x #3823
+================================================
+- Correction des FK ressources expeditions : RESTRICT/RESTRICT au lieu de SET NULL/CASCADE.
+- Conservation des CHECK metier et des colonnes generees anti-double-affectation.
+- Migration non destructive capable de normaliser automatiquement les anciennes FK v7.6/v7.7.1.
+- Controle final SQL ajoutant la verification des regles FK compatibles.
+
+LOGITIX v7.7.2 - LISTE DES AJOUTS ET AMELIORATIONS
+===================================================
+
+OBJECTIF
+--------
+Cette version consolide la partie client active de v7.6 et ajoute une interface
+administrateur exploitable, une migration non destructive et des protections
+supplementaires pour un deploiement PHP 8.4 / MySQL 8.x.
+
+AUCUN SECRET REEL N'EST LIVRE DANS L'ARCHIVE.
+Le fichier .env.local doit etre copie depuis l'installation locale existante.
+
+1. PARCOURS CLIENT
+------------------
+- Dashboard client connecte a MySQL avec compteurs dynamiques.
+- Mes expeditions : liste limitee a l'utilisateur connecte.
+- Nouvelle expedition : creation securisee avec reference de suivi aleatoire.
+- Suivi d'un colis par reference, limite au proprietaire connecte.
+- Devis : creation et historique du client.
+- Affichage du montant, de la devise et de la reponse admin sur les devis.
+- Requetes PDO preparees et controles user_id cote serveur.
+- CSRF sur toutes les ecritures client.
+
+2. INTERFACE ADMINISTRATEUR
+---------------------------
+- Dashboard admin avec statistiques reelles.
+- Gestion des clients : consultation, activation/desactivation.
+- Reinitialisation de mot de passe client avec mot de passe temporaire.
+- Invalidation des anciennes sessions via auth_version.
+- Gestion des devis : prix, devise, reponse, validation/refus.
+- Conversion d'un devis valide en expedition.
+- Gestion des expeditions : statut, vehicule, chauffeur, remorque et dates.
+- Gestion des vehicules, chauffeurs, remorques et entrepots.
+- Journal d'audit administrateur.
+- Profil admin, changement de mot de passe et 2FA conserves.
+
+3. WORKFLOW EXPEDITIONS
+-----------------------
+- Statuts controles : planifiee, en_cours, livree, annulee.
+- Transitions autorisees controlees par le code serveur.
+- Une expedition en_cours exige vehicule + chauffeur + date de depart.
+- Une expedition livree exige une date de livraison reelle.
+- Controle chronologique des dates.
+- Synchronisation de disponibilite des ressources.
+- Liberation des anciennes ressources lors d'un changement ou d'une cloture.
+
+4. CONCURRENCE ET INTEGRITE MYSQL
+---------------------------------
+- Protection contre la double affectation simultanee d'un vehicule.
+- Protection contre la double affectation simultanee d'un chauffeur.
+- Protection contre la double affectation simultanee d'une remorque.
+- Un devis ne peut produire qu'une seule expedition.
+- Colonnes generees et index UNIQUE pour completer les controles PHP.
+- Contraintes CHECK sur les etats critiques des expeditions.
+- La migration s'arrete si les donnees existantes violent ces contraintes,
+  au lieu de supprimer ou corriger silencieusement les donnees.
+
+5. BOOTSTRAP ADMIN SANS PHP CLI
+-------------------------------
+- Nouvelle page admin/bootstrap.php.
+- Desactivee par defaut.
+- Fonctionne uniquement avec LOGITIX_APP_ENV=development.
+- Fonctionne uniquement depuis la boucle locale 127.0.0.1 / ::1.
+- Verifie aussi que le nom d'hote HTTP est localhost/127.0.0.1/::1.
+- Accepte uniquement un serveur MySQL local dans le mode Web.
+- Protection CSRF.
+- Les identifiants DBA sont utilises uniquement en memoire et jamais stockes.
+- Mot de passe admin temporaire genere aleatoirement et affiche une seule fois.
+- Refuse de reinitialiser un admin actif sans confirmation explicite.
+- Une reinitialisation admin invalide l'ancien mot de passe, les sessions et la 2FA.
+
+6. MIGRATION NON DESTRUCTIVE V7.6/V7.7 -> V7.7.2
+-------------------------------------------------
+- Service includes/admin_upgrade.php.
+- Outil CLI tools/upgrade_admin_features.php.
+- Meme migration disponible dans l'assistant Web local.
+- Conserve utilisateurs, devis et expeditions.
+- Ne modifie pas les mots de passe MySQL des comptes applicatifs existants.
+- Verifie MySQL 8.0.18 minimum et refuse MariaDB.
+- Verifie la presence des tables et comptes MySQL attendus.
+- Normalise vues, contraintes et privileges.
+- Detecte les conflits de donnees avant d'ajouter les index/contraintes.
+
+7. PRIVILEGES MYSQL / MOINDRE PRIVILEGE
+---------------------------------------
+- Comptes PHP separes : logitix_client et logitix_admin.
+- Comptes DEFINER separes et verrouilles.
+- Vues SQL SECURITY DEFINER explicites.
+- Privileges par colonne pour les donnees sensibles.
+- Aucun GRANT ALL dans le SQL de reference.
+- Aucun WITH GRANT OPTION pour les comptes applicatifs.
+- Aucun compte applicatif @'%'.
+- Aucun DELETE metier accorde aux comptes PHP.
+- Aucun acces PHP direct a la table users.
+- L'admin PHP ne peut pas SELECT le hash du mot de passe d'un client.
+- Les roles MySQL residuels sont retires lors de la migration avant de reappliquer
+  le jeu de privileges connu.
+
+8. AUTHENTIFICATION ET SESSIONS
+-------------------------------
+- password_hash/password_verify.
+- Mot de passe temporaire avec changement obligatoire.
+- auth_version pour invalider les anciennes sessions.
+- Sessions client et admin separees.
+- Regeneration d'identifiant de session.
+- Delais d'inactivite et duree maximale de session.
+- Re-authentification recente pour les actions sensibles.
+- Rate limiting distinct client/admin/contexte.
+
+9. 2FA ADMIN
+------------
+- 2FA TOTP configurable/obligatoire.
+- Secret TOTP chiffre au repos avec LOGITIX_TOTP_ENCRYPTION_KEY.
+- Compteur anti-rejeu.
+- tools/setup_local_env.php preserve la cle TOTP existante lorsqu'elle est valide,
+  pour eviter de casser une 2FA deja configuree.
+
+10. JOURNAL D'AUDIT
+-------------------
+- Nouvelle table admin_audit_log.
+- Journalisation de l'acteur, action, entite, identifiant, IP et date.
+- Pas de mot de passe ni de secret TOTP dans le journal.
+- Operations metier admin et audit regroupes dans des transactions lorsque requis.
+
+11. SECURITE WEB ET CONFIGURATION
+---------------------------------
+- .env.local exclu de l'archive et de Git.
+- .htaccess bloque dotfiles, config, database, deployment, includes, models,
+  tools et extensions sensibles (SQL, ENV, cles, archives, documentation interne).
+- HTTPS force en production avec URL canonique HTTPS.
+- X-Forwarded-Proto n'est accepte que depuis des proxies explicitement approuves.
+- TLS MySQL obligatoire en production pour une base distante.
+- Configuration du port MySQL via LOGITIX_DB_PORT.
+- Secrets DB Base64 supportes pour eviter les erreurs de parsing de caracteres speciaux.
+
+12. INSTALLATION SQL NEUVE
+--------------------------
+- Un seul fichier SQL : Logitix_SQL_FINAL_COMPLET.sql.
+- MySQL 8.0.18 minimum ; MySQL 8.4 LTS recommande.
+- MariaDB refuse.
+- Garde-fou contre la reinstallation destructive active par defaut.
+- 12 tables et 13 vues securisees attendues.
+- Comptes applicatifs locaux uniquement.
+- Assertions finales bloquantes dans le SQL pour les invariants de securite critiques.
+
+13. DIAGNOSTIC ET MAINTENANCE
+-----------------------------
+- tools/diagnose_registration.php.
+- tools/diagnose_admin.php.
+- tools/setup_local_env.php.
+- tools/activate_admin.php.
+- tools/reset_user_password.php.
+- tools/upgrade_admin_features.php.
+- tools/upgrade_client_features.php redirige vers la migration complete v7.7.2.
+- Messages d'erreur locaux differencies pour identifiants, port, base, vues/privileges.
+
+14. COMPATIBILITE ET PRESENTATION
+--------------------------------
+- Cible PHP 8.4 et MySQL 8.x.
+- Les assets historiques css/, js/, images/ et fonts/ sont inchanges par rapport a v7.6.
+- Aucune refonte visuelle imposee aux pages existantes.
+- APP_URL=auto permet le changement de nom du dossier local sans casser les chemins.
+
+15. DOCUMENTATION AJOUTEE / MISE A JOUR
+---------------------------------------
+- README_FIRST.md
+- MISE_A_NIVEAU_WAMP_V7_7_2.md
+- ADMIN_V7_7_2_GUIDE.md
+- LOCAL_SECURITY_SETUP.md
+- SECURITY_CHANGES.md
+- database/APPLY_ORDER.md
+- database/README_SECURITY.md
+- VERIFICATION_REPORT.txt
+- SECURITY_MANIFEST_SHA256.txt
+- FILE_LIST.txt
+
+LIMITES DE VERIFICATION
+-----------------------
+Le code PHP et les invariants statiques du package ont ete verifies dans
+l'environnement de construction. Aucun serveur MySQL/WampServer identique a celui
+de l'utilisateur n'est disponible dans cet environnement ; l'import/migration SQL
+doit donc etre execute sur le MySQL 8.x local. Le SQL et la migration contiennent
+des controles bloquants pour refuser les etats incompatibles.

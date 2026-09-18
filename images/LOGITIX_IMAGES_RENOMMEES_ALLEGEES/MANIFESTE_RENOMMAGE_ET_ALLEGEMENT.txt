@@ -1,0 +1,57 @@
+LOGITIX - Images renommées et allégées
+
+atelier_industriel_de_maintenance_des_camions.png -> 02_remorques_tracteurs/01_atelier_industriel_de_maintenance_des_camions.jpg | avant: 2487.9 Ko | après: 247.4 Ko
+camion_benne_industriel_sur_sol_mouillé.png -> 02_remorques_tracteurs/02_camion_benne_industriel_sur_sol_mouille.jpg | avant: 2105.9 Ko | après: 183.7 Ko
+camion_citerne_dans_une_usine_industrielle.png -> 02_remorques_tracteurs/03_camion_citerne_dans_une_usine_industrielle.jpg | avant: 2056.6 Ko | après: 166.4 Ko
+camion_citerne_inoxydable_sur_cour_industrielle_hu.png -> 02_remorques_tracteurs/04_camion_citerne_inoxydable_sur_cour_industrielle_hu.jpg | avant: 2207.7 Ko | après: 198.8 Ko
+camion_frigorifique_au_quai_de_chargement.png -> 02_remorques_tracteurs/05_camion_frigorifique_au_quai_de_chargement.jpg | avant: 1854.9 Ko | après: 134.4 Ko
+camion_logitix_devant_l_entrepôt_industriel.png -> 02_remorques_tracteurs/06_camion_logitix_devant_l_entrepot_industriel.jpg | avant: 1948.6 Ko | après: 162.0 Ko
+camion_porte_conteneurs_sous_grue_portuaire.png -> 02_remorques_tracteurs/07_camion_porte_conteneurs_sous_grue_portuaire.jpg | avant: 1946.4 Ko | après: 172.5 Ko
+camion_remorque_dans_une_cour_industrielle.png -> 02_remorques_tracteurs/08_camion_remorque_dans_une_cour_industrielle.jpg | avant: 2018.9 Ko | après: 145.1 Ko
+camion_semi_remorque_devant_l_entrepôt_industriel.png -> 02_remorques_tracteurs/09_camion_semi_remorque_devant_l_entrepot_industriel.jpg | avant: 1962.7 Ko | après: 149.6 Ko
+camion_semi_remorque_devant_un_entrepôt_industriel.png -> 02_remorques_tracteurs/10_camion_semi_remorque_devant_un_entrepot_industriel.jpg | avant: 2068.7 Ko | après: 184.4 Ko
+centre_logistique_en_pleine_activité.png -> 03_secteurs_logistiques/01_centre_logistique_en_pleine_activite.jpg | avant: 2055.5 Ko | après: 174.4 Ko
+centre_logistique_industriel_en_activité.png -> 03_secteurs_logistiques/02_centre_logistique_industriel_en_activite.jpg | avant: 2155.3 Ko | après: 190.7 Ko
+centre_logistique_moderne_en_activité.png -> 03_secteurs_logistiques/03_centre_logistique_moderne_en_activite.jpg | avant: 2483.9 Ko | après: 259.4 Ko
+conductrice_souriante_devant_un_camion.png -> 01_chauffeurs/01_conductrice_souriante_devant_un_camion.jpg | avant: 1770.7 Ko | après: 99.2 Ko
+couloir_de_stockage_médical_réfrigéré.png -> 03_secteurs_logistiques/04_couloir_de_stockage_medical_refrigere.jpg | avant: 2110.0 Ko | après: 191.0 Ko
+entrepôt_automobile_aux_rangées_infinies.png -> 03_secteurs_logistiques/05_entrepot_automobile_aux_rangees_infinies.jpg | avant: 2529.2 Ko | après: 255.6 Ko
+entrepôt_automobile_moderne_et_spacieux.png -> 03_secteurs_logistiques/06_entrepot_automobile_moderne_et_spacieux.jpg | avant: 2506.7 Ko | après: 257.9 Ko
+entrepôt_automobile_éclairé_par_les_verrières.png -> 03_secteurs_logistiques/07_entrepot_automobile_eclaire_par_les_verrieres.jpg | avant: 2496.9 Ko | après: 258.8 Ko
+entrepôt_frigorifique_bien_organisé.png -> 03_secteurs_logistiques/08_entrepot_frigorifique_bien_organise.jpg | avant: 2197.7 Ko | après: 207.5 Ko
+entrepôt_frigorifique_en_activité.png -> 03_secteurs_logistiques/09_entrepot_frigorifique_en_activite.jpg | avant: 2425.1 Ko | après: 237.4 Ko
+entrepôt_frigorifique_givré_avec_chariot_élévateur.png -> 03_secteurs_logistiques/10_entrepot_frigorifique_givre_avec_chariot_elevateur.jpg | avant: 2773.8 Ko | après: 273.8 Ko
+entrepôt_frigorifique_pharmaceutique_immaculé.png -> 03_secteurs_logistiques/11_entrepot_frigorifique_pharmaceutique_immacule.jpg | avant: 2167.6 Ko | après: 197.3 Ko
+entrepôt_frigorifique_rempli_de_provisions.png -> 03_secteurs_logistiques/12_entrepot_frigorifique_rempli_de_provisions.jpg | avant: 2511.2 Ko | après: 238.2 Ko
+entrepôt_industriel_avec_bobines_d_acier_et_chario.png -> 03_secteurs_logistiques/13_entrepot_industriel_avec_bobines_d_acier_et_chario.jpg | avant: 2561.5 Ko | après: 268.5 Ko
+entrepôt_industriel_avec_grue_et_chariot_élévateur.png -> 03_secteurs_logistiques/14_entrepot_industriel_avec_grue_et_chariot_elevateur.jpg | avant: 2334.1 Ko | après: 228.5 Ko
+entrepôt_industriel_de_cargaisons_lourdes.png -> 03_secteurs_logistiques/15_entrepot_industriel_de_cargaisons_lourdes.jpg | avant: 2612.8 Ko | après: 286.4 Ko
+entrepôt_industriel_de_stockage_sécurisé.png -> 03_secteurs_logistiques/16_entrepot_industriel_de_stockage_securise.jpg | avant: 2225.4 Ko | après: 225.1 Ko
+entrepôt_industriel_sous_la_pluie.png -> 03_secteurs_logistiques/17_entrepot_industriel_sous_la_pluie.jpg | avant: 1891.1 Ko | après: 136.3 Ko
+entrepôt_logistique_aux_rayonnages_chargés.png -> 03_secteurs_logistiques/18_entrepot_logistique_aux_rayonnages_charges.jpg | avant: 2549.5 Ko | après: 276.2 Ko
+entrepôt_logistique_en_pleine_activité.png -> 03_secteurs_logistiques/19_entrepot_logistique_en_pleine_activite.jpg | avant: 2106.5 Ko | après: 178.8 Ko
+entrepôt_logistique_et_quais_de_chargement.png -> 03_secteurs_logistiques/20_entrepot_logistique_et_quais_de_chargement.jpg | avant: 2312.0 Ko | après: 207.0 Ko
+entrepôt_moderne_en_pleine_activité.png -> 03_secteurs_logistiques/21_entrepot_moderne_en_pleine_activite.jpg | avant: 2483.7 Ko | après: 251.4 Ko
+entrepôt_pharmaceutique_avec_préparateur_en_action.png -> 03_secteurs_logistiques/22_entrepot_pharmaceutique_avec_preparateur_en_action.jpg | avant: 2121.2 Ko | après: 189.5 Ko
+entrepôt_pharmaceutique_moderne_et_stérile.png -> 03_secteurs_logistiques/23_entrepot_pharmaceutique_moderne_et_sterile.jpg | avant: 1940.0 Ko | après: 165.8 Ko
+entrepôt_pharmaceutique_stérile_avec_équipes_en_in.png -> 03_secteurs_logistiques/24_entrepot_pharmaceutique_sterile_avec_equipes_en_in.jpg | avant: 2041.7 Ko | après: 167.4 Ko
+femme_en_tenue_professionnelle_devant_un_camion.png -> 01_chauffeurs/02_femme_en_tenue_professionnelle_devant_un_camion.jpg | avant: 1749.7 Ko | après: 99.9 Ko
+immense_parking_couvert_de_véhicules.png -> 03_secteurs_logistiques/25_immense_parking_couvert_de_vehicules.jpg | avant: 2406.2 Ko | après: 245.5 Ko
+inventaire_dans_l_entrepôt_frigorifique.png -> 03_secteurs_logistiques/26_inventaire_dans_l_entrepot_frigorifique.jpg | avant: 2528.0 Ko | après: 244.5 Ko
+levage_industriel_dans_un_vaste_hangar.png -> 03_secteurs_logistiques/27_levage_industriel_dans_un_vaste_hangar.jpg | avant: 2350.3 Ko | après: 233.2 Ko
+logistique_en_chambre_froide.png -> 03_secteurs_logistiques/28_logistique_en_chambre_froide.jpg | avant: 2003.7 Ko | après: 171.5 Ko
+portrait_d_un_chauffeur_devant_un_camion.png -> 01_chauffeurs/03_portrait_d_un_chauffeur_devant_un_camion.jpg | avant: 1880.7 Ko | après: 115.0 Ko
+portrait_d_un_chauffeur_souriant_devant_un_camion.png -> 01_chauffeurs/04_portrait_d_un_chauffeur_souriant_devant_un_camion.jpg | avant: 1681.0 Ko | après: 102.7 Ko
+portrait_d_un_logisticien_avec_son_van_bleu.png -> 01_chauffeurs/05_portrait_d_un_logisticien_avec_son_van_bleu.jpg | avant: 1817.5 Ko | après: 105.5 Ko
+portrait_d_un_professionnel_devant_un_camion_citer.png -> 01_chauffeurs/06_portrait_d_un_professionnel_devant_un_camion_citer.jpg | avant: 1828.2 Ko | après: 103.4 Ko
+portrait_professionnel_dans_un_terminal_logistique.png -> 01_chauffeurs/07_portrait_professionnel_dans_un_terminal_logistique.jpg | avant: 1816.7 Ko | après: 109.2 Ko
+professionnel_du_transport_industriel.png -> 01_chauffeurs/08_professionnel_du_transport_industriel.jpg | avant: 1872.6 Ko | après: 107.3 Ko
+professionnelle_de_la_livraison_devant_un_entrepôt.png -> 03_secteurs_logistiques/29_professionnelle_de_la_livraison_devant_un_entrepot.jpg | avant: 1815.4 Ko | après: 103.3 Ko
+professionnelle_devant_un_utilitaire_blanc.png -> 01_chauffeurs/09_professionnelle_devant_un_utilitaire_blanc.jpg | avant: 1855.3 Ko | après: 104.1 Ko
+préparation_de_colis_en_entrepôt.png -> 03_secteurs_logistiques/30_preparation_de_colis_en_entrepot.jpg | avant: 2078.5 Ko | après: 179.1 Ko
+préparation_de_commandes_en_entrepôt.png -> 03_secteurs_logistiques/31_preparation_de_commandes_en_entrepot.jpg | avant: 2104.8 Ko | après: 198.5 Ko
+semi_remorque_blanche_devant_entrepôt_industriel.png -> 02_remorques_tracteurs/11_semi_remorque_blanche_devant_entrepot_industriel.jpg | avant: 1851.2 Ko | après: 131.3 Ko
+transporteur_automobile_chargé_de_voitures.png -> 02_remorques_tracteurs/12_transporteur_automobile_charge_de_voitures.jpg | avant: 2312.7 Ko | après: 211.3 Ko
+
+Total avant: 109.35 Mo
+Total après: 9.50 Mo

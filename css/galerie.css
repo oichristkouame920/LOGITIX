@@ -1,0 +1,23 @@
+img{
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  height: 400px;
+  width:500px;
+}
+img:hover
+{
+  transform: scale(1.1); 
+   transition-duration: 0.5s;
+}
+
+p{
+  color: white;
+  font-size: 23px;
+  font-weight: bold;
+  text-decoration-style: double;
+}
+
+body{
+  background-color:var(--primary-color);
+}

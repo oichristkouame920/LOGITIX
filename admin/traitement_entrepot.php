@@ -1,0 +1,5 @@
+<?php
+require_once __DIR__ . '/../includes/auth_guard.php'; require_once __DIR__ . '/../models/AdminLogisticsModel.php'; if(!isPost()){redirect('admin/entrepots.php');} requireCsrf();
+$idRaw=$_POST['id']??'';$id=null;if($idRaw!==''){$v=filter_var($idRaw,FILTER_VALIDATE_INT,['options'=>['min_range'=>1]]);if($v===false){setError('ID entrepôt invalide.');redirect('admin/entrepots.php');}$id=(int)$v;}
+$data=['nom'=>clean((string)($_POST['nom']??'')),'ville'=>clean((string)($_POST['ville']??'')),'pays'=>clean((string)($_POST['pays']??''))]; if($data['nom']===''||$data['ville']===''||$data['pays']===''||strlen($data['nom'])>100||strlen($data['ville'])>100||strlen($data['pays'])>100){setError('Champs entrepôt invalides.');redirect('admin/entrepots.php');}
+try{(new AdminLogisticsModel())->saveEntrepot($id,$data,(int)$_SESSION['user_id'],clientIp());rotateCsrfToken();setSuccess($id?'Entrepôt mis à jour.':'Entrepôt ajouté.');}catch(Throwable $e){error_log('LOGITIX entrepot save: '.$e->getMessage());setError(APP_ENV==='development'?'Action impossible : '.$e->getMessage():'Action entrepôt impossible.');}redirect('admin/entrepots.php');
