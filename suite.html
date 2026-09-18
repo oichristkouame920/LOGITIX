@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Suite — Résidence Épiphanie</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,400;0,600;0,700;1,200;1,700&display=swap" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/vegas.min.css" rel="stylesheet">
+    <link href="css/tooplate-barista.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/chambre.css">
+    <link rel="stylesheet" href="css/modif.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold:#b8966a;--gold-light:#d4b896;--gold-dark:#8a6a44;--dark:#1a1612;--dark2:#2b2520;--surface:#f7f3ee;--surface2:#eee8e0;--white:#fdfaf7;--text:#2e2720;--muted:#7a6d62;--border:rgba(184,150,106,.2);--radius:2px;--ease:0.4s cubic-bezier(0.4,0,0.2,1); }
+        body { padding-top:148px; background:var(--white); font-family:'Jost',sans-serif; font-weight:300; color:var(--text); }
+        .page-hero { background:var(--dark2); padding:5rem 1.5rem 4rem; text-align:center; position:relative; overflow:hidden; }
+        .page-hero::before { content:''; position:absolute; inset:0; background-image:repeating-linear-gradient(0deg,transparent,transparent 59px,rgba(184,150,106,.06) 59px,rgba(184,150,106,.06) 60px),repeating-linear-gradient(90deg,transparent,transparent 59px,rgba(184,150,106,.06) 59px,rgba(184,150,106,.06) 60px); pointer-events:none; }
+        .page-hero::after { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 70% 60% at 50% 110%,rgba(184,150,106,.18) 0%,transparent 65%); pointer-events:none; }
+        .hero-inner { position:relative; z-index:1; }
+        .hero-eyebrow { display:inline-flex; align-items:center; gap:.7rem; font-family:'Jost',sans-serif; font-size:.68rem; font-weight:400; letter-spacing:.3em; text-transform:uppercase; color:var(--gold); margin-bottom:1.2rem; }
+        .hero-eyebrow::before,.hero-eyebrow::after { content:''; display:inline-block; width:28px; height:1px; background:var(--gold); opacity:.6; }
+        .page-hero h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(2.4rem,6vw,4.2rem); font-weight:300; font-style:italic; color:var(--white); line-height:1.1; letter-spacing:.01em; }
+        .hero-divider { display:flex; align-items:center; justify-content:center; gap:.6rem; margin:1.4rem auto; }
+        .hero-divider span { display:block; width:40px; height:1px; background:linear-gradient(to right,transparent,var(--gold)); }
+        .hero-divider span:last-child { background:linear-gradient(to left,transparent,var(--gold)); }
+        .hero-divider em { display:block; width:6px; height:6px; background:var(--gold); transform:rotate(45deg); font-style:normal; }
+        .page-hero .sub { font-family:'Jost',sans-serif; font-weight:200; font-size:.88rem; letter-spacing:.12em; text-transform:uppercase; color:rgba(253,250,247,.4); }
+        .page-breadcrumb { background:var(--surface2); border-bottom:1px solid var(--border); padding:.6rem 0; }
+        .page-breadcrumb .breadcrumb { margin:0; font-size:.72rem; letter-spacing:.08em; font-family:'Jost',sans-serif; font-weight:400; }
+        .page-breadcrumb .breadcrumb-item a { color:var(--gold-dark); text-decoration:none; }
+        .page-breadcrumb .breadcrumb-item.active { color:var(--muted); }
+        .page-breadcrumb .breadcrumb-item+.breadcrumb-item::before { content:'›'; color:var(--gold); }
+        .section-label { font-family:'Jost',sans-serif; font-size:.65rem; font-weight:500; letter-spacing:.25em; text-transform:uppercase; color:var(--gold); margin-bottom:.4rem; }
+        .section-title { font-family:'Cormorant Garamond',serif; font-size:1.7rem; font-weight:400; font-style:italic; color:var(--text); line-height:1.2; margin-bottom:.8rem; }
+        .section-rule { width:36px; height:1px; background:var(--gold); margin-bottom:1.6rem; }
+        .carousel-outer { border:1px solid var(--border); background:var(--surface); padding:8px; border-radius:var(--radius); box-shadow:0 8px 40px rgba(26,22,18,.1),0 2px 8px rgba(26,22,18,.06); }
+        .carousel-outer .carousel { border-radius:1px; overflow:hidden; }
+        .carousel-outer .carousel-item img { aspect-ratio:4/3; object-fit:cover; width:100%; display:block; }
+        .carousel-control-prev,.carousel-control-next { width:44px; height:44px; top:50%; transform:translateY(-50%); background:rgba(26,22,18,.55); border:1px solid rgba(184,150,106,.4); border-radius:0; opacity:1; transition:background var(--ease),border-color var(--ease); }
+        .carousel-control-prev { left:16px; } .carousel-control-next { right:16px; }
+        .carousel-control-prev:hover,.carousel-control-next:hover { background:rgba(184,150,106,.75); border-color:var(--gold); }
+        .carousel-control-prev-icon,.carousel-control-next-icon { width:14px; height:14px; background-size:100%; }
+        .carousel-indicators { bottom:-28px; margin:0; gap:4px; }
+        .carousel-indicators [data-bs-target] { width:20px; height:2px; background:rgba(184,150,106,.35); border:none; border-radius:0; opacity:1; transition:background var(--ease),width var(--ease); }
+        .carousel-indicators .active { background:var(--gold); width:32px; }
+        .amenities-box { border:1px solid var(--border); background:var(--surface); padding:2rem 1.8rem; border-radius:var(--radius); box-shadow:0 8px 40px rgba(26,22,18,.08); }
+        .amenity-row { display:flex; align-items:center; gap:.9rem; padding:.65rem 0; border-bottom:1px solid rgba(184,150,106,.1); transition:background var(--ease),padding-left var(--ease); }
+        .amenity-row:last-child { border-bottom:none; }
+        .amenity-row:hover { background:rgba(184,150,106,.05); padding-left:.4rem; border-radius:var(--radius); }
+        .amenity-icon { flex:0 0 36px; height:36px; display:flex; align-items:center; justify-content:center; background:var(--surface2); border:1px solid var(--border); border-radius:var(--radius); }
+        .amenity-icon img { width:22px; height:22px; object-fit:contain; filter:opacity(.7); }
+        .amenity-name { font-family:'Jost',sans-serif; font-size:.82rem; font-weight:400; color:var(--text); letter-spacing:.03em; }
+        .amenities-grid { display:grid; grid-template-columns:1fr 1fr; gap:0 1.5rem; }
+        @media (max-width:480px) { .amenities-grid { grid-template-columns:1fr; } }
+        .cta-band { background:var(--dark2); border:1px solid rgba(184,150,106,.2); border-radius:var(--radius); padding:2rem; display:flex; align-items:center; justify-content:space-between; gap:1.5rem; flex-wrap:wrap; margin-top:3rem; }
+        .cta-band p { font-family:'Cormorant Garamond',serif; font-size:1.35rem; font-weight:300; font-style:italic; color:var(--white); margin:0; }
+        .cta-band p small { display:block; font-family:'Jost',sans-serif; font-size:.7rem; font-style:normal; font-weight:300; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); margin-bottom:.2rem; }
+        .btn-gold { display:inline-flex; align-items:center; gap:.6rem; background:transparent; border:1px solid var(--gold); color:var(--gold-light); font-family:'Jost',sans-serif; font-size:.75rem; font-weight:400; letter-spacing:.2em; text-transform:uppercase; padding:.75rem 1.8rem; text-decoration:none; border-radius:var(--radius); transition:background var(--ease),color var(--ease); white-space:nowrap; }
+        .btn-gold:hover { background:var(--gold); color:var(--dark); text-decoration:none; }
+        .reveal { opacity:0; transform:translateY(28px); transition:opacity .7s ease,transform .7s ease; }
+        .reveal.visible { opacity:1; transform:none; }
+        .reveal-delay-1 { transition-delay:.15s; }
+        .reveal-delay-2 { transition-delay:.3s; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-xl">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">Residence Epiphanie</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-lg-auto">
+                    <li class="nav-item"><a class="nav-link click-scroll" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link click-scroll" href="Budget.html">Budget</a></li>
+                    <li class="nav-item"><a class="nav-link click-scroll" href="economique.html">Economique</a></li>
+                    <li class="nav-item"><a class="nav-link click-scroll" href="standard.html">Standard</a></li>
+                    <li class="nav-item"><a class="nav-link click-scroll" href="chambrelu.html">Chambre luxe</a></li>
+                    <li class="nav-item"><a class="nav-link click-scroll" href="chamblucon.html">Chambre luxe confort</a></li>
+                    <li class="nav-item"><a class="nav-link click-scroll" href="suite.html">Suite</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="page-hero">
+        <div class="hero-inner">
+            <p class="hero-eyebrow">Résidence Épiphanie</p>
+            <h1>Suite Prestige</h1>
+            <div class="hero-divider"><span></span><em></em><span></span></div>
+            <p class="sub">Excellence absolue · Votre havre de luxe</p>
+        </div>
+    </header>
+    <div class="page-breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+                <li class="breadcrumb-item"><a href="index.html#section_4">Nos chambres</a></li>
+                <li class="breadcrumb-item active">Suite</li>
+            </ol>
+        </div>
+    </div>
+    <div class="container" style="padding-top:3.5rem;padding-bottom:5rem;">
+        <div class="row g-5 align-items-start">
+            <div class="col-12 col-lg-6 reveal">
+                <p class="section-label">Galerie photos</p>
+                <h2 class="section-title">Découvrez notre suite prestige</h2>
+                <div class="section-rule"></div>
+                <div class="carousel-outer">
+                    <div id="gallery" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators"><button type="button" data-bs-target="#gallery" data-bs-slide-to="0" class="active" aria-current="true"></button><button type="button" data-bs-target="#gallery" data-bs-slide-to="1"></button><button type="button" data-bs-target="#gallery" data-bs-slide-to="2"></button><button type="button" data-bs-target="#gallery" data-bs-slide-to="3"></button><button type="button" data-bs-target="#gallery" data-bs-slide-to="4"></button><button type="button" data-bs-target="#gallery" data-bs-slide-to="5"></button></div>
+                        <div class="carousel-inner"><div class="carousel-item active"><img src="images/IMG-20251103-WA0062.jpg" class="d-block w-100" alt="Suite"></div><div class="carousel-item"><img src="images/214 ch.jpg" class="d-block w-100" alt="Suite 214"></div><div class="carousel-item"><img src="images/214 chbre.jpg" class="d-block w-100" alt="Vue 3"></div><div class="carousel-item"><img src="images/chambre 214 .jpg" class="d-block w-100" alt="Vue 4"></div><div class="carousel-item"><img src="images/ch 214.jpg" class="d-block w-100" alt="Vue 5"></div><div class="carousel-item"><img src="images/IMG-20251103-WA0071.jpg" class="d-block w-100" alt="Vue 6"></div></div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#gallery" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Précédent</span></button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#gallery" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Suivant</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 reveal reveal-delay-1">
+                <p class="section-label">Prestations incluses</p>
+                <h2 class="section-title">Équipements de la chambre</h2>
+                <div class="section-rule"></div>
+                <div class="amenities-box">
+                    <div class="amenities-grid"><div class="amenity-row"><div class="amenity-icon"><img src="images/non-smoking-rooms.svg" alt="Non-fumeur"></div><span class="amenity-name">Chambre non-fumeur</span></div><div class="amenity-row"><div class="amenity-icon"><img src="images/air-conditioning-heating.svg" alt="Clim"></div><span class="amenity-name">Climatisation</span></div><div class="amenity-row"><div class="amenity-icon"><img src="images/wi-fi.svg" alt="Wifi"></div><span class="amenity-name">Wifi haut débit</span></div><div class="amenity-row"><div class="amenity-icon"><img src="images/double-bed.svg" alt="Lit"></div><span class="amenity-name">Lit double</span></div><div class="amenity-row"><div class="amenity-icon"><img src="images/shower.svg" alt="Douche"></div><span class="amenity-name">Douche privative</span></div><div class="amenity-row"><div class="amenity-icon"><img src="images/socket-near-the-bed.svg" alt="Prise"></div><span class="amenity-name">Prise près du lit</span></div><div class="amenity-row"><div class="amenity-icon"><img src="images/cable-satellite-smart-tv.svg" alt="TV"></div><span class="amenity-name">Télévision</span></div><div class="amenity-row"><div class="amenity-icon"><img src="images/hairdryer.svg" alt="Sèche"></div><span class="amenity-name">Sèche-cheveux</span></div><div class="amenity-row"><div class="amenity-icon"><img src="images/buanderie.jpg" alt="Buanderie"></div><span class="amenity-name">Buanderie</span></div><div class="amenity-row"><div class="amenity-icon"><img src="images/concierge.jpg" alt="Concierge"></div><span class="amenity-name">Conciergerie</span></div><div class="amenity-row"><div class="amenity-icon"><img src="images/minibar.svg" alt="Minibar"></div><span class="amenity-name">Mini-bar</span></div><div class="amenity-row"><div class="amenity-icon"><img src="images/electric-kettle.svg" alt="Cuisine"></div><span class="amenity-name">Espace cuisine</span></div><div class="amenity-row"><div class="amenity-icon"><img src="images/bathtub.svg" alt="Jacuzzi"></div><span class="amenity-name">Jacuzzi privatif</span></div></div>
+                </div>
+            </div>
+        </div>
+        <div class="cta-band reveal reveal-delay-2">
+            <p><small>Réservez votre séjour</small>Suite Prestige — Résidence Épiphanie</p>
+            <a href="tel:+2250103076869" class="btn-gold"><i class="bi-telephone"></i>Nous contacter</a>
+        </div>
+    </div>
+    <footer class="site">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-12 me-auto">
+                    <em class="text-white d-block mb-4">Où nous trouver ?</em>
+                    <strong class="text-white"><i class="bi-geo-alt me-2"></i>Vridi-Cité face à la gendarmerie Terminus 53, Port-Bouet, Abidjan, Côte d'Ivoire</strong>
+                    <ul class="social-icon mt-4">
+                        <li class="social-icon-item"><a href="https://www.facebook.com/residenceepiphanie1" class="social-icon-link bi-facebook"></a></li>
+                        <li class="social-icon-item"><a href="#"><img src="images/OIP.svg" alt="tiktok" class="social-icon-link"></a></li>
+                        <li class="social-icon-item"><a href="https://wa.me/2250797639663?text=Bonjour j'aimerais avoir plus d'information sur les chambres" class="social-icon-link bi-whatsapp"></a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-12 mt-4 mb-3 mt-lg-0 mb-lg-0">
+                    <em class="text-white d-block mb-4">Contacts</em>
+                    <p class="d-flex mb-1"><strong class="me-2">Téléphone:</strong><a href="tel:+2250103076869" class="site-footer-link">(+225) 01 03 07 68 69<br>(+225) 07 97 63 96 63</a></p>
+                    <p class="d-flex"><strong class="me-2">Email:</strong><a href="mailto:lesresidencesepiphanie@gmail.com" class="site-footer-link">lesresidencesepiphanie@gmail.com</a></p>
+                </div>
+                <div class="col-lg-8 col-12 mt-4"><p class="copyright-text mb-0">Copyright © kouame — Design 2025</p></div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/click-scroll.js"></script>
+    <script src="js/vegas.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script>
+        const io = new IntersectionObserver(entries => { entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('visible'); io.unobserve(en.target); } }); }, { threshold: 0.08 });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    </script>
+</body>
+</html>

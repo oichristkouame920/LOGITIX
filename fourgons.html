@@ -48,6 +48,7 @@
         .vehicle-card:hover { transform:translateY(-4px); box-shadow:0 16px 32px rgba(33,26,20,.14); border-color:var(--choc); }
         .vehicle-card .tile { aspect-ratio:16/10; background:linear-gradient(135deg,var(--navy),var(--choc-dark)); display:flex; align-items:center; justify-content:center; overflow:hidden; position:relative; }
         .vehicle-card .tile.alt { background:linear-gradient(135deg,var(--choc),var(--navy)); }
+<<<<<<< HEAD
         /* CASES RESERVEES AUX IMAGES */
         .vehicle-card .tile .image-slot {
             width:calc(100% - 1.5rem);
@@ -77,6 +78,11 @@
             object-fit:cover;
             display:block;
         }
+=======
+        .vehicle-card .tile .placeholder-img { width:100%; height:100%; object-fit:cover; display:block; }
+        .vehicle-card .tile .no-image { font-size:3rem; color:rgba(255,255,255,.92); text-align:center; padding:1rem; }
+        .vehicle-card .tile .no-image small { display:block; font-size:.7rem; opacity:.7; margin-top:.4rem; }
+>>>>>>> origin/main
         .vehicle-card .body { padding:1.2rem 1.3rem 1.4rem; display:flex; flex-direction:column; flex:1; }
         .vehicle-card h3 { font-size:1.05rem; font-weight:800; color:var(--navy); margin-bottom:.7rem; }
         .vehicle-card .specs { list-style:none; padding:0; margin:0 0 1.2rem; display:grid; gap:.4rem; flex:1; }
@@ -108,6 +114,7 @@
         .modal-body { padding:0; }
         .modal-img { width:100%; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,var(--navy),var(--choc-dark)); overflow:hidden; }
         .modal-img img { width:100%; height:100%; object-fit:cover; }
+<<<<<<< HEAD
         .modal-img .no-image {
             width:calc(100% - 2rem);
             height:calc(100% - 2rem);
@@ -127,6 +134,10 @@
         .modal-img .no-image i { font-size:3.6rem; }
         .modal-img .no-image strong { font-size:1rem; font-weight:800; }
         .modal-img .no-image small { display:block; font-size:.75rem; opacity:.72; }
+=======
+        .modal-img .no-image { font-size:5rem; color:rgba(255,255,255,.92); text-align:center; padding:1rem; }
+        .modal-img .no-image small { display:block; font-size:.8rem; opacity:.7; margin-top:.5rem; }
+>>>>>>> origin/main
         .modal-desc { padding:1.4rem 1.6rem .2rem; color:var(--text); font-size:.9rem; line-height:1.65; }
         .spec-table { width:100%; border-collapse:collapse; margin:1rem 0 1.6rem; }
         .spec-table tr { border-bottom:1px solid var(--border); }
@@ -185,7 +196,11 @@
                 </ul>
 
                 <div class="ms-xl-2">
+<<<<<<< HEAD
                     <a class="btn custom-btn custom-border-btn" href="se_connecter.php">
+=======
+                    <a class="btn custom-btn custom-border-btn" href="se_connecter.html">
+>>>>>>> origin/main
                         Suivre son colis
                         <i class="bi-arrow-up-right ms-2"></i>
                     </a>
@@ -213,6 +228,7 @@
             <button class="filter-btn" data-filter="fourgons-specialises">Fourgons spécialisés</button>
         </div>
 
+<<<<<<< HEAD
         <!--
             MODE D'EMPLOI DES CASES IMAGES
             Quand une photo est disponible, remplacez simplement :
@@ -222,6 +238,8 @@
             Le cadrage sera appliqué automatiquement.
         -->
 
+=======
+>>>>>>> origin/main
         <!-- FOURGONS UTILITAIRES -->
         <div class="cat-section" data-cat-section="fourgons-utilitaires">
             <div class="cat-heading">
@@ -232,6 +250,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="fourgons-utilitaires">
                     <div class="vehicle-card reveal">
                         <div class="tile">
+<<<<<<< HEAD
                             <!-- CASE IMAGE : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour l’image de Mercedes Sprinter">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -239,6 +258,10 @@
                                 <small>Ajoutez votre image ici</small>
                                 <span class="image-ratio">Format conseillé : 16:10</span>
                             </div>
+=======
+                            <img src="images/fourgons/mercedes-sprinter.jpg" class="placeholder-img" alt="Mercedes Sprinter" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-truck"></i><small>Mercedes Sprinter</small></div>
+>>>>>>> origin/main
                         </div>
                         <div class="body">
                             <h3>Mercedes Sprinter</h3>
@@ -248,7 +271,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>2.5 t</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Mercedes Sprinter" data-img="" data-alt="0"
+=======
+                                data-name="Mercedes Sprinter" data-img="images/fourgons/mercedes-sprinter.jpg" data-alt="0"
+>>>>>>> origin/main
                                 data-capacity="2.5 tonnes - 15 m³" data-length="4.3 m" data-usage="Distribution urbaine et livraisons express"
                                 data-type="Utilitaire" data-avail="available" data-avail-label="Disponible"
                                 data-desc="Fourgon utilitaire polyvalent, idéal pour les livraisons en milieu urbain. Compact, maniable et économique, il offre un excellent rapport volume/poids.">
@@ -260,6 +287,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="fourgons-utilitaires">
                     <div class="vehicle-card reveal">
                         <div class="tile alt">
+<<<<<<< HEAD
                             <!-- CASE IMAGE : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour l’image de Ford Transit">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -267,6 +295,10 @@
                                 <small>Ajoutez votre image ici</small>
                                 <span class="image-ratio">Format conseillé : 16:10</span>
                             </div>
+=======
+                            <img src="images/fourgons/ford-transit.jpg" class="placeholder-img" alt="Ford Transit" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-truck"></i><small>Ford Transit</small></div>
+>>>>>>> origin/main
                         </div>
                         <div class="body">
                             <h3>Ford Transit</h3>
@@ -276,7 +308,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>3.0 t</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Ford Transit" data-img="" data-alt="1"
+=======
+                                data-name="Ford Transit" data-img="images/fourgons/ford-transit.jpg" data-alt="1"
+>>>>>>> origin/main
                                 data-capacity="3.0 tonnes - 18 m³" data-length="4.8 m" data-usage="Transport de marchandises diverses"
                                 data-type="Utilitaire" data-avail="available" data-avail-label="Disponible"
                                 data-desc="Fourgon utilitaire robuste et fiable, parfait pour les tournées de livraison régulières. Capacité de chargement généreuse pour une polyvalence maximale.">
@@ -288,6 +324,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="fourgons-utilitaires">
                     <div class="vehicle-card reveal">
                         <div class="tile">
+<<<<<<< HEAD
                             <!-- CASE IMAGE : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour l’image de Renault Master">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -295,6 +332,10 @@
                                 <small>Ajoutez votre image ici</small>
                                 <span class="image-ratio">Format conseillé : 16:10</span>
                             </div>
+=======
+                            <img src="images/fourgons/renault-master.jpg" class="placeholder-img" alt="Renault Master" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-truck"></i><small>Renault Master</small></div>
+>>>>>>> origin/main
                         </div>
                         <div class="body">
                             <h3>Renault Master</h3>
@@ -304,7 +345,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>3.5 t</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Renault Master" data-img="" data-alt="0"
+=======
+                                data-name="Renault Master" data-img="images/fourgons/renault-master.jpg" data-alt="0"
+>>>>>>> origin/main
                                 data-capacity="3.5 tonnes - 20 m³" data-length="5.0 m" data-usage="Livraison de gros volumes"
                                 data-type="Utilitaire" data-avail="available" data-avail-label="Disponible"
                                 data-desc="Fourgon utilitaire spacieux offrant un volume de chargement impressionnant. Idéal pour les livraisons de gros volumes en milieu urbain.">
@@ -316,6 +361,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="fourgons-utilitaires">
                     <div class="vehicle-card reveal">
                         <div class="tile alt">
+<<<<<<< HEAD
                             <!-- CASE IMAGE : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour l’image de Fiat Ducato">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -323,6 +369,10 @@
                                 <small>Ajoutez votre image ici</small>
                                 <span class="image-ratio">Format conseillé : 16:10</span>
                             </div>
+=======
+                            <img src="images/fourgons/fiat-ducato.jpg" class="placeholder-img" alt="Fiat Ducato" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-truck"></i><small>Fiat Ducato</small></div>
+>>>>>>> origin/main
                         </div>
                         <div class="body">
                             <h3>Fiat Ducato</h3>
@@ -332,7 +382,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>2.8 t</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Fiat Ducato" data-img="" data-alt="1"
+=======
+                                data-name="Fiat Ducato" data-img="images/fourgons/fiat-ducato.jpg" data-alt="1"
+>>>>>>> origin/main
                                 data-capacity="2.8 tonnes - 16 m³" data-length="4.5 m" data-usage="Distribution multi-secteurs"
                                 data-type="Utilitaire" data-avail="service" data-avail-label="En service"
                                 data-desc="Fourgon utilitaire polyvalent, reconnu pour sa fiabilité et son confort de conduite. Convient à de nombreux secteurs d'activité.">
@@ -344,6 +398,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="fourgons-utilitaires">
                     <div class="vehicle-card reveal">
                         <div class="tile">
+<<<<<<< HEAD
                             <!-- CASE IMAGE : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour l’image de Iveco Daily">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -351,6 +406,10 @@
                                 <small>Ajoutez votre image ici</small>
                                 <span class="image-ratio">Format conseillé : 16:10</span>
                             </div>
+=======
+                            <img src="images/fourgons/iveco-daily.jpg" class="placeholder-img" alt="Iveco Daily" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-truck"></i><small>Iveco Daily</small></div>
+>>>>>>> origin/main
                         </div>
                         <div class="body">
                             <h3>Iveco Daily</h3>
@@ -360,7 +419,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>4.0 t</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Iveco Daily" data-img="" data-alt="0"
+=======
+                                data-name="Iveco Daily" data-img="images/fourgons/iveco-daily.jpg" data-alt="0"
+>>>>>>> origin/main
                                 data-capacity="4.0 tonnes - 22 m³" data-length="5.2 m" data-usage="Transport de charges lourdes"
                                 data-type="Utilitaire" data-avail="available" data-avail-label="Disponible"
                                 data-desc="Fourgon utilitaire haute capacité, conçu pour les charges lourdes et les grands volumes. Parfait pour le transport de marchandises volumineuses.">
@@ -372,6 +435,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="fourgons-utilitaires">
                     <div class="vehicle-card reveal">
                         <div class="tile alt">
+<<<<<<< HEAD
                             <!-- CASE IMAGE : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour l’image de Citroën Jumper">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -379,6 +443,10 @@
                                 <small>Ajoutez votre image ici</small>
                                 <span class="image-ratio">Format conseillé : 16:10</span>
                             </div>
+=======
+                            <img src="images/fourgons/citroen-jumper.jpg" class="placeholder-img" alt="Citroën Jumper" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-truck"></i><small>Citroën Jumper</small></div>
+>>>>>>> origin/main
                         </div>
                         <div class="body">
                             <h3>Citroën Jumper</h3>
@@ -388,7 +456,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>3.0 t</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Citroën Jumper" data-img="" data-alt="1"
+=======
+                                data-name="Citroën Jumper" data-img="images/fourgons/citroen-jumper.jpg" data-alt="1"
+>>>>>>> origin/main
                                 data-capacity="3.0 tonnes - 17 m³" data-length="4.8 m" data-usage="Flotte de distribution"
                                 data-type="Utilitaire" data-avail="available" data-avail-label="Disponible"
                                 data-desc="Fourgon utilitaire économique et fiable, idéal pour les flottes de distribution et les livraisons quotidiennes en milieu urbain.">
@@ -410,6 +482,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="fourgons-frigo">
                     <div class="vehicle-card reveal">
                         <div class="tile">
+<<<<<<< HEAD
                             <!-- CASE IMAGE : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour l’image de Petit frigo">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -417,6 +490,10 @@
                                 <small>Ajoutez votre image ici</small>
                                 <span class="image-ratio">Format conseillé : 16:10</span>
                             </div>
+=======
+                            <img src="images/fourgons/frigo-petit.jpg" class="placeholder-img" alt="Petit frigo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-snow2"></i><small>Petit frigo</small></div>
+>>>>>>> origin/main
                         </div>
                         <div class="body">
                             <h3>Petit fourgon frigo</h3>
@@ -426,7 +503,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>0°C à +4°C</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Petit fourgon frigo" data-img="" data-alt="0"
+=======
+                                data-name="Petit fourgon frigo" data-img="images/fourgons/frigo-petit.jpg" data-alt="0"
+>>>>>>> origin/main
                                 data-capacity="1.2 tonnes - 8 m³" data-length="4.0 m" data-usage="Livraison de produits frais en ville"
                                 data-type="Frigorifique" data-avail="available" data-avail-label="Disponible"
                                 data-desc="Fourgon frigorifique compact pour la livraison de produits frais en milieu urbain. Idéal pour les commerces de proximité et la restauration.">
@@ -438,6 +519,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="fourgons-frigo">
                     <div class="vehicle-card reveal">
                         <div class="tile alt">
+<<<<<<< HEAD
                             <!-- CASE IMAGE : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour l’image de Frigo moyen">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -445,6 +527,10 @@
                                 <small>Ajoutez votre image ici</small>
                                 <span class="image-ratio">Format conseillé : 16:10</span>
                             </div>
+=======
+                            <img src="images/fourgons/frigo-moyen.jpg" class="placeholder-img" alt="Frigo moyen" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-snow2"></i><small>Frigo moyen</small></div>
+>>>>>>> origin/main
                         </div>
                         <div class="body">
                             <h3>Fourgon frigo moyen</h3>
@@ -454,7 +540,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>-5°C à +4°C</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Fourgon frigo moyen" data-img="" data-alt="1"
+=======
+                                data-name="Fourgon frigo moyen" data-img="images/fourgons/frigo-moyen.jpg" data-alt="1"
+>>>>>>> origin/main
                                 data-capacity="2.0 tonnes - 14 m³" data-length="5.0 m" data-usage="Distribution de produits frais"
                                 data-type="Frigorifique" data-avail="available" data-avail-label="Disponible"
                                 data-desc="Fourgon frigorifique polyvalent pour la distribution de produits frais et surgelés. Capacité idéale pour les tournées régionales.">
@@ -466,6 +556,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="fourgons-frigo">
                     <div class="vehicle-card reveal">
                         <div class="tile">
+<<<<<<< HEAD
                             <!-- CASE IMAGE : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour l’image de Grand frigo">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -473,6 +564,10 @@
                                 <small>Ajoutez votre image ici</small>
                                 <span class="image-ratio">Format conseillé : 16:10</span>
                             </div>
+=======
+                            <img src="images/fourgons/frigo-grand.jpg" class="placeholder-img" alt="Grand frigo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-snow2"></i><small>Grand frigo</small></div>
+>>>>>>> origin/main
                         </div>
                         <div class="body">
                             <h3>Grand fourgon frigo</h3>
@@ -482,7 +577,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>-25°C à +10°C</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Grand fourgon frigo" data-img="" data-alt="0"
+=======
+                                data-name="Grand fourgon frigo" data-img="images/fourgons/frigo-grand.jpg" data-alt="0"
+>>>>>>> origin/main
                                 data-capacity="3.5 tonnes - 22 m³" data-length="5.8 m" data-usage="Transport de surgelés et produits frais"
                                 data-type="Frigorifique" data-avail="service" data-avail-label="En service"
                                 data-desc="Fourgon frigorifique grande capacité, offrant une plage de température étendue pour le transport de surgelés, produits frais et autres denrées périssables.">
@@ -494,6 +593,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="fourgons-frigo">
                     <div class="vehicle-card reveal">
                         <div class="tile alt">
+<<<<<<< HEAD
                             <!-- CASE IMAGE : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour l’image de Multi-températures">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -501,6 +601,10 @@
                                 <small>Ajoutez votre image ici</small>
                                 <span class="image-ratio">Format conseillé : 16:10</span>
                             </div>
+=======
+                            <img src="images/fourgons/frigo-multi-temp.jpg" class="placeholder-img" alt="Multi-températures" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-snow2"></i><small>Multi-températures</small></div>
+>>>>>>> origin/main
                         </div>
                         <div class="body">
                             <h3>Fourgon multi-températures</h3>
@@ -510,7 +614,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>3 zones distinctes</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Fourgon multi-températures" data-img="" data-alt="1"
+=======
+                                data-name="Fourgon multi-températures" data-img="images/fourgons/frigo-multi-temp.jpg" data-alt="1"
+>>>>>>> origin/main
                                 data-capacity="3.0 tonnes - 18 m³" data-length="5.5 m" data-usage="Transport multi-produits"
                                 data-type="Frigorifique" data-avail="available" data-avail-label="Disponible"
                                 data-desc="Fourgon frigorifique avec zones de température distinctes, permettant le transport simultané de produits nécessitant des températures différentes.">
@@ -532,6 +640,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="fourgons-specialises">
                     <div class="vehicle-card reveal">
                         <div class="tile">
+<<<<<<< HEAD
                             <!-- CASE IMAGE : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour l’image de Électrique">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -539,6 +648,10 @@
                                 <small>Ajoutez votre image ici</small>
                                 <span class="image-ratio">Format conseillé : 16:10</span>
                             </div>
+=======
+                            <img src="images/fourgons/electrique.jpg" class="placeholder-img" alt="Électrique" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-battery-charging"></i><small>Électrique</small></div>
+>>>>>>> origin/main
                         </div>
                         <div class="body">
                             <h3>Fourgon électrique</h3>
@@ -548,7 +661,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>Autonomie 250 km</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Fourgon électrique" data-img="" data-alt="0"
+=======
+                                data-name="Fourgon électrique" data-img="images/fourgons/electrique.jpg" data-alt="0"
+>>>>>>> origin/main
                                 data-capacity="1.5 tonnes - 12 m³" data-length="4.0 m" data-usage="Livraison urbaine zéro émission"
                                 data-type="Électrique" data-avail="available" data-avail-label="Disponible"
                                 data-desc="Fourgon 100% électrique pour une mobilité durable en zone urbaine. Idéal pour les livraisons en centre-ville avec accès aux zones à faibles émissions.">
@@ -561,6 +678,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="fourgons-specialises">
                     <div class="vehicle-card reveal">
                         <div class="tile">
+<<<<<<< HEAD
                             <!-- CASE IMAGE : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour l’image de Cellulaire">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -568,6 +686,10 @@
                                 <small>Ajoutez votre image ici</small>
                                 <span class="image-ratio">Format conseillé : 16:10</span>
                             </div>
+=======
+                            <img src="images/fourgons/cellulaire.jpg" class="placeholder-img" alt="Cellulaire" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-phone"></i><small>Cellulaire</small></div>
+>>>>>>> origin/main
                         </div>
                         <div class="body">
                             <h3>Fourgon cellulaire</h3>
@@ -577,7 +699,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>Générateur</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Fourgon cellulaire" data-img="" data-alt="0"
+=======
+                                data-name="Fourgon cellulaire" data-img="images/fourgons/cellulaire.jpg" data-alt="0"
+>>>>>>> origin/main
                                 data-capacity="Équipement télécom" data-length="4.5 m" data-usage="Intervention télécoms"
                                 data-type="Spécialisé" data-avail="service" data-avail-label="En service"
                                 data-desc="Fourgon aménagé pour les interventions télécoms, équipé d'une antenne, d'un générateur et d'espace de travail pour les techniciens.">
@@ -628,11 +754,15 @@
                 <div class="modal-body">
                     <div class="modal-img" id="modalVehicleImg">
                         <img src="" alt="Fourgon" id="modalVehicleImage" style="display:none;width:100%;height:100%;object-fit:cover;">
+<<<<<<< HEAD
                         <div class="no-image" id="modalNoImage" style="display:flex;">
                             <i class="bi bi-image" aria-hidden="true"></i>
                             <strong id="modalNoImageLabel">Image du fourgon</strong>
                             <small>Emplacement réservé à l'image — format conseillé 16:9</small>
                         </div>
+=======
+                        <div class="no-image" id="modalNoImage" style="display:flex;"><i class="bi bi-truck"></i><small>Image non disponible</small></div>
+>>>>>>> origin/main
                     </div>
                     <p class="modal-desc" id="modalVehicleDesc"></p>
                     <table class="spec-table">
@@ -717,10 +847,14 @@
             const imgSrc = btn.getAttribute('data-img');
             const imgEl = document.getElementById('modalVehicleImage');
             const noImgEl = document.getElementById('modalNoImage');
+<<<<<<< HEAD
             const noImgLabel = document.getElementById('modalNoImageLabel');
             const imgWrap = document.getElementById('modalVehicleImg');
             const vehicleName = btn.getAttribute('data-name') || 'Fourgon';
             noImgLabel.textContent = 'Image : ' + vehicleName;
+=======
+            const imgWrap = document.getElementById('modalVehicleImg');
+>>>>>>> origin/main
             
             if (imgSrc) {
                 imgEl.src = imgSrc;

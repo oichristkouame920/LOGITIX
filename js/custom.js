@@ -14,7 +14,11 @@
             {src:"images/chargeme.png"},
             {src:"images/hamburg-6849995_1280.jpg"},
             {src:"images/camionslogi.png"},
+<<<<<<< HEAD
             {src:"images/termi.jpg"} 
+=======
+            {src:"images/entrepot-dakar.jpg"}.
+>>>>>>> origin/main
           ],
           timer: false,
           animation: 'kenburns',

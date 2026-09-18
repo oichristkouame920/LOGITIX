@@ -48,6 +48,7 @@
         .vehicle-card:hover { transform:translateY(-4px); box-shadow:0 16px 32px rgba(33,26,20,.14); border-color:var(--choc); }
         .vehicle-card .tile { aspect-ratio:16/10; background:linear-gradient(135deg,var(--navy),var(--choc-dark)); display:flex; align-items:center; justify-content:center; overflow:hidden; position:relative; }
         .vehicle-card .tile.alt { background:linear-gradient(135deg,var(--choc),var(--navy)); }
+<<<<<<< HEAD
         /* CASES RESERVEES AUX IMAGES */
         .vehicle-card .tile .image-slot {
             width:calc(100% - 1.5rem);
@@ -77,6 +78,11 @@
             object-fit:cover;
             display:block;
         }
+=======
+        .vehicle-card .tile .placeholder-img { width:100%; height:100%; object-fit:cover; display:block; }
+        .vehicle-card .tile .no-image { font-size:3rem; color:rgba(255,255,255,.92); text-align:center; padding:1rem; }
+        .vehicle-card .tile .no-image small { display:block; font-size:.7rem; opacity:.7; margin-top:.4rem; }
+>>>>>>> origin/main
         .vehicle-card .body { padding:1.2rem 1.3rem 1.4rem; display:flex; flex-direction:column; flex:1; }
         .vehicle-card h3 { font-size:1.05rem; font-weight:800; color:var(--navy); margin-bottom:.7rem; }
         .vehicle-card .specs { list-style:none; padding:0; margin:0 0 1.2rem; display:grid; gap:.4rem; flex:1; }
@@ -108,6 +114,7 @@
         .modal-body { padding:0; }
         .modal-img { width:100%; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,var(--navy),var(--choc-dark)); overflow:hidden; }
         .modal-img img { width:100%; height:100%; object-fit:cover; }
+<<<<<<< HEAD
         .modal-img .no-image {
             width:calc(100% - 2rem);
             height:calc(100% - 2rem);
@@ -127,6 +134,10 @@
         .modal-img .no-image i { font-size:3.6rem; }
         .modal-img .no-image strong { font-size:1rem; font-weight:800; }
         .modal-img .no-image small { display:block; font-size:.75rem; opacity:.72; }
+=======
+        .modal-img .no-image { font-size:5rem; color:rgba(255,255,255,.92); text-align:center; padding:1rem; }
+        .modal-img .no-image small { display:block; font-size:.8rem; opacity:.7; margin-top:.5rem; }
+>>>>>>> origin/main
         .modal-desc { padding:1.4rem 1.6rem .2rem; color:var(--text); font-size:.9rem; line-height:1.65; }
         .spec-table { width:100%; border-collapse:collapse; margin:1rem 0 1.6rem; }
         .spec-table tr { border-bottom:1px solid var(--border); }
@@ -175,17 +186,29 @@
                     </li>
 
                     <li class="nav-item">
+<<<<<<< HEAD
                         <a class="nav-link click-scroll" href="fourgons.html">Fourgons </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link click-scroll" href="chauffeur.html">Nos Chauffeurs</a>
+=======
+                        <a class="nav-link click-scroll" href="fourgon.html">Fourgons </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="chauffeurs.html">Nos Chauffeurs</a>
+>>>>>>> origin/main
                     </li>
 
                 </ul>
 
                 <div class="ms-xl-2">
+<<<<<<< HEAD
                     <a class="btn custom-btn custom-border-btn" href="se_connecter.php">
+=======
+                    <a class="btn custom-btn custom-border-btn" href="se_connecter.html">
+>>>>>>> origin/main
                         Suivre son colis
                         <i class="bi-arrow-up-right ms-2"></i>
                     </a>
@@ -214,6 +237,7 @@
             <button class="filter-btn" data-filter="oversize">Oversize & Hors normes</button>
         </div>
 
+<<<<<<< HEAD
         <!--
             MODE D'EMPLOI DES CASES IMAGES
             Quand une photo est disponible, remplacez simplement :
@@ -223,6 +247,8 @@
             Le cadrage sera appliqué automatiquement.
         -->
 
+=======
+>>>>>>> origin/main
         <!-- REMORQUES STANDARDS -->
         <div class="cat-section" data-cat-section="standard">
             <div class="cat-heading">
@@ -233,6 +259,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="standard">
                     <div class="vehicle-card reveal">
                         <div class="tile">
+<<<<<<< HEAD
                             <!-- CASE IMAGE : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour l’image de Bâchée coulissante">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -240,6 +267,10 @@
                                 <small>Ajoutez votre image ici</small>
                                 <span class="image-ratio">Format conseillé : 16:10</span>
                             </div>
+=======
+                            <img src="images/remorques/bachee-coulissante.jpg" class="placeholder-img" alt="Bâchée coulissante" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-box-seam"></i><small>Bâchée coulissante</small></div>
+>>>>>>> origin/main
                         </div>
                         <div class="body">
                             <h3>Bâchée coulissante</h3>
@@ -249,7 +280,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>33 palettes</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Bâchée coulissante" data-img="" data-alt="0"
+=======
+                                data-name="Bâchée coulissante" data-img="images/remorques/bachee-coulissante.jpg" data-alt="0"
+>>>>>>> origin/main
                                 data-capacity="33 palettes (90 m³)" data-length="13.6 m" data-usage="Transport national et international"
                                 data-type="Bâchée" data-avail="available" data-avail-label="Disponible"
                                 data-desc="Remorque bâchée coulissante idéale pour le transport de marchandises palettisées. Accès latéral facilité par la bâche coulissante, permettant des chargements et déchargements rapides.">
@@ -261,6 +296,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="standard">
                     <div class="vehicle-card reveal">
                         <div class="tile alt">
+<<<<<<< HEAD
                             <!-- CASE IMAGE : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour l’image de Fourgon sec">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -268,6 +304,10 @@
                                 <small>Ajoutez votre image ici</small>
                                 <span class="image-ratio">Format conseillé : 16:10</span>
                             </div>
+=======
+                            <img src="images/remorques/fourgon-sec.jpg" class="placeholder-img" alt="Fourgon sec" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-box"></i><small>Fourgon sec</small></div>
+>>>>>>> origin/main
                         </div>
                         <div class="body">
                             <h3>Fourgon sec</h3>
@@ -277,7 +317,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>33 palettes</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Fourgon sec" data-img="" data-alt="1"
+=======
+                                data-name="Fourgon sec" data-img="images/remorques/fourgon-sec.jpg" data-alt="1"
+>>>>>>> origin/main
                                 data-capacity="33 palettes (92 m³)" data-length="13.6 m" data-usage="Transport de marchandises diverses"
                                 data-type="Fermé" data-avail="available" data-avail-label="Disponible"
                                 data-desc="Remorque fermée totalement sécurisée, protégeant les marchandises des intempéries et des vols. Idéale pour le transport de biens de consommation.">
@@ -289,6 +333,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="standard">
                     <div class="vehicle-card reveal">
                         <div class="tile">
+<<<<<<< HEAD
                             <!-- CASE IMAGE : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour l’image de Plateau ridelle">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -296,6 +341,10 @@
                                 <small>Ajoutez votre image ici</small>
                                 <span class="image-ratio">Format conseillé : 16:10</span>
                             </div>
+=======
+                            <img src="images/remorques/plateau-ridelle.jpg" class="placeholder-img" alt="Plateau ridelle" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-grid"></i><small>Plateau ridelle</small></div>
+>>>>>>> origin/main
                         </div>
                         <div class="body">
                             <h3>Plateau ridelle</h3>
@@ -305,7 +354,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>Multi-usages</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Plateau ridelle" data-img="" data-alt="0"
+=======
+                                data-name="Plateau ridelle" data-img="images/remorques/plateau-ridelle.jpg" data-alt="0"
+>>>>>>> origin/main
                                 data-capacity="24 tonnes" data-length="13.6 m" data-usage="Transport de marchandises volumineuses"
                                 data-type="Plateau" data-avail="available" data-avail-label="Disponible"
                                 data-desc="Remorque plateau avec ridelles amovibles, parfaite pour les charges lourdes et volumineuses que les conteneurs fermés ne peuvent pas accueillir.">
@@ -317,6 +370,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="standard">
                     <div class="vehicle-card reveal">
                         <div class="tile alt">
+<<<<<<< HEAD
                             <!-- CASE IMAGE : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour l’image de Mégabâchée">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -324,6 +378,10 @@
                                 <small>Ajoutez votre image ici</small>
                                 <span class="image-ratio">Format conseillé : 16:10</span>
                             </div>
+=======
+                            <img src="images/remorques/megabachee.jpg" class="placeholder-img" alt="Mégabâchée" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-archive"></i><small>Mégabâchée</small></div>
+>>>>>>> origin/main
                         </div>
                         <div class="body">
                             <h3>Mégabâchée</h3>
@@ -333,7 +391,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>30 palettes</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Mégabâchée" data-img="" data-alt="1"
+=======
+                                data-name="Mégabâchée" data-img="images/remorques/megabachee.jpg" data-alt="1"
+>>>>>>> origin/main
                                 data-capacity="30 palettes (105 m³)" data-length="13.6 m" data-usage="Transport de volume"
                                 data-type="Bâchée" data-avail="service" data-avail-label="En service"
                                 data-desc="Version surdimensionnée de la remorque bâchée, offrant un volume de chargement maximal pour les marchandises légères mais volumineuses.">
@@ -355,6 +417,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="specialisees">
                     <div class="vehicle-card reveal">
                         <div class="tile">
+<<<<<<< HEAD
                             <!-- CASE IMAGE : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour l’image de Frigorifique">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -362,6 +425,10 @@
                                 <small>Ajoutez votre image ici</small>
                                 <span class="image-ratio">Format conseillé : 16:10</span>
                             </div>
+=======
+                            <img src="images/remorques/frigorifique.jpg" class="placeholder-img" alt="Frigorifique" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-snow2"></i><small>Frigorifique</small></div>
+>>>>>>> origin/main
                         </div>
                         <div class="body">
                             <h3>Frigorifique</h3>
@@ -371,7 +438,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>26 palettes</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Frigorifique" data-img="" data-alt="0"
+=======
+                                data-name="Frigorifique" data-img="images/remorques/frigorifique.jpg" data-alt="0"
+>>>>>>> origin/main
                                 data-capacity="26 palettes" data-length="13.6 m" data-usage="Transport de produits frais et surgelés"
                                 data-type="Frigorifique" data-avail="available" data-avail-label="Disponible"
                                 data-desc="Remorque isotherme avec groupe frigorifique intégré, maintenant une température constante pour le transport de denrées périssables, médicaments et produits sensibles.">
@@ -383,6 +454,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="specialisees">
                     <div class="vehicle-card reveal">
                         <div class="tile alt">
+<<<<<<< HEAD
                             <!-- CASE IMAGE : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour l’image de Citerne">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -390,6 +462,10 @@
                                 <small>Ajoutez votre image ici</small>
                                 <span class="image-ratio">Format conseillé : 16:10</span>
                             </div>
+=======
+                            <img src="images/remorques/citerne.jpg" class="placeholder-img" alt="Citerne" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-droplet"></i><small>Citerne</small></div>
+>>>>>>> origin/main
                         </div>
                         <div class="body">
                             <h3>Citerne</h3>
@@ -399,7 +475,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>Compartimentée</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Citerne" data-img="" data-alt="1"
+=======
+                                data-name="Citerne" data-img="images/remorques/citerne.jpg" data-alt="1"
+>>>>>>> origin/main
                                 data-capacity="40 000 litres" data-length="Varié" data-usage="Transport de liquides"
                                 data-type="Citerne" data-avail="available" data-avail-label="Disponible"
                                 data-desc="Remorque citerne conçue pour le transport sécurisé de liquides alimentaires, chimiques ou de carburants, avec des compartiments pour le multi-produits.">
@@ -411,6 +491,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="specialisees">
                     <div class="vehicle-card reveal">
                         <div class="tile">
+<<<<<<< HEAD
                             <!-- CASE IMAGE : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour l’image de Citerne gaz">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -418,6 +499,10 @@
                                 <small>Ajoutez votre image ici</small>
                                 <span class="image-ratio">Format conseillé : 16:10</span>
                             </div>
+=======
+                            <img src="images/remorques/citerne-gas.jpg" class="placeholder-img" alt="Citerne gaz" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-fire"></i><small>Citerne gaz</small></div>
+>>>>>>> origin/main
                         </div>
                         <div class="body">
                             <h3>Citerne gaz (GPL)</h3>
@@ -427,7 +512,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>Sécurité renforcée</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Citerne gaz (GPL)" data-img="" data-alt="0"
+=======
+                                data-name="Citerne gaz (GPL)" data-img="images/remorques/citerne-gas.jpg" data-alt="0"
+>>>>>>> origin/main
                                 data-capacity="25 000 litres" data-length="Varié" data-usage="Transport de gaz liquéfiés"
                                 data-type="Citerne sous pression" data-avail="service" data-avail-label="En service"
                                 data-desc="Remorque citerne sous pression pour le transport de gaz de pétrole liquéfié (GPL) et autres gaz sous pression, avec équipements de sécurité certifiés.">
@@ -439,6 +528,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="specialisees">
                     <div class="vehicle-card reveal">
                         <div class="tile alt">
+<<<<<<< HEAD
                             <!-- CASE IMAGE : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour l’image de Porte-voitures">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -446,6 +536,10 @@
                                 <small>Ajoutez votre image ici</small>
                                 <span class="image-ratio">Format conseillé : 16:10</span>
                             </div>
+=======
+                            <img src="images/remorques/porte-voitures.jpg" class="placeholder-img" alt="Porte-voitures" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-truck-flatbed"></i><small>Porte-voitures</small></div>
+>>>>>>> origin/main
                         </div>
                         <div class="body">
                             <h3>Porte-voitures</h3>
@@ -455,7 +549,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>Protection intégrée</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Porte-voitures" data-img="" data-alt="1"
+=======
+                                data-name="Porte-voitures" data-img="images/remorques/porte-voitures.jpg" data-alt="1"
+>>>>>>> origin/main
                                 data-capacity="6 à 8 véhicules" data-length="13.6 m" data-usage="Transport automobile"
                                 data-type="Spécialisée" data-avail="service" data-avail-label="En service"
                                 data-desc="Remorque à deux niveaux pour le transport de véhicules neufs ou d'occasion, avec systèmes de fixation et protection contre les intempéries.">
@@ -467,6 +565,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="specialisees">
                     <div class="vehicle-card reveal">
                         <div class="tile">
+<<<<<<< HEAD
                             <!-- CASE IMAGE : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour l’image de Porte-conteneurs">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -474,6 +573,10 @@
                                 <small>Ajoutez votre image ici</small>
                                 <span class="image-ratio">Format conseillé : 16:10</span>
                             </div>
+=======
+                            <img src="images/remorques/porte-conteneurs.jpg" class="placeholder-img" alt="Porte-conteneurs" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-bricks"></i><small>Porte-conteneurs</small></div>
+>>>>>>> origin/main
                         </div>
                         <div class="body">
                             <h3>Porte-conteneurs</h3>
@@ -483,7 +586,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>Multimodal</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Porte-conteneurs" data-img="" data-alt="0"
+=======
+                                data-name="Porte-conteneurs" data-img="images/remorques/porte-conteneurs.jpg" data-alt="0"
+>>>>>>> origin/main
                                 data-capacity="30 tonnes" data-length="20-40 pieds" data-usage="Transport multimodal"
                                 data-type="Spécialisée" data-avail="available" data-avail-label="Disponible"
                                 data-desc="Remorque châssis conçue pour le transport de conteneurs ISO de 20 ou 40 pieds, facilitant le transfert entre les différents modes de transport.">
@@ -495,6 +602,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="specialisees">
                     <div class="vehicle-card reveal">
                         <div class="tile alt">
+<<<<<<< HEAD
                             <!-- CASE IMAGE : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour l’image de Benne">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -502,6 +610,10 @@
                                 <small>Ajoutez votre image ici</small>
                                 <span class="image-ratio">Format conseillé : 16:10</span>
                             </div>
+=======
+                            <img src="images/remorques/benne.jpg" class="placeholder-img" alt="Benne" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-dumpster"></i><small>Benne</small></div>
+>>>>>>> origin/main
                         </div>
                         <div class="body">
                             <h3>Benne</h3>
@@ -511,7 +623,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>Basculement hydraulique</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Benne" data-img="" data-alt="1"
+=======
+                                data-name="Benne" data-img="images/remorques/benne.jpg" data-alt="1"
+>>>>>>> origin/main
                                 data-capacity="20-30 m³" data-length="6-8 m" data-usage="Transport de matériaux en vrac"
                                 data-type="Benne" data-avail="available" data-avail-label="Disponible"
                                 data-desc="Remorque benne basculante pour le transport de sable, graviers, déchets et autres matériaux en vrac. Système hydraulique puissant pour un déchargement rapide.">
@@ -533,6 +649,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="semi-remorques">
                     <div class="vehicle-card reveal">
                         <div class="tile">
+<<<<<<< HEAD
                             <!-- CASE IMAGE : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour l’image de Semi-remorque bâchée">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -540,6 +657,10 @@
                                 <small>Ajoutez votre image ici</small>
                                 <span class="image-ratio">Format conseillé : 16:10</span>
                             </div>
+=======
+                            <img src="images/remorques/semi-bachee.jpg" class="placeholder-img" alt="Semi-remorque bâchée" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-truck"></i><small>Semi-remorque bâchée</small></div>
+>>>>>>> origin/main
                         </div>
                         <div class="body">
                             <h3>Semi-remorque bâchée</h3>
@@ -549,7 +670,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>24 palettes</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Semi-remorque bâchée" data-img="" data-alt="0"
+=======
+                                data-name="Semi-remorque bâchée" data-img="images/remorques/semi-bachee.jpg" data-alt="0"
+>>>>>>> origin/main
                                 data-capacity="24 palettes (88 m³)" data-length="13.6 m" data-usage="Transport général"
                                 data-type="Semi-remorque" data-avail="available" data-avail-label="Disponible"
                                 data-desc="Semi-remorque standard bâchée, offrant une bonne protection et une grande flexibilité de chargement pour les marchandises diverses.">
@@ -561,6 +686,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="semi-remorques">
                     <div class="vehicle-card reveal">
                         <div class="tile alt">
+<<<<<<< HEAD
                             <!-- CASE IMAGE : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour l’image de Semi-remorque fourgon">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -568,6 +694,10 @@
                                 <small>Ajoutez votre image ici</small>
                                 <span class="image-ratio">Format conseillé : 16:10</span>
                             </div>
+=======
+                            <img src="images/remorques/semi-fourgon.jpg" class="placeholder-img" alt="Semi-remorque fourgon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-building"></i><small>Semi-remorque fourgon</small></div>
+>>>>>>> origin/main
                         </div>
                         <div class="body">
                             <h3>Semi-remorque fourgon</h3>
@@ -577,7 +707,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>33 palettes</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Semi-remorque fourgon" data-img="" data-alt="1"
+=======
+                                data-name="Semi-remorque fourgon" data-img="images/remorques/semi-fourgon.jpg" data-alt="1"
+>>>>>>> origin/main
                                 data-capacity="33 palettes (96 m³)" data-length="13.6 m" data-usage="Transport sécurisé"
                                 data-type="Semi-remorque" data-avail="available" data-avail-label="Disponible"
                                 data-desc="Semi-remorque fermée offrant une sécurité maximale et une protection totale contre les intempéries pour les marchandises de valeur.">
@@ -589,6 +723,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="semi-remorques">
                     <div class="vehicle-card reveal">
                         <div class="tile">
+<<<<<<< HEAD
                             <!-- CASE IMAGE : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour l’image de Semi-remorque frigo">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -596,6 +731,10 @@
                                 <small>Ajoutez votre image ici</small>
                                 <span class="image-ratio">Format conseillé : 16:10</span>
                             </div>
+=======
+                            <img src="images/remorques/semi-frigo.jpg" class="placeholder-img" alt="Semi-remorque frigo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-thermometer-half"></i><small>Semi-remorque frigo</small></div>
+>>>>>>> origin/main
                         </div>
                         <div class="body">
                             <h3>Semi-remorque frigo</h3>
@@ -605,7 +744,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>26 palettes</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Semi-remorque frigo" data-img="" data-alt="0"
+=======
+                                data-name="Semi-remorque frigo" data-img="images/remorques/semi-frigo.jpg" data-alt="0"
+>>>>>>> origin/main
                                 data-capacity="26 palettes" data-length="13.6 m" data-usage="Transport de produits frais"
                                 data-type="Semi-remorque" data-avail="service" data-avail-label="En service"
                                 data-desc="Semi-remorque isotherme avec groupe frigorifique indépendant, garantissant la chaîne du froid pour les denrées périssables.">
@@ -617,6 +760,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="semi-remorques">
                     <div class="vehicle-card reveal">
                         <div class="tile alt">
+<<<<<<< HEAD
                             <!-- CASE IMAGE : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour l’image de Semi-remorque extensible">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -624,6 +768,10 @@
                                 <small>Ajoutez votre image ici</small>
                                 <span class="image-ratio">Format conseillé : 16:10</span>
                             </div>
+=======
+                            <img src="images/remorques/semi-extensible.jpg" class="placeholder-img" alt="Semi-remorque extensible" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-arrows-expand"></i><small>Semi-remorque extensible</small></div>
+>>>>>>> origin/main
                         </div>
                         <div class="body">
                             <h3>Semi-remorque extensible</h3>
@@ -633,7 +781,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>Marchandises longues</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Semi-remorque extensible" data-img="" data-alt="1"
+=======
+                                data-name="Semi-remorque extensible" data-img="images/remorques/semi-extensible.jpg" data-alt="1"
+>>>>>>> origin/main
                                 data-capacity="22 tonnes" data-length="13.6-18.6 m" data-usage="Transport de marchandises longues"
                                 data-type="Semi-remorque" data-avail="available" data-avail-label="Disponible"
                                 data-desc="Semi-remorque à longueur variable, idéale pour le transport de tubes, poutres, et autres charges longues qui dépassent les dimensions standard.">
@@ -655,6 +807,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="oversize">
                     <div class="vehicle-card reveal">
                         <div class="tile">
+<<<<<<< HEAD
                             <!-- CASE IMAGE : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour l’image de Lowboy">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -662,6 +815,10 @@
                                 <small>Ajoutez votre image ici</small>
                                 <span class="image-ratio">Format conseillé : 16:10</span>
                             </div>
+=======
+                            <img src="images/remorques/lowboy.jpg" class="placeholder-img" alt="Lowboy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-arrow-down"></i><small>Lowboy</small></div>
+>>>>>>> origin/main
                         </div>
                         <div class="body">
                             <h3>Lowboy (Plateau surbaissé)</h3>
@@ -671,7 +828,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>Engins de chantier</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Lowboy (Plateau surbaissé)" data-img="" data-alt="0"
+=======
+                                data-name="Lowboy (Plateau surbaissé)" data-img="images/remorques/lowboy.jpg" data-alt="0"
+>>>>>>> origin/main
                                 data-capacity="45 tonnes" data-length="12-16 m" data-usage="Transport d'engins de chantier et machines lourdes"
                                 data-type="Oversize" data-avail="available" data-avail-label="Disponible"
                                 data-desc="Remorque plateau surbaissé à faible hauteur de chargement, idéale pour le transport de pelleteuses, bulldozers, grues et autres engins de chantier de grande hauteur.">
@@ -683,6 +844,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="oversize">
                     <div class="vehicle-card reveal">
                         <div class="tile alt">
+<<<<<<< HEAD
                             <!-- CASE IMAGE : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour l’image de Multi-essieux">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -690,6 +852,10 @@
                                 <small>Ajoutez votre image ici</small>
                                 <span class="image-ratio">Format conseillé : 16:10</span>
                             </div>
+=======
+                            <img src="images/remorques/remorque-axles.jpg" class="placeholder-img" alt="Multi-essieux" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-asterisk"></i><small>Multi-essieux</small></div>
+>>>>>>> origin/main
                         </div>
                         <div class="body">
                             <h3>Remorque multi-essieux</h3>
@@ -699,7 +865,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>Modulable</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Remorque multi-essieux" data-img="" data-alt="1"
+=======
+                                data-name="Remorque multi-essieux" data-img="images/remorques/remorque-axles.jpg" data-alt="1"
+>>>>>>> origin/main
                                 data-capacity="80 tonnes" data-length="14-24 m" data-usage="Transport de charges exceptionnelles"
                                 data-type="Oversize" data-avail="available" data-avail-label="Disponible"
                                 data-desc="Remorque à essieux multiples pour la répartition des charges lourdes, permettant le transport de transformateurs, générateurs et équipements industriels de très grande masse.">
@@ -711,6 +881,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="oversize">
                     <div class="vehicle-card reveal">
                         <div class="tile">
+<<<<<<< HEAD
                             <!-- CASE IMAGE : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour l’image de Colis longs">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -718,6 +889,10 @@
                                 <small>Ajoutez votre image ici</small>
                                 <span class="image-ratio">Format conseillé : 16:10</span>
                             </div>
+=======
+                            <img src="images/remorques/remorque-colis.jpg" class="placeholder-img" alt="Colis longs" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-rulers"></i><small>Colis longs</small></div>
+>>>>>>> origin/main
                         </div>
                         <div class="body">
                             <h3>Remorque pour colis longs</h3>
@@ -727,7 +902,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>Convoi exceptionnel</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Remorque pour colis longs" data-img="" data-alt="0"
+=======
+                                data-name="Remorque pour colis longs" data-img="images/remorques/remorque-colis.jpg" data-alt="0"
+>>>>>>> origin/main
                                 data-capacity="30 tonnes" data-length="Jusqu'à 30 m" data-usage="Transport de colis longs"
                                 data-type="Oversize" data-avail="service" data-avail-label="En service"
                                 data-desc="Remorque spécialement conçue pour le transport de colis longs comme les éoliennes, tronçons de pont, poutres métalliques, et structures industrielles.">
@@ -739,6 +918,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="oversize">
                     <div class="vehicle-card reveal">
                         <div class="tile alt">
+<<<<<<< HEAD
                             <!-- CASE IMAGE : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour l’image de Modulaire">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -746,6 +926,10 @@
                                 <small>Ajoutez votre image ici</small>
                                 <span class="image-ratio">Format conseillé : 16:10</span>
                             </div>
+=======
+                            <img src="images/remorques/remorque-modulaire.jpg" class="placeholder-img" alt="Modulaire" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-layers"></i><small>Modulaire</small></div>
+>>>>>>> origin/main
                         </div>
                         <div class="body">
                             <h3>Remorque modulaire</h3>
@@ -755,7 +939,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>Configurations variables</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Remorque modulaire" data-img="" data-alt="1"
+=======
+                                data-name="Remorque modulaire" data-img="images/remorques/remorque-modulaire.jpg" data-alt="1"
+>>>>>>> origin/main
                                 data-capacity="60 tonnes" data-length="12-24 m" data-usage="Transport de charges exceptionnelles"
                                 data-type="Oversize" data-avail="available" data-avail-label="Disponible"
                                 data-desc="Remorque modulaire extensible offrant une flexibilité maximale pour le transport de charges exceptionnelles de différentes tailles et poids.">
@@ -767,6 +955,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="oversize">
                     <div class="vehicle-card reveal">
                         <div class="tile">
+<<<<<<< HEAD
                             <!-- CASE IMAGE : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour l’image de Porte-engins">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -774,6 +963,10 @@
                                 <small>Ajoutez votre image ici</small>
                                 <span class="image-ratio">Format conseillé : 16:10</span>
                             </div>
+=======
+                            <img src="images/remorques/remorque-porte-engins.jpg" class="placeholder-img" alt="Porte-engins" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-crane"></i><small>Porte-engins</small></div>
+>>>>>>> origin/main
                         </div>
                         <div class="body">
                             <h3>Remorque porte-engins</h3>
@@ -783,7 +976,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>Chargement au sol</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Remorque porte-engins" data-img="" data-alt="0"
+=======
+                                data-name="Remorque porte-engins" data-img="images/remorques/remorque-porte-engins.jpg" data-alt="0"
+>>>>>>> origin/main
                                 data-capacity="50 tonnes" data-length="12-16 m" data-usage="Transport d'engins de chantier"
                                 data-type="Oversize" data-avail="service" data-avail-label="En service"
                                 data-desc="Remorque avec rampe d'accès pour le chargement par roulage des engins de chantier, permettant un accès facile et sécurisé pour les machines sur chenilles ou roues.">
@@ -795,6 +992,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="oversize">
                     <div class="vehicle-card reveal">
                         <div class="tile alt">
+<<<<<<< HEAD
                             <!-- CASE IMAGE : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour l’image de Semi-remorque oversize">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -802,6 +1000,10 @@
                                 <small>Ajoutez votre image ici</small>
                                 <span class="image-ratio">Format conseillé : 16:10</span>
                             </div>
+=======
+                            <img src="images/remorques/remorque-semi-remorque-oversize.jpg" class="placeholder-img" alt="Semi-remorque oversize" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-truck"></i><small>Semi-remorque oversize</small></div>
+>>>>>>> origin/main
                         </div>
                         <div class="body">
                             <h3>Semi-remorque oversize</h3>
@@ -811,7 +1013,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>Escorte obligatoire</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Semi-remorque oversize" data-img="" data-alt="1"
+=======
+                                data-name="Semi-remorque oversize" data-img="images/remorques/remorque-semi-remorque-oversize.jpg" data-alt="1"
+>>>>>>> origin/main
                                 data-capacity="60 tonnes" data-length="14-20 m" data-usage="Transport de charges surdimensionnées"
                                 data-type="Oversize" data-avail="available" data-avail-label="Disponible"
                                 data-desc="Semi-remorque pour charges larges et lourdes, dépassant les dimensions standards. Transport nécessitant une autorisation spéciale et escorte.">
@@ -861,11 +1067,15 @@
                 <div class="modal-body">
                     <div class="modal-img" id="modalVehicleImg">
                         <img src="" alt="Remorque" id="modalVehicleImage" style="display:none;width:100%;height:100%;object-fit:cover;">
+<<<<<<< HEAD
                         <div class="no-image" id="modalNoImage" style="display:flex;">
                             <i class="bi bi-image" aria-hidden="true"></i>
                             <strong id="modalNoImageLabel">Image de la remorque</strong>
                             <small>Emplacement réservé à l'image — format conseillé 16:9</small>
                         </div>
+=======
+                        <div class="no-image" id="modalNoImage" style="display:flex;"><i class="bi bi-box-seam"></i><small>Image non disponible</small></div>
+>>>>>>> origin/main
                     </div>
                     <p class="modal-desc" id="modalVehicleDesc"></p>
                     <table class="spec-table">
@@ -950,10 +1160,14 @@
             const imgSrc = btn.getAttribute('data-img');
             const imgEl = document.getElementById('modalVehicleImage');
             const noImgEl = document.getElementById('modalNoImage');
+<<<<<<< HEAD
             const noImgLabel = document.getElementById('modalNoImageLabel');
             const imgWrap = document.getElementById('modalVehicleImg');
             const vehicleName = btn.getAttribute('data-name') || 'Remorque';
             noImgLabel.textContent = 'Image : ' + vehicleName;
+=======
+            const imgWrap = document.getElementById('modalVehicleImg');
+>>>>>>> origin/main
             
             if (imgSrc) {
                 imgEl.src = imgSrc;

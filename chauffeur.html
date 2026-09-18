@@ -41,6 +41,7 @@
         .driver-card:hover { transform:translateY(-4px); box-shadow:0 16px 32px rgba(33,26,20,.14); border-color:var(--choc); }
         .driver-card .tile { aspect-ratio:4/3; background:linear-gradient(135deg,var(--navy),var(--choc-dark)); display:flex; align-items:center; justify-content:center; overflow:hidden; position:relative; }
         .driver-card .tile.alt { background:linear-gradient(135deg,var(--choc),var(--navy)); }
+<<<<<<< HEAD
         /* CASES RESERVEES AUX IMAGES */
         .driver-card .tile .image-slot {
             width:calc(100% - 1.5rem);
@@ -70,6 +71,11 @@
             object-fit:cover;
             display:block;
         }
+=======
+        .driver-card .tile .placeholder-img { width:100%; height:100%; object-fit:cover; display:block; }
+        .driver-card .tile .no-image { font-size:4rem; color:rgba(255,255,255,.92); text-align:center; padding:1rem; }
+        .driver-card .tile .no-image small { display:block; font-size:.8rem; opacity:.7; margin-top:.4rem; }
+>>>>>>> origin/main
         .driver-card .body { padding:1.2rem 1.3rem 1.4rem; display:flex; flex-direction:column; flex:1; }
         .driver-card h3 { font-size:1.1rem; font-weight:800; color:var(--navy); margin-bottom:.2rem; }
         .driver-card .role { font-size:.85rem; color:var(--choc); font-weight:600; margin-bottom:.8rem; }
@@ -102,6 +108,7 @@
         .modal-body { padding:0; }
         .modal-img { width:100%; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,var(--navy),var(--choc-dark)); overflow:hidden; }
         .modal-img img { width:100%; height:100%; object-fit:cover; }
+<<<<<<< HEAD
         .modal-img .no-image {
             width:calc(100% - 2rem);
             height:calc(100% - 2rem);
@@ -121,6 +128,10 @@
         .modal-img .no-image i { font-size:3.6rem; }
         .modal-img .no-image strong { font-size:1rem; font-weight:800; }
         .modal-img .no-image small { display:block; font-size:.75rem; opacity:.72; }
+=======
+        .modal-img .no-image { font-size:5rem; color:rgba(255,255,255,.92); text-align:center; padding:1rem; }
+        .modal-img .no-image small { display:block; font-size:.8rem; opacity:.7; margin-top:.5rem; }
+>>>>>>> origin/main
         .modal-desc { padding:1.4rem 1.6rem .2rem; color:var(--text); font-size:.9rem; line-height:1.65; }
         .spec-table { width:100%; border-collapse:collapse; margin:1rem 0 1.6rem; }
         .spec-table tr { border-bottom:1px solid var(--border); }
@@ -195,7 +206,11 @@
                 </ul>
 
                 <div class="ms-xl-2">
+<<<<<<< HEAD
                     <a class="btn custom-btn custom-border-btn" href="se_connecter.php">
+=======
+                    <a class="btn custom-btn custom-border-btn" href="se_connecter.html">
+>>>>>>> origin/main
                         Suivre son colis
                         <i class="bi-arrow-up-right ms-2"></i>
                     </a>
@@ -227,6 +242,7 @@
             <button class="filter-btn" data-filter="specialises">Chauffeurs spécialisés</button>
         </div>
 
+<<<<<<< HEAD
         <!--
             MODE D'EMPLOI DES CASES IMAGES
             Quand une photo est disponible, remplacez simplement un bloc :
@@ -236,6 +252,8 @@
             La taille et le cadrage seront appliqués automatiquement.
         -->
 
+=======
+>>>>>>> origin/main
         <!-- CHAUFFEURS POIDS LOURDS -->
         <div class="cat-section" data-cat-section="tracteurs">
             <div class="cat-heading">
@@ -246,11 +264,19 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="tracteurs">
                     <div class="driver-card reveal">
                         <div class="tile">
+<<<<<<< HEAD
                             <!-- CASE IMAGE CHAUFFEUR 01 : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <img src="images/chauffeurs/koffi-yao.png" alt="Koffi Yao">
                         </div>
                         <div class="body">
                             <h3>Koffi Yao</h3>
+=======
+                            <img src="images/chauffeurs/chauffeur1.jpg" class="placeholder-img" alt="Jean Dupont" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-person-circle"></i><small>Jean Dupont</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Jean Dupont</h3>
+>>>>>>> origin/main
                             <div class="role"><i class="bi bi-star-fill me-1" style="color:var(--choc);"></i> Chauffeur poids lourds</div>
                             <ul class="specs">
                                 <li><i class="bi bi-check-circle-fill"></i>18 ans d'expérience</li>
@@ -258,7 +284,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>International</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Koffi Yao" data-img="" data-alt="0"
+=======
+                                data-name="Jean Dupont" data-img="images/chauffeurs/chauffeur1.jpg" data-alt="0"
+>>>>>>> origin/main
                                 data-experience="18 ans" data-vehicles="Mercedes Actros, Scania S" data-zone="International"
                                 data-type="Poids lourds" data-avail="available" data-avail-label="Disponible"
                                 data-desc="Chauffeur poids lourds expérimenté, spécialiste des longs trajets internationaux. Maîtrise parfaite des normes de sécurité et de la gestion des temps de conduite.">
@@ -270,6 +300,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="tracteurs">
                     <div class="driver-card reveal">
                         <div class="tile alt">
+<<<<<<< HEAD
                             <!-- CASE IMAGE CHAUFFEUR 02 : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour la photo de Aïssata Koné">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -280,6 +311,13 @@
                         </div>
                         <div class="body">
                             <h3>Aïssata Koné</h3>
+=======
+                            <img src="images/chauffeurs/chauffeur2.jpg" class="placeholder-img" alt="Marie Koffi" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-person-circle"></i><small>Marie Koffi</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Marie Koffi</h3>
+>>>>>>> origin/main
                             <div class="role"><i class="bi bi-star-fill me-1" style="color:var(--choc);"></i> Chauffeur poids lourds</div>
                             <ul class="specs">
                                 <li><i class="bi bi-check-circle-fill"></i>12 ans d'expérience</li>
@@ -287,7 +325,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>National</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Aïssata Koné" data-img="" data-alt="1"
+=======
+                                data-name="Marie Koffi" data-img="images/chauffeurs/chauffeur2.jpg" data-alt="1"
+>>>>>>> origin/main
                                 data-experience="12 ans" data-vehicles="Volvo FH, MAN TGX" data-zone="National"
                                 data-type="Poids lourds" data-avail="available" data-avail-label="Disponible"
                                 data-desc="Chauffeur poids lourds fiable et ponctuelle, spécialisée dans les rotations nationales régulières. Excellente connaissance du réseau routier national.">
@@ -299,6 +341,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="tracteurs">
                     <div class="driver-card reveal">
                         <div class="tile">
+<<<<<<< HEAD
                             <!-- CASE IMAGE CHAUFFEUR 03 : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour la photo de Moussa N'Guessan">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -309,6 +352,13 @@
                         </div>
                         <div class="body">
                             <h3>Moussa N'Guessan</h3>
+=======
+                            <img src="images/chauffeurs/chauffeur3.jpg" class="placeholder-img" alt="Kouadio N'guessan" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-person-circle"></i><small>Kouadio N'guessan</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Kouadio N'guessan</h3>
+>>>>>>> origin/main
                             <div class="role"><i class="bi bi-star-fill me-1" style="color:var(--choc);"></i> Chauffeur poids lourds</div>
                             <ul class="specs">
                                 <li><i class="bi bi-check-circle-fill"></i>15 ans d'expérience</li>
@@ -316,7 +366,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>International</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Moussa N'Guessan" data-img="" data-alt="0"
+=======
+                                data-name="Kouadio N'guessan" data-img="images/chauffeurs/chauffeur3.jpg" data-alt="0"
+>>>>>>> origin/main
                                 data-experience="15 ans" data-vehicles="Mercedes Actros, Scania S" data-zone="International"
                                 data-type="Poids lourds" data-avail="service" data-avail-label="En service"
                                 data-desc="Chauffeur poids lourds expérimenté, spécialisé dans le transport international de marchandises. Maîtrise des procédures douanières et des réglementations européennes.">
@@ -328,6 +382,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="tracteurs">
                     <div class="driver-card reveal">
                         <div class="tile alt">
+<<<<<<< HEAD
                             <!-- CASE IMAGE CHAUFFEUR 04 : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour la photo de Abdoulaye Traoré">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -338,6 +393,13 @@
                         </div>
                         <div class="body">
                             <h3>Abdoulaye Traoré</h3>
+=======
+                            <img src="images/chauffeurs/chauffeur4.jpg" class="placeholder-img" alt="Abdoulaye Diallo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-person-circle"></i><small>Abdoulaye Diallo</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Abdoulaye Diallo</h3>
+>>>>>>> origin/main
                             <div class="role"><i class="bi bi-star-fill me-1" style="color:var(--choc);"></i> Chauffeur poids lourds</div>
                             <ul class="specs">
                                 <li><i class="bi bi-check-circle-fill"></i>10 ans d'expérience</li>
@@ -345,7 +407,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>National</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Abdoulaye Traoré" data-img="" data-alt="1"
+=======
+                                data-name="Abdoulaye Diallo" data-img="images/chauffeurs/chauffeur4.jpg" data-alt="1"
+>>>>>>> origin/main
                                 data-experience="10 ans" data-vehicles="MAN TGX" data-zone="National"
                                 data-type="Poids lourds" data-avail="available" data-avail-label="Disponible"
                                 data-desc="Chauffeur poids lourds dynamique, spécialisé dans les transports nationaux. Grand sens de la responsabilité et de la ponctualité.">
@@ -367,6 +433,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="fourgons">
                     <div class="driver-card reveal">
                         <div class="tile">
+<<<<<<< HEAD
                             <!-- CASE IMAGE CHAUFFEUR 05 : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour la photo de Aminata Diop">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -377,6 +444,13 @@
                         </div>
                         <div class="body">
                             <h3>Aminata Diop</h3>
+=======
+                            <img src="images/chauffeurs/chauffeur5.jpg" class="placeholder-img" alt="Camille Dubois" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-person-circle"></i><small>Camille Dubois</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Camille Dubois</h3>
+>>>>>>> origin/main
                             <div class="role"><i class="bi bi-star-fill me-1" style="color:var(--choc);"></i> Chauffeur fourgon</div>
                             <ul class="specs">
                                 <li><i class="bi bi-check-circle-fill"></i>8 ans d'expérience</li>
@@ -384,7 +458,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>Distribution urbaine</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Aminata Diop" data-img="" data-alt="0"
+=======
+                                data-name="Camille Dubois" data-img="images/chauffeurs/chauffeur5.jpg" data-alt="0"
+>>>>>>> origin/main
                                 data-experience="8 ans" data-vehicles="Mercedes Sprinter, Ford Transit" data-zone="Urbain"
                                 data-type="Fourgon" data-avail="available" data-avail-label="Disponible"
                                 data-desc="Chauffeur fourgon expérimenté, spécialiste de la distribution urbaine. Parfaite connaissance des centres-villes et des zones piétonnes.">
@@ -396,6 +474,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="fourgons">
                     <div class="driver-card reveal">
                         <div class="tile alt">
+<<<<<<< HEAD
                             <!-- CASE IMAGE CHAUFFEUR 06 : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour la photo de Kwame Mensah">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -406,6 +485,13 @@
                         </div>
                         <div class="body">
                             <h3>Kwame Mensah</h3>
+=======
+                            <img src="images/chauffeurs/chauffeur6.jpg" class="placeholder-img" alt="David Konan" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-person-circle"></i><small>David Konan</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>David Konan</h3>
+>>>>>>> origin/main
                             <div class="role"><i class="bi bi-star-fill me-1" style="color:var(--choc);"></i> Chauffeur fourgon</div>
                             <ul class="specs">
                                 <li><i class="bi bi-check-circle-fill"></i>6 ans d'expérience</li>
@@ -413,7 +499,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>Livraisons express</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Kwame Mensah" data-img="" data-alt="1"
+=======
+                                data-name="David Konan" data-img="images/chauffeurs/chauffeur6.jpg" data-alt="1"
+>>>>>>> origin/main
                                 data-experience="6 ans" data-vehicles="Renault Master" data-zone="Urbain"
                                 data-type="Fourgon" data-avail="available" data-avail-label="Disponible"
                                 data-desc="Chauffeur fourgon dynamique et réactif, spécialisé dans les livraisons express en milieu urbain. Sens de l'orientation et ponctualité exemplaires.">
@@ -425,6 +515,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="fourgons">
                     <div class="driver-card reveal">
                         <div class="tile">
+<<<<<<< HEAD
                             <!-- CASE IMAGE CHAUFFEUR 07 : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour la photo de Grace Mukamana">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -435,6 +526,13 @@
                         </div>
                         <div class="body">
                             <h3>Grace Mukamana</h3>
+=======
+                            <img src="images/chauffeurs/chauffeur7.jpg" class="placeholder-img" alt="Sophie Yao" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-person-circle"></i><small>Sophie Yao</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Sophie Yao</h3>
+>>>>>>> origin/main
                             <div class="role"><i class="bi bi-star-fill me-1" style="color:var(--choc);"></i> Chauffeur fourgon</div>
                             <ul class="specs">
                                 <li><i class="bi bi-check-circle-fill"></i>5 ans d'expérience</li>
@@ -442,7 +540,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>Multi-secteurs</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Grace Mukamana" data-img="" data-alt="0"
+=======
+                                data-name="Sophie Yao" data-img="images/chauffeurs/chauffeur7.jpg" data-alt="0"
+>>>>>>> origin/main
                                 data-experience="5 ans" data-vehicles="Fiat Ducato" data-zone="Urbain"
                                 data-type="Fourgon" data-avail="service" data-avail-label="En service"
                                 data-desc="Chauffeur fourgon polyvalent, s'adaptant à tous types de livraisons. Excellente relation client et professionnalisme reconnu.">
@@ -464,6 +566,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="specialises">
                     <div class="driver-card reveal">
                         <div class="tile">
+<<<<<<< HEAD
                             <!-- CASE IMAGE CHAUFFEUR 08 : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour la photo de Samuel Bamba">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -474,6 +577,13 @@
                         </div>
                         <div class="body">
                             <h3>Samuel Bamba</h3>
+=======
+                            <img src="images/chauffeurs/chauffeur8.jpg" class="placeholder-img" alt="Marc Bamba" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-person-circle"></i><small>Marc Bamba</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Marc Bamba</h3>
+>>>>>>> origin/main
                             <div class="role"><i class="bi bi-star-fill me-1" style="color:var(--choc);"></i> Chauffeur oversize</div>
                             <ul class="specs">
                                 <li><i class="bi bi-check-circle-fill"></i>20 ans d'expérience</li>
@@ -481,7 +591,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>Convois exceptionnels</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Samuel Bamba" data-img="" data-alt="0"
+=======
+                                data-name="Marc Bamba" data-img="images/chauffeurs/chauffeur8.jpg" data-alt="0"
+>>>>>>> origin/main
                                 data-experience="20 ans" data-vehicles="Lowboy, Multi-essieux" data-zone="International"
                                 data-type="Oversize" data-avail="available" data-avail-label="Disponible"
                                 data-desc="Chauffeur oversize expérimenté, spécialiste des convois exceptionnels. Maîtrise des procédures d'escorte et des réglementations spécifiques.">
@@ -493,6 +607,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="specialises">
                     <div class="driver-card reveal">
                         <div class="tile alt">
+<<<<<<< HEAD
                             <!-- CASE IMAGE CHAUFFEUR 09 : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour la photo de Fatoumata Camara">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -503,6 +618,13 @@
                         </div>
                         <div class="body">
                             <h3>Fatoumata Camara</h3>
+=======
+                            <img src="images/chauffeurs/chauffeur9.jpg" class="placeholder-img" alt="Fatou Traoré" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-person-circle"></i><small>Fatou Traoré</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Fatou Traoré</h3>
+>>>>>>> origin/main
                             <div class="role"><i class="bi bi-star-fill me-1" style="color:var(--choc);"></i> Chauffeur frigorifique</div>
                             <ul class="specs">
                                 <li><i class="bi bi-check-circle-fill"></i>10 ans d'expérience</li>
@@ -510,7 +632,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>Chaîne du froid</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Fatoumata Camara" data-img="" data-alt="1"
+=======
+                                data-name="Fatou Traoré" data-img="images/chauffeurs/chauffeur9.jpg" data-alt="1"
+>>>>>>> origin/main
                                 data-experience="10 ans" data-vehicles="Fourgon frigo" data-zone="National"
                                 data-type="Frigorifique" data-avail="available" data-avail-label="Disponible"
                                 data-desc="Chauffeur frigorifique certifié, spécialiste de la chaîne du froid. Garant de la qualité et de la sécurité des produits périssables transportés.">
@@ -522,6 +648,7 @@
                 <div class="col-md-6 col-lg-4 vehicle-item" data-cat="specialises">
                     <div class="driver-card reveal">
                         <div class="tile">
+<<<<<<< HEAD
                             <!-- CASE IMAGE CHAUFFEUR 10 : remplacer ce bloc par une balise <img> lorsque la photo sera disponible -->
                             <div class="image-slot" role="img" aria-label="Emplacement réservé pour la photo de Ousmane Keita">
                                 <i class="bi bi-image" aria-hidden="true"></i>
@@ -532,6 +659,13 @@
                         </div>
                         <div class="body">
                             <h3>Ousmane Keita</h3>
+=======
+                            <img src="images/chauffeurs/chauffeur10.jpg" class="placeholder-img" alt="Ibrahim Cissé" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="no-image" style="display:none;"><i class="bi bi-person-circle"></i><small>Ibrahim Cissé</small></div>
+                        </div>
+                        <div class="body">
+                            <h3>Ibrahim Cissé</h3>
+>>>>>>> origin/main
                             <div class="role"><i class="bi bi-star-fill me-1" style="color:var(--choc);"></i> Chauffeur citerne</div>
                             <ul class="specs">
                                 <li><i class="bi bi-check-circle-fill"></i>14 ans d'expérience</li>
@@ -539,7 +673,11 @@
                                 <li><i class="bi bi-check-circle-fill"></i>ADN/ADR</li>
                             </ul>
                             <button type="button" class="btn-discover" data-bs-toggle="modal" data-bs-target="#vehicleModal"
+<<<<<<< HEAD
                                 data-name="Ousmane Keita" data-img="" data-alt="0"
+=======
+                                data-name="Ibrahim Cissé" data-img="images/chauffeurs/chauffeur10.jpg" data-alt="0"
+>>>>>>> origin/main
                                 data-experience="14 ans" data-vehicles="Citerne liquide" data-zone="International"
                                 data-type="Citerne" data-avail="service" data-avail-label="En service"
                                 data-desc="Chauffeur citerne certifié ADR, spécialiste du transport de liquides dangereux. Rigoureux et respectueux des normes de sécurité les plus strictes.">
@@ -565,7 +703,11 @@
         </div>
     </div>
 
+<<<<<<< HEAD
     <!-- AVANTAGES ET RECRUTEMENT
+=======
+    <!-- AVANTAGES ET RECRUTEMENT -->
+>>>>>>> origin/main
     <div class="container" style="padding-bottom:5rem;">
         <p class="section-label">Avantages</p>
         <h2 class="section-title">Pourquoi rejoindre LOGITIX ?</h2>
@@ -594,7 +736,11 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
     </div> -->
+=======
+    </div>
+>>>>>>> origin/main
 
     <!-- MODAL -->
     <div class="modal fade" id="vehicleModal" tabindex="-1" aria-hidden="true">
@@ -607,11 +753,15 @@
                 <div class="modal-body">
                     <div class="modal-img" id="modalVehicleImg">
                         <img src="" alt="Chauffeur" id="modalVehicleImage" style="display:none;width:100%;height:100%;object-fit:cover;">
+<<<<<<< HEAD
                         <div class="no-image" id="modalNoImage" style="display:flex;">
                             <i class="bi bi-image" aria-hidden="true"></i>
                             <strong id="modalNoImageLabel">Photo du chauffeur</strong>
                             <small>Emplacement réservé à l'image — format conseillé 16:9</small>
                         </div>
+=======
+                        <div class="no-image" id="modalNoImage" style="display:flex;"><i class="bi bi-person-circle"></i><small>Image non disponible</small></div>
+>>>>>>> origin/main
                     </div>
                     <p class="modal-desc" id="modalVehicleDesc"></p>
                     <table class="spec-table">
@@ -696,10 +846,14 @@
             const imgSrc = btn.getAttribute('data-img');
             const imgEl = document.getElementById('modalVehicleImage');
             const noImgEl = document.getElementById('modalNoImage');
+<<<<<<< HEAD
             const noImgLabel = document.getElementById('modalNoImageLabel');
             const imgWrap = document.getElementById('modalVehicleImg');
             const driverName = btn.getAttribute('data-name') || 'Chauffeur';
             noImgLabel.textContent = 'Photo de ' + driverName;
+=======
+            const imgWrap = document.getElementById('modalVehicleImg');
+>>>>>>> origin/main
             
             if (imgSrc) {
                 imgEl.src = imgSrc;
