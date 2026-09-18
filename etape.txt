@@ -1,0 +1,4 @@
+git clone https://github.com/oichristkouame920/LOGITIX.git LOGITIX_FINAL
+cd LOGITIX_FINAL
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\installer_logitix.ps1

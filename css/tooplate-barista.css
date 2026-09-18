@@ -691,7 +691,7 @@ strong {
 }
 
 .menu-block .border-top {
-  border-top-color: rgba(255, 255, 255, 0.35) !important;
+  border-top-color: rgba(255, 255, 255, 0.35);
 }
 
 .menu-block h6 {
@@ -742,7 +742,7 @@ strong {
   REVIEWS              
 -----------------------------------------*/
 .reviews-section { /*pour la couleur qui es derriere vu pour vous*/
-  background-color: #527b7cff;
+  background-color: rgb(168, 75, 21);
 }
 
 .reviews-block {
@@ -753,15 +753,11 @@ strong {
 }
 
 .reviews-block .border-top {
-  border-top-color: rgba(255, 255, 255, 0.35) !important;
+  border-top-color: rgba(255, 255, 255, 0.35);
 }
 
 .reviews-block-image-wrap-a {
-<<<<<<< HEAD
   background-image: url('../images/entrepôts/entrepot_abidj.jpg'); /*pour l'image de la presentaion de san pedro*/
-=======
-  background-image: url('../images/entrepot_abidj.jpg'); /*pour l'image de la presenaion de abijan*/
->>>>>>> origin/main
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -769,11 +765,7 @@ strong {
 }
 
 .reviews-block-image-wrap-b {
-<<<<<<< HEAD
   background-image: url('../images/entrepôts/entrepot_sanpe.jpg'); /*pour l'image de la presentaion de san pedro*/
-=======
-  background-image: url('../images/entrepot_sanpe.jpg'); /*pour l'image de la presenaion de san pedro*/
->>>>>>> origin/main
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -781,11 +773,7 @@ strong {
 }
 
 .reviews-block-image-wrap-c {
-<<<<<<< HEAD
   background-image: url('../images/entrepôts/entrepot_brest.jpg'); /*pour l'image de la presentaion de brest*/
-=======
-  background-image: url('../images/entrepot_brest.jpg'); /*pour l'image de la presenaion de brest*/
->>>>>>> origin/main
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -793,11 +781,7 @@ strong {
 }
 
 .reviews-block-image-wrap-d {
-<<<<<<< HEAD
   background-image: url('../images/entrepôts/entrepot_shangai.jpg'); /*pour l'image de la presentaion de shangai*/
-=======
-  background-image: url('../images/收藏的一些简洁大气的厂房意向图\ -\ 小红书.jfif'); /*pour l'image de la presenaion de shangai*/
->>>>>>> origin/main
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -805,11 +789,7 @@ strong {
 }
 
 .reviews-block-image-wrap-e {
-<<<<<<< HEAD
   background-image: url('../images/entrepôts/entrepot-dakar.jpg'); /*pour l'image de la presenaion de dakar*/
-=======
-  background-image: url('../images/entrepot-dakar.jpg'); /*pour l'image de la presenaion de dakar*/
->>>>>>> origin/main
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

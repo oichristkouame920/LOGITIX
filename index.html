@@ -14,7 +14,448 @@
         <link href="css/vegas.min.css" rel="stylesheet">
         <link href="css/tooplate-barista.css" rel="stylesheet">
         <link rel="stylesheet" href="css/popup.css">
+
+        <style> 
+            /* =========================
+            POPUP PREMIUM LOGITIX
+            ========================== */
+
+            .logitix-popup .modal-dialog{
+                max-width: 980px;
+            }
+
+            .logitix-popup .modal-content{
+                border: none;
+                border-radius: 24px;
+                overflow: hidden;
+                box-shadow: 0 30px 80px rgba(0,0,0,.35);
+                background: #fff;
+            }
+
+            .logitix-popup-left{
+                min-height: 560px;
+
+                background:
+                    linear-gradient(
+                        135deg,
+                        rgba(1,32,63,.95),
+                        rgba(1,32,63,.72)
+                    ),
+                url("images/flotte_camion_ameliorer.png") center/cover no-repeat;
+
+                color: #fff;
+                padding: 45px;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                position: relative;
+            }
+
+            .logitix-popup-logo{
+                width: 170px;
+                height: auto;
+            }
+
+            .logitix-popup-badge{
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+            
+                padding: 7px 14px;
+            
+                border-radius: 50px;
+            
+                background: rgba(255,255,255,.12);
+                border: 1px solid rgba(255,255,255,.22);
+            
+                font-size: .78rem;
+                font-weight: 600;
+            
+                margin-bottom: 18px;
+            }
+
+            .logitix-popup-left h2{
+                font-size: 2.2rem;
+                font-weight: 800;
+                line-height: 1.15;
+                margin-bottom: 15px;
+            }
         
+            .logitix-popup-left p{
+                color: rgba(255,255,255,.82);
+                font-size: .95rem;
+                line-height: 1.7;
+                max-width: 420px;
+            }
+        
+            .logitix-popup-trust{
+                display: flex;
+                gap: 18px;
+                flex-wrap: wrap;
+                margin-top: 25px;
+            }
+        
+            .logitix-popup-trust span{
+                font-size: .78rem;
+                color: rgba(255,255,255,.85);
+            }
+        
+            .logitix-popup-trust i{
+                color: #ff9f1c;
+                margin-right: 5px;
+            }
+        
+            .logitix-popup-right{
+                padding: 45px;
+            
+                position: relative;
+            
+                background:
+                    radial-gradient(
+                        circle at top right,
+                        rgba(255,159,28,.08),
+                        transparent 35%
+                    ),
+                #ffffff;
+            }
+
+            /* =========================
+               BOUTON FERMETURE
+            ========================== */
+
+            .logitix-popup-close{
+                position: absolute;
+                top: 18px;
+                right: 18px;
+                z-index: 9999;
+
+                width: 42px;
+                height: 42px;
+
+                border: none;
+                border-radius: 50%;
+
+                background: #01203F;
+                color: #fff;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                font-size: 1.2rem;
+
+                cursor: pointer;
+
+                box-shadow: 0 6px 18px rgba(0,0,0,.20);
+
+                transition:
+                    transform .2s ease,
+                    background-color .2s ease;
+            }
+
+            .logitix-popup-close:hover{
+                background: #ff9f1c;
+                color: #01203F;
+                transform: rotate(90deg);
+            }
+        
+            .logitix-popup-close:focus{
+                outline: none;
+            
+                box-shadow:
+                    0 0 0 3px rgba(255,159,28,.30),
+                    0 6px 18px rgba(0,0,0,.20);
+            }
+        
+            .logitix-popup-right h3{
+                color: #01203F;
+                font-weight: 800;
+
+                margin-bottom: 10px;
+
+                font-size: 1.7rem;
+
+                padding-right: 50px;
+            }
+
+            .logitix-popup-subtitle{
+                color: #697386;
+            
+                font-size: .92rem;
+                line-height: 1.6;
+            
+                margin-bottom: 25px;
+            }
+        
+            .logitix-service{
+                display: flex;
+                align-items: center;
+            
+                gap: 14px;
+            
+                padding: 13px 0;
+            
+                border-bottom: 1px solid #edf0f3;
+            }
+
+            .logitix-service:last-child{
+                border-bottom: none;
+            }
+        
+            .logitix-service-icon{
+                width: 44px;
+                height: 44px;
+            
+                border-radius: 12px;
+            
+                background: rgba(255,159,28,.12);
+                color: #d97706;
+            
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            
+                font-size: 1.2rem;
+            
+                flex-shrink: 0;
+            }
+        
+            .logitix-service strong{
+                color: #01203F;
+            
+                font-size: .9rem;
+            
+                display: block;
+            }
+        
+            .logitix-service small{
+                color: #7b8493;
+            
+                font-size: .77rem;
+            }
+        
+            .logitix-popup-actions{
+                margin-top: 28px;
+            
+                display: flex;
+                gap: 12px;
+            
+                flex-wrap: wrap;
+            }
+        
+            .logitix-btn-primary{
+                background: #ff9f1c;
+                color: #111;
+            
+                border: none;
+                border-radius: 10px;
+            
+                padding: 12px 22px;
+            
+                font-weight: 700;
+            
+                transition: .2s ease;
+            }
+        
+            .logitix-btn-primary:hover{
+                background: #e98c08;
+                color: #111;
+            
+                transform: translateY(-1px);
+            }
+        
+            .logitix-btn-secondary{
+                background: transparent;
+                color: #01203F;
+            
+                border: 1px solid #ccd3db;
+                border-radius: 10px;
+            
+                padding: 12px 22px;
+            
+                font-weight: 700;
+            
+                transition: .2s ease;
+            }
+        
+            .logitix-btn-secondary:hover{
+                background: #01203F;
+                color: #fff;
+            
+                border-color: #01203F;
+            }
+        
+            .logitix-popup-note{
+                font-size: .72rem;
+            
+                color: #9299a3;
+            
+                margin-top: 18px;
+            }
+        
+            /* =========================
+               RESPONSIVE
+            ========================== */
+        
+            @media (max-width: 991px){
+                .logitix-popup-left{
+                    min-height: 320px;
+                    padding: 30px;
+                }
+
+                .logitix-popup-left h2{
+                    font-size: 1.7rem;
+                }
+
+                .logitix-popup-right{
+                    padding: 35px 28px;
+                }
+            }
+
+            @media (max-width: 576px){
+            
+                .logitix-popup .modal-dialog{
+                    margin: 12px;
+                }
+            
+                .logitix-popup-left{
+                    min-height: 260px;
+                }
+            
+                .logitix-popup-actions{
+                    flex-direction: column;
+                }
+            
+                .logitix-popup-actions a{
+                    width: 100%;
+                    text-align: center;
+                }
+            
+                .logitix-popup-close{
+                    top: 12px;
+                    right: 12px;
+                
+                    width: 38px;
+                    height: 38px;
+                }
+            }
+
+            /* Apparition générale */
+            .logitix-popup .modal-content{
+                opacity: 0;
+                transform: translateY(30px) scale(.97);
+            
+                transition:
+                    opacity .45s ease,
+                    transform .45s cubic-bezier(.2,.8,.2,1);
+            }
+
+            .logitix-popup.show .modal-content{
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+
+
+            /* Partie gauche */
+            .logitix-popup-left > *{
+                opacity: 0;
+                transform: translateX(-20px);
+            
+                transition:
+                    opacity .5s ease .15s,
+                    transform .5s ease .15s;
+            }
+
+            .logitix-popup.show .logitix-popup-left > *{
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            /* Titre + description */
+            .logitix-popup-right h3,
+            .logitix-popup-subtitle{
+                opacity: 0;
+                transform: translateY(15px);
+            
+                transition:
+                    opacity .4s ease .20s,
+                    transform .4s ease .20s;
+            }
+
+            .logitix-popup.show .logitix-popup-right h3,
+            .logitix-popup.show .logitix-popup-subtitle{
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+
+            /* Services */
+            .logitix-service{
+                opacity: 0;
+                transform: translateY(15px);
+            
+                transition:
+                    opacity .4s ease,
+                    transform .4s ease;
+            }
+
+            .logitix-popup.show .logitix-service{
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            /* Décalage progressif */
+            .logitix-popup.show .logitix-service:nth-of-type(1){
+                transition-delay: .25s;
+            }
+
+            .logitix-popup.show .logitix-service:nth-of-type(2){
+                transition-delay: .32s;
+            }
+
+            .logitix-popup.show .logitix-service:nth-of-type(3){
+                transition-delay: .39s;
+            }
+
+            .logitix-popup.show .logitix-service:nth-of-type(4){
+                transition-delay: .46s;
+            }
+
+            /* Boutons */
+            .logitix-popup-actions{
+                opacity: 0;
+                transform: translateY(15px);
+            
+                transition:
+                    opacity .4s ease .50s,
+                    transform .4s ease .50s;
+            }
+
+            .logitix-popup.show .logitix-popup-actions{
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+
+            /* Petite animation du logo */
+            .logitix-popup.show .logitix-popup-logo{
+                animation: logitixLogo .7s ease .15s both;
+            }
+
+            @keyframes logitixLogo{
+                0%{
+                    opacity: 0;
+                    transform: translateY(-10px) scale(.9);
+                }
+
+                100%{
+                    opacity: 1;
+                    transform: translateY(0) scale(1);
+                }
+            }
+        </style>
     </head>
     
     <body>
@@ -172,11 +613,7 @@
                                     </div>
 
                                     <div class="team-block-image-wrap">
-<<<<<<< HEAD
                                         <img src="images/entrepôts/entrepot_abidj.jpg" class="team-block-image img-fluid" alt="">
-=======
-                                        <img src="images/entrepo2.avif" class="team-block-image img-fluid" alt="">
->>>>>>> origin/main
                                     </div>
                                 </div>
                             </div>
@@ -192,11 +629,7 @@
                                     </div>
 
                                     <div class="team-block-image-wrap">
-<<<<<<< HEAD
                                         <img src="images/entrepôts/entrepot_shangai.jpg" class="team-block-image img-fluid" alt="">
-=======
-                                        <img src="images/termi.jpg" class="team-block-image img-fluid" alt="">
->>>>>>> origin/main
                                     </div>
                                 </div>
                             </div>
@@ -294,11 +727,7 @@
                                     </div>
 
                                     <div class="team-block-image-wrap">
-<<<<<<< HEAD
                                         <img src="images/chauffeurs/moussa-nguessan.png" class="team-block-image img-fluid" alt="">
-=======
-                                        <img src="images/chauffeur_2.jpg" class="team-block-image img-fluid" alt="">
->>>>>>> origin/main
                                     </div>
                                 </div>
                             </div>
@@ -318,11 +747,7 @@
                                     </div>
                                 </div>
                             </div> -->
-<<<<<<< HEAD
                             <!-- <div class="col-lg-3 col-md-6 col-12"> -->
-=======
-                            <div class="col-lg-3 col-md-6 col-12">
->>>>>>> origin/main
                                 <!-- <div class="team-block-wrap">
                                     <div class="team-block-info d-flex flex-column">
                                         <div class="d-flex mt-auto mb-3">
@@ -483,42 +908,25 @@
 
                                 <strong class="text-white">
                                     <i class="bi-geo-alt me-2"></i>
-<<<<<<< HEAD
                                     📍 Zone portuaire, Port Autonome, Dakar, Sénégal (Dakar)
-=======
-                                    📍 Zone portuaire, Grand Port Maritime du Havre, 76600 Le Havre, France (Dakar)
->>>>>>> origin/main
                                     <hr>
                                 </strong>
 
                                 <strong class="text-white">
                                     <i class="bi-geo-alt me-2"></i>
-<<<<<<< HEAD
                                     📍 Zone portuaire,Port Autonome de San-Pédro, San-Pédro, Côte d'Ivoire (San-Pedro)
-=======
-                                    📍 Zone portuaire, Grand Port Maritime du Havre, 76600 Le Havre, France (San-Pedro)
->>>>>>> origin/main
                                     <hr>
                                 </strong>
 
                                 <strong class="text-white">
                                     <i class="bi-geo-alt me-2"></i>
-<<<<<<< HEAD
                                     📍 Zone portuaire,Port de Shangai, Shangai, Chine (Shangai)
-=======
-                                    📍 Zone portuaire, Grand Port Maritime du Havre, 76600 Le Havre, France (Shangai)
->>>>>>> origin/main
                                     <hr>
                                 </strong>
 
                                 <ul class="social-icon mt-4">
                                     <li class="social-icon-item">
-<<<<<<< HEAD
                                         <a href="https://www.facebook.com/logitix" class="social-icon-link bi-facebook"></a>
-=======
-                                        <a href="https://www.facebook.com/logitix" class="social-icon-link bi-facebook">
-                                        </a>
->>>>>>> origin/main
                                     </li>
         
                                     <li class="social-icon-item"><a href="https://wa.me/2250503231625?text=Bonjour j'aimerais avoir plus d'information sur les chambres" class="social-icon-link bi-whatsapp"></a></li>
@@ -555,6 +963,276 @@
                 </footer>
             </main>
 
+            <!-- =========================
+                 POPUP PREMIUM LOGITIX
+            ========================== -->
+
+            <div
+                class="modal fade logitix-popup"
+                id="popupAccueil"
+                tabindex="-1"
+                aria-hidden="true"
+            >
+
+                <div class="modal-dialog modal-dialog-centered modal-xl">
+                
+                    <div class="modal-content">
+                    
+                        <div class="row g-0">
+                        
+                            <!-- =========================
+                                 PARTIE VISUELLE GAUCHE
+                            ========================== -->
+                        
+                            <div class="col-lg-6 logitix-popup-left">
+                            
+                                <div>
+                                
+                                    <img
+                                        src="images/logo.png"
+                                        alt="LOGITIX"
+                                        class="logitix-popup-logo"
+                                    >
+                                
+                                </div>
+                            
+                                <div>
+                                
+                                    <div class="logitix-popup-badge">
+                                    
+                                        <i class="bi bi-globe2"></i>
+                                    
+                                        Solutions logistiques intégrées
+                                    
+                                    </div>
+                                
+                                    <h2>
+                                        Votre logistique.<br>
+                                        Notre expertise.
+                                    </h2>
+                                
+                                    <p>
+                                    
+                                        LOGITIX vous accompagne dans le transport,
+                                        l'entreposage, la distribution et le suivi
+                                        de vos marchandises avec une approche simple,
+                                        fiable et professionnelle.
+                                    
+                                    </p>
+                                
+                                    <div class="logitix-popup-trust">
+                                    
+                                        <span>
+                                        
+                                            <i class="bi bi-shield-check"></i>
+                                        
+                                            Sécurisé
+                                        
+                                        </span>
+                                    
+                                        <span>
+                                        
+                                            <i class="bi bi-clock-history"></i>
+                                        
+                                            Suivi continu
+                                        
+                                        </span>
+                                    
+                                        <span>
+                                        
+                                            <i class="bi bi-geo-alt"></i>
+                                        
+                                            Réseau logistique
+                                        
+                                        </span>
+                                    
+                                    </div>
+                                
+                                </div>
+                            
+                            </div>
+                        
+                        
+                            <!-- =========================
+                                 PARTIE DROITE
+                            ========================== -->
+                        
+                            <div class="col-lg-6 logitix-popup-right">
+                            
+                                <!-- Bouton fermeture -->
+                            
+                                <button
+                                    type="button"
+                                    class="logitix-popup-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Fermer"
+                                >
+                            
+                                    <i class="bi bi-x-lg"></i>
+                            
+                                </button>
+                            
+                            
+                                <h3>
+                                    Bienvenue chez LOGITIX
+                                </h3>
+                            
+                                <p class="logitix-popup-subtitle">
+                                
+                                    Une plateforme conçue pour simplifier vos opérations
+                                    logistiques, de la demande de devis jusqu'au suivi
+                                    de vos expéditions.
+                                
+                                </p>
+                            
+                            
+                                <!-- Transport -->
+                            
+                                <div class="logitix-service">
+                                
+                                    <div class="logitix-service-icon">
+                                    
+                                        <i class="bi bi-truck"></i>
+                                    
+                                    </div>
+                                
+                                    <div>
+                                    
+                                        <strong>
+                                            Transport & distribution
+                                        </strong>
+                                    
+                                        <small>
+                                            Acheminement sécurisé de vos marchandises.
+                                        </small>
+                                    
+                                    </div>
+                                
+                                </div>
+                            
+                            
+                                <!-- Entreposage -->
+                            
+                                <div class="logitix-service">
+                                
+                                    <div class="logitix-service-icon">
+                                    
+                                        <i class="bi bi-box-seam"></i>
+                                    
+                                    </div>
+                                
+                                    <div>
+                                    
+                                        <strong>
+                                            Entreposage
+                                        </strong>
+                                    
+                                        <small>
+                                            Solutions adaptées à différents types de marchandises.
+                                        </small>
+                                    
+                                    </div>
+                                
+                                </div>
+                            
+                            
+                                <!-- Expéditions -->
+                            
+                                <div class="logitix-service">
+                                
+                                    <div class="logitix-service-icon">
+                                    
+                                        <i class="bi bi-clipboard-data"></i>
+                                    
+                                    </div>
+                                
+                                    <div>
+                                    
+                                        <strong>
+                                            Gestion des expéditions
+                                        </strong>
+                                    
+                                        <small>
+                                            Suivez vos opérations depuis votre espace client.
+                                        </small>
+                                    
+                                    </div>
+                                
+                                </div>
+                            
+                            
+                                <!-- Devis -->
+                            
+                                <div class="logitix-service">
+                                
+                                    <div class="logitix-service-icon">
+                                    
+                                        <i class="bi bi-file-earmark-text"></i>
+                                    
+                                    </div>
+                                
+                                    <div>
+                                    
+                                        <strong>
+                                            Demandes de devis
+                                        </strong>
+                                    
+                                        <small>
+                                            Préparez rapidement vos besoins de transport.
+                                        </small>
+                                    
+                                    </div>
+                                
+                                </div>
+                            
+                            
+                                <!-- Boutons -->
+                            
+                                <div class="logitix-popup-actions">
+                                
+                                    <a
+                                        href="crer_compte.php"
+                                        class="logitix-btn-primary text-decoration-none"
+                                    >
+                                
+                                        <i class="bi bi-person-plus me-1"></i>
+                                
+                                        Créer un compte
+                                
+                                    </a>
+                                
+                                    <a
+                                        href="se_connecter.php"
+                                        class="logitix-btn-secondary text-decoration-none"
+                                    >
+                                
+                                        <i class="bi bi-box-arrow-in-right me-1"></i>
+                                
+                                        Se connecter
+                                
+                                    </a>
+                                
+                                </div>
+                            
+                            
+                                <div class="logitix-popup-note">
+                                
+                                    Déjà client LOGITIX ?
+                                    Connectez-vous pour accéder à votre tableau de bord
+                                    et suivre vos opérations.
+                                
+                                </div>
+                            
+                            </div>
+                        
+                        </div>
+                    
+                    </div>
+                
+                </div>
+            
+            </div>
+
             <!-- JAVASCRIPT FILES -->
             <script src="js/jquery.min.js"></script>
             <script src="js/bootstrap.min.js"></script>
@@ -564,5 +1242,35 @@
             <script src="js/custom.js"></script>
             <script src="js/popup.js"></script>
 
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                
+                    const popupElement = document.getElementById("popupAccueil");
+                
+                    if (!popupElement) {
+                        console.error("Popup LOGITIX introuvable");
+                        return;
+                        moveBy
+                    }
+                
+                    if (typeof bootstrap === "undefined") {
+                        console.error("Bootstrap JS n'est pas chargé");
+                        return;
+                    }
+                
+                    const popup = new bootstrap.Modal(
+                        popupElement,
+                        {
+                            backdrop: true,
+                            keyboard: true
+                        }
+                    );
+                    
+                    setTimeout(function () {
+                        popup.show();
+                    }, 700);
+                
+                });
+            </script>
     </body>
 </html>
