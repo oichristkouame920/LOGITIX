@@ -30,7 +30,14 @@ function Fail($Message) {
 
 function New-LogitixPassword {
     $bytes = New-Object byte[] 32
-    [System.Security.Cryptography.RandomNumberGenerator]::Fill($bytes)
+    $rng = [System.Security.Cryptography.RandomNumberGenerator]::Create()
+
+    try {
+        $rng.GetBytes($bytes)
+    }
+    finally {
+        $rng.Dispose()
+    }
 
     return [Convert]::ToBase64String($bytes).
         Replace("+", "-").
@@ -256,7 +263,14 @@ SET DEFAULT ROLE NONE TO
     if (-not $TotpKey) {
 
         $TotpBytes = New-Object byte[] 32
-        [System.Security.Cryptography.RandomNumberGenerator]::Fill($TotpBytes)
+        $rng = [System.Security.Cryptography.RandomNumberGenerator]::Create()
+
+        try {
+            $rng.GetBytes($TotpBytes)
+        }
+        finally {
+            $rng.Dispose()
+        }
 
         $TotpKey = [Convert]::ToBase64String($TotpBytes)
 
