@@ -875,7 +875,7 @@ strong {
 -----------------------------------------*/
 .contact-section {
   /*background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.45), rgba(188, 108, 37, 1)), url('../images/IMG-20251103-WA0048.jpg'); pour l'image de la derniere section*/
-  background-color: #0B2C4D;
+  background-color: lightsteelblue;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
