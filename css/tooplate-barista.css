@@ -319,6 +319,7 @@ strong {
   top: 0;
   right: 0;
   left: 0;
+  background-color: #0B2C4D;
 }
 
 .sticky-wrapper.is-sticky .container {
@@ -742,11 +743,11 @@ strong {
   REVIEWS              
 -----------------------------------------*/
 .reviews-section { /*pour la couleur qui es derriere vu pour vous*/
-  background-color: #527b7cff;
+  background-color: rgba(188, 108, 37, 1);
 }
 
 .reviews-block {
-  background-color: var(--section-bg-color);
+  background-color:#0B2C4D ;
   border-radius: var(--border-radius-medium);
   position: relative;
   overflow: hidden;
@@ -811,7 +812,7 @@ strong {
 .reviews-block-info p {
   font-size: var(--btn-font-size);
   font-style: italic;
-  color: black;
+  color: white;
 }
 
 .reviews-group i {
@@ -873,7 +874,8 @@ strong {
   CONTACT               
 -----------------------------------------*/
 .contact-section {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.45), rgba(188, 108, 37, 1)), url('../images/IMG-20251103-WA0048.jpg'); /*pour l'image de la derniere section*/
+  /*background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.45), rgba(188, 108, 37, 1)), url('../images/IMG-20251103-WA0048.jpg'); pour l'image de la derniere section*/
+  background-color: #0B2C4D;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
