@@ -2262,8 +2262,6 @@ if (isLoggedIn()) {
 
     </footer>
 
-
-
     <!-- JAVASCRIPT FILES -->
 
     <script src="js/jquery.min.js"></script>
@@ -2320,7 +2318,7 @@ if (isLoggedIn()) {
                             : "text";
 
 
-                    const icon =
+                    const icon =KO
                         this.querySelector("i");
 
 
